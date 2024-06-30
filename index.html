@@ -47,23 +47,23 @@
 <mainrole="main">
     <section class="l-hero content content--canvas">
         
-        <nav class="h-right">
+        <nav class="lgo-banner h-right">
             <img class="lgo-banner__image" src="\img\m5f_banner_48px_256px.jpg" alt="Mach Five Tech Group Chicago">
-            <a tabindex="0" aria-haspopup="true"
+
+            <a class="lgo-banner-cta" tabindex="0" aria-haspopup="true"
             data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="false"
             data-n55-enchanted-cta-size="xsmall"
-            data-n55-sodapop-id="soda__"
             data-n55-theme="night"
-            style="background-color: #fff; margin: 8px 0 4px"
+            QQQQstyle="background-color: #fff; margin: 8px 0 4px"
             ><span>Login</span><span></span>
             </a>
 
-            <a tabindex="0" aria-haspopup="true"
+            <a class="lgo-banner-cta" tabindex="0" aria-haspopup="true"
             data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="false"
             data-n55-enchanted-cta-size="xsmall"
             onClick="contact_form_iframe_sfdc.openCTA()"
             data-n55-theme="night"
-            style="background-color: #fff; margin: 8px 16px 4px;"
+            QQQQstyle="background-color: #fff; margin: 8px 16px 4px;"
             ><span>Contact</span><span></span>
             </a>
         </nav>
@@ -251,13 +251,13 @@
 </main>
 <footer class="l-foot">
     <br><br><br>
-    <nav class="h-center">
+    <nav class="foot-nav-cta">
         <a tabindex="0" aria-haspopup="true"
-        data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="false"
-        data-n55-enchanted-cta-size="small"
+        data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="false" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="false"
+        data-n55-enchanted-cta-size="small" data-n55-enchanted-cta-ambient="emit"
         onClick="contact_form_iframe_sfdc.openCTA()"
         data-n55-theme="night"
-        style="background-color: #fff; margin: 8px 16px 4px;"
+        style=""
         ><span>Contact</span><span></span>
         </a>
     </nav>
@@ -279,15 +279,22 @@
     display: block; width: 100%; height: 100vh;
     background-color: var( --m5lc-theme-night-mid );
 }
-.l-hero .lgo-banner__image{
+.lgo-banner .lgo-banner__image{
     float: left;
     user-select: none;
-    padding-top: 6px;
-    width: 176px;
+    padding-top: 14px;
+    width: 112px;
 }
+.lgo-banner .lgo-banner-cta { margin: 4px; }
 .l-foot {
+    position: relative;
     display: block; width: 100%; height: 24vw;
     background-color: var( --m5lc-theme-night-mid );
+}
+.l-foot .foot-nav-cta {
+    position: absolute;
+    bottom: 16px;
+    left: calc( 50vw - 86px);
 }
 .l-content-row { }
 .l-content-row .content-row__panel { background-color: var(--m5lc-theme-night-mid); border-radius: 8px; margin: 12px; }
@@ -298,8 +305,13 @@
 .l-content-row .h-padding-16px {padding: 16px;}
 .l-content-row .h-margin_bottom_0 {margin-bottom: 0;}
 .l-content-row .readampm { color: #000; letter-spacing: 1px;}
-
+/*  MQ  */
+@media only screen and (min-width:48.1em){/* med *//* lg */
+    .lgo-banner .lgo-banner__image{ padding-top: 6px; width: 176px; }
+    .lgo-banner .lgo-banner-cta { margin: 8px 12px 4px 1px; }
+}
 </style>
+
 <script>
     const contact_form_iframe_sfdcCustom = {"theme": "danger"}
 </script>
