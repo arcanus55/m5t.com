@@ -124,7 +124,7 @@ function createCanvas() {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 92%;
+		height: calc( 100vh - 50px);
 	`;
 	container.appendChild(canvas.b);
 	ctx = {
