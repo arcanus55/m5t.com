@@ -43,6 +43,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.machfivetech.com/img/android-chrome-512x512.png">
     <meta property="og:logo" content="https://www.machfivetech.com/img/android-chrome-512x512.png" />
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -58,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JXK6LQW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
- 
+
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
 <main role="main">
     <section class="l-hero QQQQcontent QQQQcontent--canvas">
@@ -91,7 +92,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img class="hero__img" src="\img\m5t_lgo_circ_600.png" alt="Mach Five Tech Group Chicago Logo">
     <br><br class="h-ds-b__desktop--only">
     <br><br class="h-ds-b__desktop--only">
-    <h2 class="hd2 h-center">How We Help You</h2>
+    <h2 id="txt-rotate" class="hd2 h-center">How We Help You <span id="txt-rotate__verb" style="color: #D83E22;">thrive</span></h2>
     <br>
     <section id="a11y-skipmain" class="l-content-row pfmf-grid pfmf-grid__60_40">
         <div class="h-left h-padding-16px">
@@ -386,8 +387,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .l-content-row .readampm { color: #000; letter-spacing: .4px; }
 
 .l-content-row .hd2 { font-size: 42px !important; line-height: .94;}
+
+#txt-rotate {font-size: 22px; margin-top: 36px;}
 /*  MQ  */
 @media only screen and (min-width:48.1em){/* med *//* lg */
+    #txt-rotate {font-size: 48px;}
+
     .lgo-banner .lgo-banner__image { padding-top: 6px; width: 176px; }
     .lgo-banner .lgo-banner-cta { margin: 8px 12px 4px 1px; }
 
@@ -405,6 +410,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="contact_form_iframe_sfdc"></neodigm-widget>
+
+<script>
+    setTimeout(()=>{
+        const verbs = ["Architect", "Be Awesome", "Be Heard", "Code", "Communicate", "Deliver", "Design", "Develop", "Envision", "Ideate", "Level Up", "Plan", "Scale", "Test", "Thrive", "Understand"]
+        neodigmUtils.typeOn({"q1st":"#txt-rotate__verb", "msg": verbs.join("|"), "mode":"LOOP","uniqueDelay":232})        
+    }, 2e3)
+</script>
+
 
 <template src="js/noise.min.js"></template>
 <template src="js/util.js"></template>
