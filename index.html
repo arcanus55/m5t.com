@@ -62,7 +62,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
 <main role="main">
-    <section class="l-hero QQQQcontent QQQQcontent--canvas">
+    <section class="l-hero QQQQcontent QQQQcontent--canvas"
+    style="background-image: url('/img/m5t_hero-01.jpg');background-repeat: no-repeat;background-size: cover;">
         
         <nav class="lgo-banner h-right">
             <img class="lgo-banner__image" src="\img\m5f_banner_48px_256px.jpg" alt="Mach Five Tech Group Chicago">
@@ -85,8 +86,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
         </nav>
 
-        <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_3d_spheres"
-        style="display: block; width: 100%; overflow: hidden;"></neodigm-widget>
+        <QQQQneodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_3d_spheres"
+        style="display: block; width: 100%; overflow: hidden;"></QQQQneodigm-widget>
 
     </section>
     <img class="hero__img" src="\img\m5t_lgo_circ_600.png" alt="Mach Five Tech Group Chicago Logo">
@@ -121,7 +122,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Engineering Leadership</p>
                     <p>Product Roadmapping</p>
                     <p>Stakeholder Interviews</p>
-                    <p>Technical Advising</p>
                     <p>Technical Documentation</p>
                     <p class="h-margin_bottom_0">User Research & A/B testing</p>
                 </div>
@@ -324,6 +324,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
     </nav>
 </footer>
+<aside class="foot-copy">
+    <br class="h-br-half">
+    <p class="readampm__legal h-center">(c)2008-2024 Mach Five Tech Group | Chicago</p>
+</aside>
 
 <template id="soda__plan"    data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
     <div class="h-left readampm__legal">
@@ -332,7 +336,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Engineering Leadership</p>
         <p>Product Roadmapping</p>
         <p>Stakeholder Interviews</p>
-        <p>Technical Advising</p>
         <p>Technical Documentation</p>
         <p class="h-margin_bottom_0">User Research & A/B testing</p>
     </div>
@@ -442,8 +445,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 .l-foot .foot-nav-cta {
     position: absolute;
-    bottom: 16px;
+    bottom: 56px;
     left: calc( 50vw - 86px);
+}
+.foot-copy {
+    position: relative;
+    display: block; width: 100%; height: 48px;
+    background-color: #161616;
+}
+.foot-copy p {
+    color: #fff !important;
+    margin: 0;
 }
 .l-content-row { }
 .l-content-row .content-row__panel { background-color: var(--m5lc-theme-night-mid); border-radius: 8px; margin: 12px; height: min-content; }
