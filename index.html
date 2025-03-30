@@ -17,11 +17,11 @@
           CONSOLE_LOG_VER: true,
         }
     </script>
-    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55__v3_5.css"></link>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.css"></link>
     <script>
         const effect_3d_spheresCustom = {"context": "[data-n55-token='effect_3d_spheres']", "color": 0xFFB11B, "speed_x": 0.0004, "speed_y": 0.002, "camera_z": "+1500"}
     </script>
-    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v3_5.js"></script>
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.js"></script>
     <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css"></link>
     <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
 
@@ -85,14 +85,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="h-ds-b__desktop--only">
     <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg"
     data-n55-parallax-size="fullscreen">
-    <section><aside></aside></section>
+    <section><aside>
+        <div class="hero__cont">
+            <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_background_spotlight_dance"></neodigm-widget>
+        </div>
+    </aside></section>
     </neodigm-parallax>     
 </div>
+<style>
+.hero__cont > neodigm-widget  {
+    position: absolute; display: block;
+    width: 400px; height: 400px;
+    top: calc( 50vh - 200px);
+    left: calc( 50vw - 200px);
+    margin: 8px;
+    user-select: none;
+}
+</style>
     
     <section class="l-hero h-ds-b__mobile--only"
     style="background-color: #323232; background-image: url('/img/m5t_hero-01.jpg');background-repeat: no-repeat;background-size: cover;">
-
     </section>
+
     
     <img class="hero__img" src="\img\m5t_lgo_circ_600.png" alt="Mach Five Tech Group Chicago Logo">
     <br><br class="h-ds-b__desktop--only">
@@ -301,7 +315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <article class="h-center h-padding-16px">
                 <div class="h-left readampm__legal">
                     <p class="h-margin_0">PROFICIENCIES</p>
-                    <p>Casino Emulators</p>
+                    <p>Casino Loyalty</p>
                     <p>Co-op Leaderboards</p>
                     <p>Event Kiosks</p>
                     <p>Mobile Games</p>
@@ -319,7 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h2 class="hd2">I Need to Delight</h2>
             </article>
             <article>
-                <p class="readampm">Custom Branded Gamification! The M5T Gamification service makes your brand fun and engaging. Our whimsical mobile games amplify your brands look and feel, making it a powerful online differentiator. Reward visitors for sharing socially and making it fun to promote your unforgettable story.</p>
+                <p class="readampm">Brand Loyalty Gamification! The M5T Gamification service makes your brand fun and engaging. Our whimsical mobile games amplify your brands look and feel, making it a powerful online differentiator. Reward visitors for sharing socially and making it fun to promote your unforgettable story.</p>
                 <br>
                 <nav class="h-right">
                     <a tabindex="0" aria-haspopup="true"
