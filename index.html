@@ -90,7 +90,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <div class="h-ds-b__desktop--only">
-    <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg"
+    < data-n55-parallax="/img/m5t_hero-01.jpg"
     data-n55-parallax-size="fullscreen">
     <section><aside>
         <div class="hero__cont">
@@ -454,21 +454,29 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     width: 112px;
 }
 .lgo-banner .lgo-banner-cta { margin: 4px; }
-.hero__img {
-    width: 380px;
-    height: auto;
-    position: absolute;
-    display: block;
-  top: calc(34vh - 160px);  /* Adjust visually as needed */
-    margin: 8px;
-    left: calc(50vw - 196px);
-    user-select: none;
+
+    .hero__img {
+  width: 380px;
+  height: auto;
+  position: absolute;
+  display: block;
+  top: calc(32vh - 140px);
+  margin: 8px;
+  left: calc(50vw - 190px);
+  user-select: none;
 }
 
 .hero__cont > neodigm-widget {
-  top: calc(50vh - 260px);
+  position: absolute;
+  display: block;
+  width: 400px;
+  height: 400px;
+  top: calc(32vh - 160px);
+  left: calc(50vw - 200px);
+  margin: 8px;
+  user-select: none;
 }
-    
+
 .l-foot {
     position: relative;
     display: block; width: 100%; height: 32vh;
@@ -549,11 +557,13 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 
 neodigm-parallax {
   display: block;
-  height: 68vh !important;
-  max-height: 720px;
-  min-height: 420px;
+  height: 64vh !important;
+  max-height: 640px;
+  min-height: 360px;
   overflow: hidden;
+  position: relative;
 }
+
 
 
 /* Align nav font with site typography */
@@ -776,8 +786,19 @@ backdrop-filter: blur(6px);
 
 @media (max-width: 768px) {
   neodigm-parallax {
-    height: 56vh !important;
-    min-height: 320px;
+    height: 52vh !important;
+    max-height: 520px;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__img {
+    top: calc(26vh - 120px);
+  }
+
+  .hero__cont > neodigm-widget {
+    top: calc(26vh - 140px);
   }
 }
 
