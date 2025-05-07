@@ -63,26 +63,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
 <main role="main">
-    <nav class="lgo-banner h-right">
-        <img class="lgo-banner__image" src="\img\m5f_banner_48px_256px.jpg" alt="Mach Five Tech Chicago">
+    <nav class="nav-main" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/img/m5t_lgo_circ_600.png" alt="Mach Five Tech Logo" />
+    </a>
 
-        <a class="lgo-banner-cta"
-        href="/cutomer_portal/"
-        target="_blank" rel="noopener" tabindex="0" aria-haspopup="true"
-        data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="false"
-        data-n55-enchanted-cta-size="xsmall"
-        data-n55-theme="danger"
-        ><span>Login</span><span></span>
-        </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
-        <a class="lgo-banner-cta" tabindex="0" aria-haspopup="true"
-        data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="false"
-        data-n55-enchanted-cta-size="xsmall"
-        onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()"
-        data-n55-theme="danger"
-        ><span>Contact</span><span></span>
-        </a>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="#a11y-skipmain">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
+      <li>
+        <a href="/cutomer_portal/" target="_blank" rel="noopener" class="nav-cta">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <div class="h-ds-b__desktop--only">
     <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg"
     data-n55-parallax-size="fullscreen">
@@ -535,6 +540,99 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
         rotate: -4deg;
     }
 }
+
+
+    .nav-main {
+  background-color: var(--m5lc-theme-night-mid);
+  border-bottom: 1px solid #444;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 24px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 72px;
+}
+
+.nav-logo img {
+  height: 48px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--m5lc-theme-brand);
+}
+
+.nav-cta {
+  background-color: var(--m5lc-theme-brand);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 2px;
+  width: 24px;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    background-color: var(--m5lc-theme-night-mid);
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    padding: 16px 0;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+  }
+}
+
+
+
+    
 </style>
 
 <script>
