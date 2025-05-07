@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,36 +61,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a> -->
-<header class="main-header">
-  <div class="nav-container">
-    <a href="/" class="logo">Mach Five Tech</a>
-    
-    <nav class="desktop-nav">
-      <a href="#plan">Plan</a>
-      <a href="#code">Code</a>
-      <a href="#culture">Culture</a>
-      <a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a>
+<a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
+<main role="main">
+    <nav class="lgo-banner h-right">
+        <img class="lgo-banner__image" src="\img\m5f_banner_48px_256px.jpg" alt="Mach Five Tech Chicago">
+
+        <a class="lgo-banner-cta"
+        href="/cutomer_portal/"
+        target="_blank" rel="noopener" tabindex="0" aria-haspopup="true"
+        data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="false"
+        data-n55-enchanted-cta-size="xsmall"
+        data-n55-theme="danger"
+        ><span>Login</span><span></span>
+        </a>
+
+        <a class="lgo-banner-cta" tabindex="0" aria-haspopup="true"
+        data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="false"
+        data-n55-enchanted-cta-size="xsmall"
+        onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()"
+        data-n55-theme="danger"
+        ><span>Contact</span><span></span>
+        </a>
     </nav>
-
-    <a href="/cutomer_portal/" class="login-button">Login</a>
-
-    <button class="menu-toggle" aria-label="Menu Toggle" onclick="toggleMobileMenu(this)">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="#plan">Plan</a>
-    <a href="#code">Code</a>
-    <a href="#culture">Culture</a>
-    <a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a>
-  </nav>
-</header>
-
-
-
-
 <div class="h-ds-b__desktop--only">
     <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg"
     data-n55-parallax-size="fullscreen">
@@ -542,132 +535,8 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
         rotate: -4deg;
     }
 }
-
-.m5t-header {
-  background: #222;
-  color: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.m5t-header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0.6em 1.2em;
-}
-
-.m5t-logo {
-  color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1rem;
-  flex: 1;
-}
-
-.m5t-nav {
-  display: flex;
-  justify-content: center;
-  flex: 2;
-  gap: 2rem;
-}
-
-.m5t-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
-.m5t-login {
-  background-color: #d83e22;
-  color: white;
-  font-size: 0.75rem;
-  padding: 0.3em 0.8em;
-  border-radius: 3px;
-  text-decoration: none;
-}
-
-.m5t-burger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.m5t-burger span {
-  display: block;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-.m5t-burger.open span:nth-child(1) {
-  transform: rotate(45deg) translateY(6px);
-}
-.m5t-burger.open span:nth-child(2) {
-  opacity: 0;
-}
-.m5t-burger.open span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-6px);
-}
-
-.m5t-nav--mobile {
-  display: none;
-  flex-direction: column;
-  background: #222;
-  padding: 1rem;
-}
-
-.m5t-nav--mobile a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 0;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  .m5t-nav {
-    display: none;
-  }
-  .m5t-login {
-    display: none;
-  }
-  .m5t-burger {
-    display: flex;
-  }
-  .m5t-nav--mobile.show {
-    display: flex;
-  }
-}
-
-
-
-  
 </style>
 
-<script>
-  function toggleMobileMenu(btn) {
-    btn.classList.toggle('open');
-    document.getElementById('mobileNav').classList.toggle('show');
-  }
-</script>
-
-
-    
 <script>
     const contact_form_iframe_sfdcCustom = {"contact_cta_theme": ["danger"],"contact_cta_theme_hex": ["#DD4124"],"contact_cta_oid": ["00D6A000002intt"]}
     function contactSodaPop(){  //  Contact onClick set background to gray, the onClose back to normal.
