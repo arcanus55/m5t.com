@@ -61,23 +61,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
-<nav class="main-nav">
-  <div class="nav-container">
-    <a class="logo" href="/" unselectable="on">Mach Five Tech</a>
-    <div class="nav-actions">
-      <a href="/cutomer_portal/" target="_blank" class="nav-btn nav-login">Login</a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span class="hamburger"></span>
-      </button>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#plan">Plan</a></li>
-      <li><a href="#code">Code</a></li>
-      <li><a href="#culture">Culture</a></li>
-      <li><a href="#contact" onclick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
-    </ul>
+<header class="main-nav">
+  <div class="nav-left">
+    <a href="/" class="logo">Mach Five Tech</a>
+    <a href="/cutomer_portal/" class="nav-login">Login</a>
   </div>
-</nav>
+  <ul class="nav-links">
+    <li><a href="#plan">Plan</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#culture">Culture</a></li>
+    <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
+  </ul>
+</header>
+
 
 <div class="h-ds-b__desktop--only">
     <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg"
@@ -533,61 +529,61 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 }
 
 .main-nav {
-  width: 100%;
-  background-color: #222;
-  color: white;
-  padding: 0.5em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 0.4em 1.2em;
   font-family: 'Roboto Condensed', sans-serif;
   position: sticky;
   top: 0;
   z-index: 9999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .main-nav .logo {
-  font-size: 1.2rem;
-  font-weight: bold;
   color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
   text-decoration: none;
+  margin-right: 1rem;
+  display: inline-block;
+  padding-right: 1rem;
   text-transform: uppercase;
 }
 
-.main-nav .nav-actions {
+.main-nav .nav-left {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.main-nav .nav-login {
+.nav-login {
   background-color: #d83e22;
-  padding: 0.25em 0.6em;
-  border-radius: 3px;
   color: white;
   font-size: 0.75rem;
-  font-weight: 500;
+  padding: 0.25em 0.6em;
+  border-radius: 3px;
   text-decoration: none;
 }
 
-.main-nav .nav-links {
-  list-style: none;
+.nav-links {
   display: flex;
   gap: 2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.main-nav .nav-links li a {
+.nav-links li a {
   color: white;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 300;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-.main-nav .nav-links li a:hover {
+.nav-links li a:hover {
   color: #d83e22;
 }
 
