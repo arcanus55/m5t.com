@@ -91,24 +91,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="h-ds-b__desktop--only">
   <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg" data-n55-parallax-size="fullscreen">
-    <section><aside>
-      <div class="hero__cont">
-        <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_background_spotlight_dance"></neodigm-widget>
-      </div>
-    </aside></section>
+   <section><aside>
+  <div class="hero__flex">
+    <div class="hero__img-wrap">
+      <img class="hero__img" src="/img/m5t_lgo_circ_600.png" alt="Mach Five Tech Chicago Logo">
+      <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_background_spotlight_dance"></neodigm-widget>
+    </div>
+  </div>
+</aside></section>
+
   </neodigm-parallax>
 </div>
 
-<style>
-.hero__cont > neodigm-widget  {
-    position: absolute; display: block;
-    width: 400px; height: 400px;
-    top: calc( 50vh - 260px);
-    left: calc( 50vw - 200px);
-    margin: 8px;
-    user-select: none;
-}
-</style>
+
     
     <section class="l-hero h-ds-b__mobile--only"
     style="background-color: #323232; background-image: url('/img/m5t_hero-01.jpg');background-repeat: no-repeat;background-size: cover;">
@@ -455,27 +450,39 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 }
 .lgo-banner .lgo-banner-cta { margin: 4px; }
 
-    .hero__img {
-  width: 380px;
-  height: auto;
-  position: absolute;
-  display: block;
-  top: calc(32vh - 140px);
-  margin: 8px;
-  left: calc(50vw - 190px);
-  user-select: none;
+ .hero__flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-.hero__cont > neodigm-widget {
-  position: absolute;
-  display: block;
+.hero__img-wrap {
+  position: relative;
   width: 400px;
   height: 400px;
-  top: calc(32vh - 160px);
-  left: calc(50vw - 200px);
-  margin: 8px;
-  user-select: none;
 }
+
+.hero__img {
+  position: absolute;
+  width: 100%;
+  max-width: 380px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hero__img-wrap neodigm-widget {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
 
 .l-foot {
     position: relative;
@@ -797,10 +804,7 @@ backdrop-filter: blur(6px);
     top: calc(26vh - 120px);
   }
 
-  .hero__cont > neodigm-widget {
-    top: calc(26vh - 140px);
-  }
-}
+ 
 
 
 </style>
