@@ -60,22 +60,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
-<header class="main-nav">
-  <div class="nav-inner">
+<!-- <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a> -->
+<header class="main-header">
+  <div class="nav-container">
     <a href="/" class="logo">Mach Five Tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+    
+    <nav class="desktop-nav">
+      <a href="#plan">Plan</a>
+      <a href="#code">Code</a>
+      <a href="#culture">Culture</a>
+      <a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a>
+    </nav>
+
+    <a href="/cutomer_portal/" class="login-button">Login</a>
+
+    <button class="menu-toggle" aria-label="Menu Toggle" onclick="toggleMobileMenu(this)">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#plan">Plan</a></li>
-      <li><a href="#code">Code</a></li>
-      <li><a href="#culture">Culture</a></li>
-      <li><a href="#contact" onclick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
-    </ul>
-    <a href="/cutomer_portal/" class="nav-login">Login</a>
   </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#plan">Plan</a>
+    <a href="#code">Code</a>
+    <a href="#culture">Culture</a>
+    <a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a>
+  </nav>
 </header>
+
 
 
 
@@ -534,67 +545,57 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     }
 }
 
-/* Desktop + mobile nav cleanup */
-.main-nav {
+.main-header {
   background: #222;
+  color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
   position: sticky;
   top: 0;
-  z-index: 9999;
-  padding: 0.75rem 1.5rem;
+  z-index: 1000;
+  width: 100%;
 }
 
-.nav-inner {
-  max-width: 1440px;
+.nav-container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0.6em 1.2em;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
+  align-items: center;
 }
 
 .logo {
-  color: white;
+  color: #fff;
   font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  text-decoration: none;
+  font-size: 1rem;
   text-transform: uppercase;
-}
-
-.nav-login {
-  background-color: #d83e22;
-  color: white;
-  font-size: 0.75rem;
-  padding: 0.35em 0.8em;
-  border-radius: 3px;
   text-decoration: none;
-  margin-left: auto;
-  order: 3;
 }
 
-.nav-links {
+.desktop-nav {
   display: flex;
   gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  order: 2;
 }
 
-.nav-links li a {
+.desktop-nav a {
   color: white;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
   text-decoration: none;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
-.nav-links li a:hover {
-  color: #d83e22;
+.login-button {
+  margin-left: auto;
+  margin-right: 0;
+  background-color: #d83e22;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.3em 0.8em;
+  border-radius: 3px;
+  text-decoration: none;
 }
 
-.hamburger {
+.menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -603,71 +604,68 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
-  margin-left: 1rem;
-  order: 1;
+  z-index: 1001;
 }
 
-.hamburger span {
+.menu-toggle span {
+  background-color: white;
   height: 3px;
   width: 100%;
-  background: white;
-  transition: 0.3s ease;
-  transform-origin: center;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
 }
-.hamburger.open span:nth-child(2) {
+.menu-toggle.open span:nth-child(2) {
   opacity: 0;
 }
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
 }
 
-@media only screen and (max-width: 768px) {
-  .nav-inner {
-    flex-direction: row;
-  }
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #222;
+  padding: 1rem;
+}
 
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background: #222;
+.mobile-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
     display: none;
-    padding: 1rem 0;
-    margin-top: 0.5rem;
-    order: 4;
   }
-
-  .nav-links.open {
+  .login-button {
+    display: none;
+  }
+  .menu-toggle {
     display: flex;
   }
-
-  .hamburger {
+  .mobile-nav.show {
     display: flex;
-  }
-
-  .nav-login {
-    order: 5;
-    margin-top: 0.5rem;
   }
 }
+
 
   
 </style>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
+  function toggleMobileMenu(btn) {
+    btn.classList.toggle('open');
+    document.getElementById('mobileNav').classList.toggle('show');
+  }
 </script>
+
 
     
 <script>
