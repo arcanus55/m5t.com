@@ -62,20 +62,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
 <header class="main-nav">
-  <div class="nav-left">
+  <div class="nav-inner">
     <a href="/" class="logo">Mach Five Tech</a>
-    <a href="/cutomer_portal/" class="nav-login">Login</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#plan">Plan</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#culture">Culture</a></li>
+      <li><a href="#contact" onclick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
+    </ul>
+    <a href="/cutomer_portal/" class="nav-login">Login</a>
   </div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#plan">Plan</a></li>
-    <li><a href="#code">Code</a></li>
-    <li><a href="#culture">Culture</a></li>
-    <li><a href="#contact" onclick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
-  </ul>
 </header>
+
 
 
 
@@ -535,21 +536,28 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 
 /* Desktop + mobile nav cleanup */
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: #222;
-  padding: 1rem 2rem;
-  font-family: 'Roboto Condensed', sans-serif;
   position: sticky;
   top: 0;
   z-index: 9999;
+  padding: 0.75rem 1.5rem;
 }
 
-.main-nav .logo {
+.nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
   color: white;
   font-weight: 700;
   font-size: 1.25rem;
+  letter-spacing: 0.05em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -561,6 +569,8 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   padding: 0.35em 0.8em;
   border-radius: 3px;
   text-decoration: none;
+  margin-left: auto;
+  order: 3;
 }
 
 .nav-links {
@@ -569,11 +579,13 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   list-style: none;
   margin: 0;
   padding: 0;
+  order: 2;
 }
 
 .nav-links li a {
   color: white;
   font-size: 0.75rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -592,6 +604,8 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   border: none;
   cursor: pointer;
   padding: 0;
+  margin-left: 1rem;
+  order: 1;
 }
 
 .hamburger span {
@@ -613,17 +627,19 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 }
 
 @media only screen and (max-width: 768px) {
+  .nav-inner {
+    flex-direction: row;
+  }
+
   .nav-links {
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: #222;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    padding: 1rem 0;
+    width: 100%;
+    background: #222;
     display: none;
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+    order: 4;
   }
 
   .nav-links.open {
@@ -632,7 +648,11 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 
   .hamburger {
     display: flex;
-    margin-left: 1rem;
+  }
+
+  .nav-login {
+    order: 5;
+    margin-top: 0.5rem;
   }
 }
 
