@@ -62,17 +62,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
 <header class="main-nav">
-  <div class="nav-left">
-    <a href="/" class="logo">Mach Five Tech</a>
-    <a href="/cutomer_portal/" class="nav-login">Login</a>
+  <div class="nav-container">
+    <div class="nav-left">
+      <a href="/" class="logo">Mach Five Tech</a>
+      <a href="/cutomer_portal/" class="nav-login">Login</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#plan">Plan</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#culture">Culture</a></li>
+      <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
+    </ul>
   </div>
-  <ul class="nav-links">
-    <li><a href="#plan">Plan</a></li>
-    <li><a href="#code">Code</a></li>
-    <li><a href="#culture">Culture</a></li>
-    <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
-  </ul>
 </header>
+
 
 
 <div class="h-ds-b__desktop--only">
@@ -529,33 +532,35 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 }
 
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: #222;
-  padding: 0.4em 1.2em;
   font-family: 'Roboto Condensed', sans-serif;
   position: sticky;
   top: 0;
   z-index: 9999;
+  padding: 0.4em 1.2em;
 }
 
-.main-nav .logo {
-  color: white;
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  margin-right: 1rem;
-  display: inline-block;
-  padding-right: 1rem;
-  text-transform: uppercase;
+.nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.main-nav .nav-left {
+.nav-left {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.logo {
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .nav-login {
