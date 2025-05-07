@@ -64,27 +64,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
 <main role="main">
 <nav class="nav-main" role="navigation" id="m5tNav">
- <div class="nav-container">
-  <div class="nav-title">Mach Five Tech</div>
+  <div class="nav-container">
+    <div class="nav-title">Mach Five Tech</div>
 
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-  <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
-  <ul class="nav-links">
-    <li><a href="#a11y-skipmain">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#case-studies">Case Studies</a></li>
-    <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
-  </ul>
+    <ul class="nav-links">
+      <li><a href="#a11y-skipmain">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
+    </ul>
 
-  <a href="/cutomer_portal/" target="_blank" rel="noopener" class="nav-cta nav-cta--mobile">Login</a>
-</div>
-
+    <!-- Login CTA, mobile-visible -->
+    <a href="/cutomer_portal/" target="_blank" rel="noopener" class="nav-cta nav-cta--mobile">Login</a>
+  </div>
 </nav>
+
 
 
 <div class="h-ds-b__desktop--only">
@@ -758,6 +759,7 @@ backdrop-filter: blur(6px);
   transform: translateY(-12px);
 }
 
+/* Mobile login button style */
 .nav-cta--mobile {
   display: none;
   background-color: var(--m5lc-theme-brand);
@@ -766,23 +768,26 @@ backdrop-filter: blur(6px);
   border-radius: 24px;
   font-weight: 400;
   font-size: 14px;
+  text-decoration: none;
   transition: background 0.3s ease;
 }
 
-.nav-cta--mobile:hover {
-  background: linear-gradient(var(--m5lc-theme-info), var(--m5lc-theme-info-alt));
-}
-
-/* Show login CTA on mobile only */
+/* Show only on mobile */
 @media (max-width: 768px) {
   .nav-cta--mobile {
     display: inline-block;
     position: absolute;
-    top: 18px;
+    top: 20px;
     right: 20px;
     z-index: 1001;
   }
+
+  /* Hide the login inside nav-links if it's still there (safety) */
+  .nav-links .nav-cta {
+    display: none;
+  }
 }
+
 
     
 </style>
