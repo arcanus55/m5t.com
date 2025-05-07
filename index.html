@@ -62,19 +62,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
 <header class="main-nav">
-  <div class="nav-container">
-    <div class="nav-left">
-      <a href="/" class="logo">Mach Five Tech</a>
-      <a href="/cutomer_portal/" class="nav-login">Login</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#plan">Plan</a></li>
-      <li><a href="#code">Code</a></li>
-      <li><a href="#culture">Culture</a></li>
-      <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
-    </ul>
+  <div class="nav-left">
+    <a href="/" class="logo">Mach Five Tech</a>
+    <a href="/cutomer_portal/" class="nav-login">Login</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#plan">Plan</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#culture">Culture</a></li>
+    <li><a href="#contact" onclick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
+  </ul>
 </header>
+
 
 
 
@@ -531,34 +533,23 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     }
 }
 
+/* Desktop + mobile nav cleanup */
 .main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #222;
+  padding: 1rem 2rem;
   font-family: 'Roboto Condensed', sans-serif;
   position: sticky;
   top: 0;
   z-index: 9999;
-  padding: 0.4em 1.2em;
 }
 
-.nav-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo {
+.main-nav .logo {
   color: white;
   font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+  font-size: 1.25rem;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -567,7 +558,7 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   background-color: #d83e22;
   color: white;
   font-size: 0.75rem;
-  padding: 0.25em 0.6em;
+  padding: 0.35em 0.8em;
   border-radius: 3px;
   text-decoration: none;
 }
@@ -583,7 +574,6 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 .nav-links li a {
   color: white;
   font-size: 0.75rem;
-  letter-spacing: 0.04em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -592,10 +582,74 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   color: #d83e22;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
 
-    
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: white;
+  transition: 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #222;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: 1rem;
+  }
+}
+
+  
 </style>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+    
 <script>
     const contact_form_iframe_sfdcCustom = {"contact_cta_theme": ["danger"],"contact_cta_theme_hex": ["#DD4124"],"contact_cta_oid": ["00D6A000002intt"]}
     function contactSodaPop(){  //  Contact onClick set background to gray, the onClose back to normal.
