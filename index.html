@@ -90,8 +90,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-
 <div class="h-ds-b__desktop--only">
     <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg"
     data-n55-parallax-size="fullscreen">
@@ -545,57 +543,58 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     }
 }
 
-.main-header {
+.m5t-header {
   background: #222;
   color: #fff;
   font-family: 'Roboto Condensed', sans-serif;
   position: sticky;
   top: 0;
-  z-index: 1000;
   width: 100%;
+  z-index: 1000;
 }
 
-.nav-container {
-  max-width: 1200px;
+.m5t-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0.6em 1.2em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.logo {
+.m5t-logo {
   color: #fff;
   font-weight: 700;
-  font-size: 1rem;
   text-transform: uppercase;
   text-decoration: none;
+  font-size: 1rem;
+  flex: 1;
 }
 
-.desktop-nav {
+.m5t-nav {
   display: flex;
+  justify-content: center;
+  flex: 2;
   gap: 2rem;
 }
 
-.desktop-nav a {
+.m5t-nav a {
   color: white;
   text-decoration: none;
   font-size: 0.75rem;
   text-transform: uppercase;
 }
 
-.login-button {
-  margin-left: auto;
-  margin-right: 0;
+.m5t-login {
   background-color: #d83e22;
-  color: #fff;
+  color: white;
   font-size: 0.75rem;
   padding: 0.3em 0.8em;
   border-radius: 3px;
   text-decoration: none;
 }
 
-.menu-toggle {
+.m5t-burger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -607,32 +606,32 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   z-index: 1001;
 }
 
-.menu-toggle span {
-  background-color: white;
+.m5t-burger span {
+  display: block;
   height: 3px;
-  width: 100%;
+  background: white;
   border-radius: 2px;
   transition: 0.3s;
 }
 
-.menu-toggle.open span:nth-child(1) {
+.m5t-burger.open span:nth-child(1) {
   transform: rotate(45deg) translateY(6px);
 }
-.menu-toggle.open span:nth-child(2) {
+.m5t-burger.open span:nth-child(2) {
   opacity: 0;
 }
-.menu-toggle.open span:nth-child(3) {
+.m5t-burger.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-6px);
 }
 
-.mobile-nav {
+.m5t-nav--mobile {
   display: none;
   flex-direction: column;
   background: #222;
   padding: 1rem;
 }
 
-.mobile-nav a {
+.m5t-nav--mobile a {
   color: white;
   text-decoration: none;
   padding: 0.5rem 0;
@@ -641,19 +640,20 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 }
 
 @media (max-width: 768px) {
-  .desktop-nav {
+  .m5t-nav {
     display: none;
   }
-  .login-button {
+  .m5t-login {
     display: none;
   }
-  .menu-toggle {
+  .m5t-burger {
     display: flex;
   }
-  .mobile-nav.show {
+  .m5t-nav--mobile.show {
     display: flex;
   }
 }
+
 
 
   
