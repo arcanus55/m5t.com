@@ -542,10 +542,12 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     }
 }
 
-    neodigm-parallax[data-n55-parallax-size="fullscreen"] {
-  height: 72vh !important;
+neodigm-parallax {
+  display: block;
+  height: 68vh !important;
   max-height: 720px;
   min-height: 420px;
+  overflow: hidden;
 }
 
 
@@ -768,7 +770,7 @@ backdrop-filter: blur(6px);
 }
 
 @media (max-width: 768px) {
-  neodigm-parallax[data-n55-parallax-size="fullscreen"] {
+  neodigm-parallax {
     height: 56vh !important;
     min-height: 320px;
   }
