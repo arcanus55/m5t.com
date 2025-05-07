@@ -533,75 +533,64 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 }
 
 .main-nav {
+  width: 100%;
+  background-color: #222;
+  color: white;
+  padding: 0.5em 1.5em;
+  font-family: 'Roboto Condensed', sans-serif;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background-color: #202020;
-  padding: 0.75rem 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav-container {
+  z-index: 9999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1140px;
-  margin: 0 auto;
 }
 
-.logo {
-  color: #fff;
+.main-nav .logo {
   font-size: 1.2rem;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.03em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.nav-actions {
+.main-nav .nav-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-}
-
-.nav-links {
-  display: flex;
   gap: 1rem;
+}
+
+.main-nav .nav-login {
+  background-color: #d83e22;
+  padding: 0.25em 0.6em;
+  border-radius: 3px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.main-nav .nav-links {
   list-style: none;
-  margin-left: auto;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links a {
-  color: #eee;
-  font-size: 0.9rem;
-  text-transform: uppercase;
+.main-nav .nav-links li a {
+  color: white;
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.nav-links a:hover {
-  background-color: var(--m5lc-theme-brand);
-  color: #fff;
-}
-
-.nav-btn.nav-login {
-  color: #fff;
   font-size: 0.85rem;
-  background-color: var(--m5lc-theme-brand);
-  padding: 0.4rem 0.75rem;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.nav-btn.nav-login:hover {
-  background-color: var(--m5lc-theme-brand-alt);
+.main-nav .nav-links li a:hover {
+  color: #d83e22;
 }
 
-.nav-toggle {
-  display: none;
-}
 
     
 </style>
