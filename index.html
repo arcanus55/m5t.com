@@ -25,7 +25,7 @@
     <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.js"></script>
     <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css"></link>
     <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:wght@100;300;400|Roboto+Slab:wght@300|Roboto+Mono:wght@300">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="stylesheet" type="text/css" requestor="Neodigm 55" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:wght@100;300;400|Roboto+Slab:wght@300|Roboto+Mono:wght@300|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,0">
 
@@ -538,7 +538,47 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     }
 }
 
+/* Align nav font with site typography */
+.nav-main,
+.nav-title,
+.nav-links a,
+.nav-cta {
+  font-family: 'Roboto Condensed', sans-serif;
+}
 
+/* Refine nav title */
+.nav-title {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Refine nav link style */
+.nav-links li a {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Refine nav button style */
+.nav-cta {
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 24px;
+  padding: 6px 18px;
+  background: linear-gradient(var(--m5lc-theme-brand), var(--m5lc-theme-brand-alt));
+  transition: background 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: linear-gradient(var(--m5lc-theme-info), var(--m5lc-theme-info-alt));
+}
+
+
+    
  .nav-main {
   background-color: var(--m5lc-theme-night-mid);
   position: sticky;
