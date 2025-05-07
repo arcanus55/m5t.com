@@ -542,6 +542,13 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     }
 }
 
+    neodigm-parallax[data-n55-parallax-size="fullscreen"] {
+  height: 72vh !important;
+  max-height: 720px;
+  min-height: 420px;
+}
+
+
 /* Align nav font with site typography */
 .nav-main,
 .nav-title,
@@ -759,7 +766,15 @@ backdrop-filter: blur(6px);
   opacity: 0;
   transform: translateY(-12px);
 }
-   
+
+@media (max-width: 768px) {
+  neodigm-parallax[data-n55-parallax-size="fullscreen"] {
+    height: 56vh !important;
+    min-height: 320px;
+  }
+}
+
+
 </style>
 
 <script>
