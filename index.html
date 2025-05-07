@@ -63,14 +63,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
 <main role="main">
-    <nav class="nav-main" role="navigation">
+<nav class="nav-main" role="navigation" id="m5tNav">
   <div class="nav-container">
-    <a href="/" class="nav-logo">
-      <img src="/img/m5t_lgo_circ_600.png" alt="Mach Five Tech Logo" />
-    </a>
+    <div class="nav-title">Mach Five Tech</div>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-    <label for="nav-toggle" class="nav-toggle-label">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -81,12 +79,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="#about">About</a></li>
       <li><a href="#case-studies">Case Studies</a></li>
       <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
-      <li>
-        <a href="/cutomer_portal/" target="_blank" rel="noopener" class="nav-cta">Login</a>
-      </li>
+      <li><a href="/cutomer_portal/" target="_blank" rel="noopener" class="nav-cta">Login</a></li>
     </ul>
   </div>
 </nav>
+
 
 <div class="h-ds-b__desktop--only">
     <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg"
@@ -542,27 +539,35 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 }
 
 
-    .nav-main {
+ .nav-main {
   background-color: var(--m5lc-theme-night-mid);
-  border-bottom: 1px solid #444;
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  padding: 0 24px;
+  z-index: 999;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-main.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: #222;
 }
 
 .nav-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  height: 72px;
   max-width: 1200px;
   margin: 0 auto;
-  height: 72px;
+  padding: 0 24px;
 }
 
-.nav-logo img {
-  height: 48px;
+.nav-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.6px;
 }
 
 .nav-links {
@@ -570,27 +575,43 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   gap: 28px;
   list-style: none;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 .nav-links li a {
-  text-decoration: none;
+  position: relative;
   color: #fff;
   font-weight: 400;
+  text-decoration: none;
   letter-spacing: 0.5px;
+  padding: 4px 2px;
   transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-  color: var(--m5lc-theme-brand);
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--m5lc-theme-brand);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
 }
 
 .nav-cta {
   background-color: var(--m5lc-theme-brand);
-  color: #fff;
+  color: #fff !important;
   padding: 6px 14px;
   border-radius: 4px;
+  font-weight: 500;
 }
 
+/* Hamburger menu */
 .nav-toggle {
   display: none;
 }
@@ -598,34 +619,53 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 .nav-toggle-label {
   display: none;
   flex-direction: column;
-  cursor: pointer;
+  justify-content: center;
   gap: 6px;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  z-index: 1001;
 }
 
 .nav-toggle-label span {
-  display: block;
-  height: 2px;
-  width: 24px;
   background: #fff;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 @media (max-width: 768px) {
+  .nav-toggle-label {
+    display: flex;
+  }
+
   .nav-links {
     position: absolute;
     top: 72px;
     right: 0;
-    background-color: var(--m5lc-theme-night-mid);
+    background-color: #1e1e1e;
     flex-direction: column;
     width: 100%;
     display: none;
     padding: 16px 0;
+    align-items: center;
   }
 
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
-    display: flex;
-  }
-
-  .nav-toggle-label {
     display: flex;
   }
 }
