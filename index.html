@@ -95,8 +95,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul class="nav-links">
   <li><a href="#a11y-skipmain">Services</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="#case-studies">Case Studies</a></li>
+  <!-- <>li><a href="#about">About</a></li> -->
+  <li><a href="https://www.machfivegroup.com">Mach Five Group</a></li>
   <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
   <li>
     <a href="/cutomer_portal/" target="_blank" rel="noopener" class="nav-cta">Login</a>
@@ -149,7 +149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
 
     
-    <section id="a11y-skipmain" class="l-content-row pfmf-grid pfmf-grid__60_40">
+    <section id="a11y-skipmain" id="plan" class="l-content-row pfmf-grid pfmf-grid__60_40">
         <div class="h-left h-padding-16px">
             <article>
               <h2 class="hd2 i-need-tag">
@@ -162,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </article>
             <article>
               <p class="readampm">
-                We help define your goals, articulate what success looks like, and provide a step-by-step plan to deliver and meet the strategic objectives.
+                We help define your goals, articulate what success looks like, and provide a step-by-step plan to deliver and meet your strategic objectives.
               </p>
               
                 <br>
@@ -196,7 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
     <br><br class="h-ds-b__desktop--only">
     <br><br class="h-ds-b__desktop--only">
-    <section class="l-content-row pfmf-grid pfmf-grid__40_60">
+    <section  id="code" class="l-content-row pfmf-grid pfmf-grid__40_60">
         <div class="content-row__panel">
             <article class="h-center h-padding-16px">
                 <div class="h-left readampm__legal">
@@ -238,7 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
     <br><br class="h-ds-b__desktop--only">
     <br><br class="h-ds-b__desktop--only">
-    <section class="l-content-row pfmf-grid pfmf-grid__60_40">
+    <section id="culture" class="l-content-row pfmf-grid pfmf-grid__60_40">
         <div class="h-left h-padding-16px">
           <h2 class="hd2 i-need-tag">
             I Need a Quality Culture
@@ -278,7 +278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <br><br class="h-ds-b__desktop--only">
     <br><br class="h-ds-b__desktop--only">
     <section class="l-content-row pfmf-grid pfmf-grid__40_60">
-        <div class="content-row__panel">
+        <div id="minds" class="content-row__panel">
 
             <article class="h-center h-padding-16px">
                 <div class="h-left readampm__legal">
@@ -301,7 +301,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2 class="hd2 i-need-tag">
             I Need Great Minds
           </h2>
-                <p class="readampm">We can scale and augment your development team. We’ve full-stack architects, front-end UX engineers, and accountable technical project managers.</p>
+                <p class="readampm">We slot in high-trust engineers: full-stack architects, UX specialists, and project leads who move fast, sweat the details, and take ownership like it's their product.</p>
                 <br>
                 <nav class="h-right">
                     <a tabindex="0" aria-haspopup="true"
@@ -318,7 +318,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <br><br class="h-ds-b__desktop--only">
     <br><br class="h-ds-b__desktop--only">
     <section class="l-content-row pfmf-grid pfmf-grid__60_40">
-        <div class="h-left h-padding-16px">
+        <div id="future" class="h-left h-padding-16px">
           <h2 class="hd2 i-need-tag">
             I Need to Future-proof
             <!--<span class="tagline">We tame legacy code so it stops biting back.</span>-->
@@ -357,7 +357,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
     <br><br class="h-ds-b__desktop--only">
     <br><br class="h-ds-b__desktop--only">
-    <section class="l-content-row pfmf-grid pfmf-grid__40_60">
+    <section  id="delight" class="l-content-row pfmf-grid pfmf-grid__40_60">
         <div class="content-row__panel">
             <article class="h-center h-padding-16px">
                 <div class="h-left readampm__legal">
@@ -445,11 +445,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div>
       <h4>Services</h4>
-      <ul>
-        <li><a href="#code">Application Development</a></li>
-        <li><a href="#plan">Technical Strategy</a></li>
-        <li><a href="#culture">Team Coaching</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <ul>
+          <li><a href="#plan">Planning</a></li>
+          <li><a href="#code">Coding</a></li>
+          <li><a href="#culture">Team Coaching</a></li>
+          <li><a href="#minds">Embedded Team</a></li>
+          <li><a href="#future">Software Resilience</a></li>
+          <li><a href="#delight">Gamification</a></li>
+          <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div>
@@ -1410,6 +1413,9 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 </style>
