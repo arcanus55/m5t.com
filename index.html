@@ -137,12 +137,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img class="hero__img" src="\img\m5t_lgo_circ_600.png" alt="Mach Five Tech Chicago Logo">
     <br><br class="h-ds-b__desktop--only">
     <br><br class="h-ds-b__desktop--only">
-    <div class="we-help-wrapper">
+    <div class="we-help-wrapper" style="margin: 96px auto 64px; padding-top: 32px;">
       <div class="reticle"></div>
-      <h2 id="txt-rotate" class="hd2 h-center">
-        We Help You 
-        <span id="txt-rotate__verb" style="color: #D83E22;">Thrive</span>
-      </h2>
+      <div class="we-help-inner">
+        <div class="we-help-line">
+        <h2 id="txt-rotate" class="hd2 h-center">
+          We Help You <span id="txt-rotate__verb" style="color: #D83E22;">Thrive</span>
+        </h2>
+      </div>
+      <p class="we-help-subline">We partner with high-velocity teams to design, deliver, and refine software that scales.</p>
+
+    </div>
+      
     </div>
     
     
@@ -965,54 +971,9 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   display: inline-block;
 }
 
-#txt-rotate::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 180px;
-  transform: translate(-50%, -50%);
-  background-image: 
-    repeating-linear-gradient(0deg, rgba(123,196,196,0.1) 0px, transparent 1px, transparent 10px),
-    repeating-linear-gradient(90deg, rgba(123,196,196,0.1) 0px, transparent 1px, transparent 10px);
-  background-size: 10px 10px;
-  border: 1px dashed rgba(123,196,196,0.4);
-  border-radius: 6px;
-  animation: dashedPulse 8s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-}
 
-#txt-rotate::before {
-  content: 'WIDTH: 300px';
-  position: absolute;
-  top: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 11px;
-  font-family: 'Courier New', monospace;
-  color: rgba(123,196,196,0.65);
-  background-color: #111;
-  padding: 2px 6px;
-  border-radius: 2px;
-  border: 1px solid rgba(123,196,196,0.25);
-}
 
-#txt-rotate span::before {
-  content: 'HEIGHT: 180px';
-  position: absolute;
-  top: 50%;
-  right: -100px;
-  transform: translateY(-50%) rotate(90deg);
-  font-size: 11px;
-  font-family: 'Courier New', monospace;
-  color: rgba(123,196,196,0.65);
-  background-color: #111;
-  padding: 2px 6px;
-  border-radius: 2px;
-  border: 1px solid rgba(123,196,196,0.25);
-}
+
 
 @keyframes dashedPulse {
   0% { border-color: rgba(123,196,196,0.4); }
@@ -1020,29 +981,8 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   100% { border-color: rgba(123,196,196,0.4); }
 }
 
-#txt-rotate::after {
-  /* existing properties kept */
-  box-shadow:
-    0 0 12px rgba(123, 196, 196, 0.15),
-    inset 0 0 24px rgba(123, 196, 196, 0.05);
-}
 
-#txt-rotate span::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 4px;
-  height: 4px;
-  background-color: #7BC4C4;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow:
-    0 0 6px rgba(123,196,196,0.6),
-    0 0 12px rgba(123,196,196,0.4);
-  animation: blipPulse 3s infinite ease-in-out;
-  z-index: 2;
-}
+
 
 @keyframes blipPulse {
   0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
@@ -1073,29 +1013,22 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 }
 
 
-#txt-rotate::before {
-  background: radial-gradient(circle at center, rgba(255,255,255,0.015), transparent 80%);
-  z-index: 0;
-  pointer-events: none;
-}
-
 
 .reticle {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   transform: translate(-50%, -50%);
-  border: 2px dashed rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  box-shadow:
-    0 0 12px rgba(255, 255, 255, 0.15),
-    0 0 32px rgba(255, 255, 255, 0.1) inset;
-  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
-  animation: pulseReticle 4s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(255,255,255,0.03), transparent 70%);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.05);
+  animation: pulseReticle 5s ease-in-out infinite;
   z-index: 1;
 }
+
 
 
 
@@ -1417,6 +1350,96 @@ html {
   scroll-behavior: smooth;
 }
 
+#txt-rotate__verb {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.6s ease;
+}
+
+#txt-rotate__verb.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.we-help-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.we-help-subline {
+  font-size: 1.25rem;
+  color: #888;
+  font-family: 'Roboto', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.we-help-wrapper {
+  position: relative;
+  padding: 96px 24px;
+  margin: 12px auto;
+  background-color: #fff;
+  text-align: center;
+  z-index: 1;
+  max-width: 960px;
+}
+
+@media (max-width: 768px) {
+  .we-help-wrapper {
+    padding: 72px 16px;
+    margin: 48px auto;
+  }
+
+  #txt-rotate {
+    font-size: 40px !important;
+  }
+
+  #txt-rotate__verb {
+    font-size: 40px !important;
+  }
+
+  .we-help-wrapper p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+.we-help-wrapper::before,
+.we-help-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.12), transparent);
+  z-index: 0;
+}
+
+.we-help-wrapper::before {
+  top: 0;
+}
+
+.we-help-wrapper::after {
+  bottom: 0;
+}
+
+
+
+.we-help-line {
+  white-space: nowrap;
+  overflow-x: auto;
+  text-align: center;
+}
+
+#txt-rotate {
+  display: inline-block;
+}
+
+
 
 </style>
 
@@ -1473,6 +1496,11 @@ html {
         const verbs = ["Architect", "Be Awesome", "Code", "Communicate", "Deliver", "Design", "Develop", "Envision", "Ideate", "Level Up", "Plan", "Scale", "Test", "Thrive", "Understand"]
         neodigmUtils.typeOn({"q1st":"#txt-rotate__verb", "msg": verbs.join("|"), "mode":"LOOP","uniqueDelay":203})        
     }, 2e3)
+    setTimeout(() => {
+  const verbSpan = document.getElementById("txt-rotate__verb");
+  verbSpan.classList.add("fade-in");
+}, 1800); // trigger after brief delay
+
 </script>
     
 <script>
