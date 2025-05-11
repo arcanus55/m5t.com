@@ -135,9 +135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     
     <img class="hero__img" src="\img\m5t_lgo_circ_600.png" alt="Mach Five Tech Chicago Logo">
-    <br><br class="h-ds-b__desktop--only">
-    <br><br class="h-ds-b__desktop--only">
-    <div class="we-help-wrapper" style="margin: 96px auto 64px; padding-top: 32px;">
+    <div class="we-help-wrapper" style="margin: 0 auto; padding: 48px 24px 32px;">
       <div class="reticle"></div>
       <div class="we-help-inner">
         <div class="we-help-line">
@@ -586,7 +584,7 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     color: #fff !important;
     margin: 0;
 }
-.l-content-row { }
+
 .l-content-row .content-row__panel { background-color: var(--m5lc-theme-night-mid); border-radius: 8px; margin: 12px; height: min-content; }
 .l-content-row .content-row__panel p { color: #fff; }
 .l-content-row > div > article { padding: 8px; }
@@ -618,10 +616,40 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     transition: all 1s;
 }
 
-#txt-rotate {font-size: 32px; margin-top: 32px;}
+
+
+
+
+#txt-rotate,
+#txt-rotate__verb {
+  font-size: clamp(36px, 8vw, 96px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin: 0;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  #txt-rotate,
+  #txt-rotate__verb {
+    font-size: 56px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #txt-rotate,
+  #txt-rotate__verb {
+    font-size: 72px;
+  }
+}
+
+
+
+
+
 /*  MQ  */
 @media only screen and (min-width:48.1em){/* med *//* lg */
-    #txt-rotate {font-size: 76px;  margin-top: 0;}
+   
 
     .lgo-banner .lgo-banner__image { padding-top: 6px; width: 176px; }
     .lgo-banner .lgo-banner-cta { margin: 8px 12px 4px 1px; }
@@ -740,12 +768,6 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
   z-index: 2;
 }
-
-
-
-
-
-
 
 
 /* Align nav font with site typography */
@@ -1390,23 +1412,24 @@ html {
 
 @media (max-width: 768px) {
   .we-help-wrapper {
-    padding: 72px 16px;
-    margin: 48px auto;
+    padding: 48px 16px;
+    margin: 0 auto;
   }
+}
 
-  #txt-rotate {
-    font-size: 40px !important;
-  }
 
-  #txt-rotate__verb {
-    font-size: 40px !important;
-  }
+  .we-help-line h2 {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+
 
   .we-help-wrapper p {
     font-size: 16px;
     line-height: 1.6;
   }
-}
 
 .we-help-wrapper::before,
 .we-help-wrapper::after {
