@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mach Five Tech</title>
+    <script> // init
+        let neodigmOptCustom = { CONSOLE_LOG_VER:true, W4S_VOLUME: .016 }
+        let neodigmOpt_launchCompleteCustom = {
+          ver: "1.2.4",
+          N55_LC_DOMAIN: ["MachFiveTech.com", 256],
+          N55_LC_TAG1: ["MachFiveTech 🌶️ a Creative Fusion of Business Perspective and Technical Agility", 256],
+          N55_LC_TAG2: ["MachFiveTech 🌶️ a Creative Fusion of Business Perspective and Technical Agility", 256],
+          N55_LC_TAG3: ["MachFiveTech 🌶️ a Creative Fusion of Business Perspective and Technical Agility", 256],
+          N55_LC_COLOR_BRAND: ["192839", 256],
+          N55_LC_KEYWORDS: [["A", "B"], 256],
+          CONSOLE_LOG_VER: true,
+        }
+    </script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.css"></link>
+    
+  
+
+
+    <script>
+        const effect_3d_spheresCustom = {"context": "[data-n55-token='effect_3d_spheres']", "color": 0xFFB11B, "speed_x": 0.0004, "speed_y": 0.002, "camera_z": "+1500"}
+    </script>
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.js"></script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css"></link>
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:wght@100;300;400|Roboto+Slab:wght@300|Roboto+Mono:wght@300">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="stylesheet" type="text/css" requestor="Neodigm 55" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:wght@100;300;400|Roboto+Slab:wght@300|Roboto+Mono:wght@300|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#d83e22">
+    <meta name="msapplication-TileColor" content="#d83e22">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content=" I Need a Plan | Mach Five Tech">
+    <meta property="og:site_name" content="Mach Five Tech">
+    <meta property="og:url" content="https://www.machfivetech.com/">
+    <meta property="og:description" content="Chicago Technical Project Management & Web Application Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.machfivetech.com/img/android-chrome-512x512.png">
+    <meta property="og:logo" content="https://www.machfivetech.com/img/android-chrome-512x512.png" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5JXK6LQW');</script>
+<!-- End Google Tag Manager -->
+<meta name="google-site-verification" content="x9fg0pyi7ejVptCd_wXmH90YQjBnXMa--L-Aqzrt_3U" />
+
+<style>
+  .content-row__panel {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .content-row__panel.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+
+</head>
+<body data-n55-ampm-theme="light">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JXK6LQW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<a class="js-skip__main--id skip__main" href="#a11y-skipmain">Skip to Main Content</a>
+<main role="main">
+<nav class="nav-main" role="navigation" id="m5tNav">
+  <div class="nav-container">
+    <div class="nav-title">Mach Five Tech</div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+<ul class="nav-links">
+  <li><a href="#a11y-skipmain">Services</a></li>
+  <!-- <>li><a href="#about">About</a></li> -->
+  <li><a href="https://www.machfivegroup.com">Mach Five Group</a></li>
+  <li><a href="#contact" onClick="contactSodaPop();contact_form_iframe_sfdc.openCTA()">Contact</a></li>
+  <li>
+    <a href="/cutomer_portal/" target="_blank" rel="noopener" class="nav-cta">Login</a>
+  </li>
+</ul>
+
+  </div>
+</nav>
+
+
+
+<div class="h-ds-b__desktop--only">
+    <neodigm-parallax data-n55-parallax="/img/m5t_hero-01.jpg"
+    data-n55-parallax-size="fullscreen">
+    <section><aside>
+        <div class="hero__cont">
+            <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_background_spotlight_dance"></neodigm-widget>
+        </div>
+    </aside></section>
+    </neodigm-parallax>     
+</div>
+<style>
+.hero__cont > neodigm-widget  {
+    position: absolute; display: block;
+    width: 400px; height: 400px;
+    top: calc( 50vh - 260px);
+    left: calc( 50vw - 200px);
+    margin: 8px;
+    user-select: none;
+}
+</style>
+    
+    <section class="l-hero h-ds-b__mobile--only"
+    style="background-color: #323232; background-image: url('/img/m5t_hero-01.jpg');background-repeat: no-repeat;background-size: cover;">
+    </section>
+
+    
+    <img class="hero__img" src="\img\m5t_lgo_circ_600.png" alt="Mach Five Tech Chicago Logo">
+    <div class="we-help-wrapper" style="margin: 0 auto; padding: 48px 24px 32px;">
+      <div class="reticle"></div>
+      <div class="we-help-inner">
+        <div class="we-help-line">
+        <h2 id="txt-rotate" class="hd2 h-center">
+          We Help You <span id="txt-rotate__verb" style="color: #D83E22;">Thrive</span>
+        </h2>
+      </div>
+      <p class="we-help-subline">We partner with high-velocity teams to design, deliver, and refine software that scales.</p>
+
+    </div>
+      
+    </div>
+    
+    
+    
+
+    
+    <section id="a11y-skipmain" id="plan" class="l-content-row pfmf-grid pfmf-grid__60_40">
+        <div class="h-left h-padding-16px">
+            <article>
+              <h2 class="hd2 i-need-tag">
+                
+               
+                I Need a Plan
+              <!--<span class="tagline">Let’s chart it together.</span>-->
+              </h2>
+              
+            </article>
+            <article>
+              <p class="readampm">
+                We help define your goals, articulate what success looks like, and provide a step-by-step plan to deliver and meet your strategic objectives.
+              </p>
+              
+                <br>
+                <nav class="h-left">
+                    <a tabindex="0" aria-haspopup="true"
+                    data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
+                    data-n55-enchanted-cta-size="small"
+                    data-n55-sodapop-id="soda__plan"
+                    data-n55-theme="primary" data-n55-flash-theme="danger"
+                    ><span>Learn More</span><span>Learn More</span>
+                    </a>
+                </nav>
+            </article>
+        </div>
+        <div class="content-row__panel">
+            <article class="h-center h-padding-16px">
+                <div class="h-left readampm__legal">
+                    <p class="h-margin_0">PROFICIENCIES</p>
+                    <p>Codebase Architecture</p>
+                    <p>Engineering Leadership</p>
+                    <p>Product Roadmapping</p>
+                    <p>Stakeholder Interviews</p>
+                    <p>Technical Documentation</p>
+                    <p class="h-margin_bottom_0">User Research & A/B testing</p>
+                </div>
+                <picture class="iconthumb">
+                    <img src="/img/a_plan.jpg" alt="I need a plan">
+                </picture>     
+            </article>
+        </div>
+    </section>
+    <br><br class="h-ds-b__desktop--only">
+    <br><br class="h-ds-b__desktop--only">
+    <section  id="code" class="l-content-row pfmf-grid pfmf-grid__40_60">
+        <div class="content-row__panel">
+            <article class="h-center h-padding-16px">
+                <div class="h-left readampm__legal">
+                    <p class="h-margin_0">PROFICIENCIES</p>
+                    <p>Accessibility Auditing</p>
+                    <p>Application Development</p>
+                    <p>Cloud Migration</p>
+                    <p>Code Audit Refactoring</p>
+                    <p>DevOps & Infrastructure</p>
+                    <p>Project Management</p>
+                    <p>Security Auditing</p>
+                    <p class="h-margin_bottom_0">UX Research + Design</p>
+                </div> 
+                <picture class="iconthumb">
+                    <img src="/img/code.jpg" alt="I need code Application Development">
+                </picture>    
+            </article>
+        </div>
+        <div class="h-left h-padding-16px">
+          <h2 class="hd2 i-need-tag">
+            I Need Code
+            <!--<span class="tagline">We build the stuff you wish you had yesterday.</span>-->
+
+          </h2>
+            <article>
+                <p class="readampm">We'll partner with you from ideation to launch. We craft performant web and mobile apps that delight users and exceed expectations. We have the tools and the skills to give you a sustainable technology advantage.</p>
+                <br>
+                <nav class="h-right">
+                    <a tabindex="0" aria-haspopup="true"
+                    data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
+                    data-n55-enchanted-cta-size="small"
+                    data-n55-sodapop-id="soda__code"
+                    data-n55-theme="primary" data-n55-flash-theme="danger"
+                    ><span>Learn More</span><span>Learn More</span>
+                    </a>
+                </nav>
+            </article>
+        </div>
+    </section>
+    <br><br class="h-ds-b__desktop--only">
+    <br><br class="h-ds-b__desktop--only">
+    <section id="culture" class="l-content-row pfmf-grid pfmf-grid__60_40">
+        <div class="h-left h-padding-16px">
+          <h2 class="hd2 i-need-tag">
+            I Need a Quality Culture
+            <!--<span class="tagline">We embed, we mentor, and your team levels up.</span>-->
+          </h2>
+                <p class="readampm">Our leadership experience nurtures a culture of innovation and excellence. Leveraging thought leadership and hard earned expertise we inspire a quality first sense of ownership that unlocks your team's productivity and enables excellence.</p>
+                <br>
+                <nav class="h-left">
+                    <a tabindex="0" aria-haspopup="true"
+                    data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
+                    data-n55-enchanted-cta-size="small"
+                    data-n55-sodapop-id="soda__culture"
+                    data-n55-theme="primary" data-n55-flash-theme="danger"
+                    ><span>Learn More</span><span>Learn More</span>
+                    </a>
+                </nav>
+            </article>
+        </div>
+        <div class="content-row__panel">
+            <article class="h-center h-padding-16px">
+                <div class="h-left readampm__legal">
+                    <p class="h-margin_0">PROFICIENCIES</p>
+                    <p>Code Style and Hygiene</p>
+                    <p>Developer Mentoring and Training</p>
+                    <p>Development Process Tuning</p>
+                    <p>Engineering Leadership</p>
+                    <p>Hiring Process Assistance</p>
+                    <p>Leadership Coaching</p>
+                    <p class="h-margin_bottom_0">Programming Workshops</p>
+                </div>
+                <picture class="iconthumb">
+                    <img src="/img/a_quality_culture.jpg" alt="I need a quality culture Developer Mentoring and Training">
+                </picture>   
+            </article>
+        </div>
+    </section>
+    <br><br class="h-ds-b__desktop--only">
+    <br><br class="h-ds-b__desktop--only">
+    <section class="l-content-row pfmf-grid pfmf-grid__40_60">
+        <div id="minds" class="content-row__panel">
+
+            <article class="h-center h-padding-16px">
+                <div class="h-left readampm__legal">
+                    <p class="h-margin_0">PROFICIENCIES</p>
+                    <p>Application Development</p>
+                    <p>Codebase Architecture</p>
+                    <p>DevOps</p>
+                    <p>Performance Tuning</p>
+                    <p>Project Management</p>
+                    <p>UI Refactoring</p>
+                    <p class="h-margin_bottom_0">UX Research & Design</p>
+                </div>
+            <picture class="iconthumb">
+                <img src="/img/great_minds.jpg" alt="I need Great Minds with Strategy">
+            </picture>                
+            </article>
+
+        </div>
+        <div class="h-left h-padding-16px">
+          <h2 class="hd2 i-need-tag">
+            I Need Great Minds
+          </h2>
+                <p class="readampm">We slot in high-trust engineers: full-stack architects, UX specialists, and project leads who move fast, sweat the details, and take ownership like it's their product.</p>
+                <br>
+                <nav class="h-right">
+                    <a tabindex="0" aria-haspopup="true"
+                    data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
+                    data-n55-enchanted-cta-size="small"
+                    data-n55-sodapop-id="soda__minds"
+                    data-n55-theme="primary" data-n55-flash-theme="danger"
+                    ><span>Learn More</span><span>Learn More</span>
+                    </a>
+                </nav>
+            </article>
+        </div>
+    </section>
+    <br><br class="h-ds-b__desktop--only">
+    <br><br class="h-ds-b__desktop--only">
+    <section class="l-content-row pfmf-grid pfmf-grid__60_40">
+        <div id="future" class="h-left h-padding-16px">
+          <h2 class="hd2 i-need-tag">
+            I Need to Future-proof
+            <!--<span class="tagline">We tame legacy code so it stops biting back.</span>-->
+          </h2>
+            <article>
+                <p class="readampm">We have vast experience refactoring software inundated with Technical Debt. We can identify and refactor software patterns that lead to unreliable, unstable, and difficult to maintain applications. We can lead you to the place where your software infrastructure stands the test of time.</p>
+                <br>
+                <nav class="h-left">
+                    <a tabindex="0" aria-haspopup="true"
+                    data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
+                    data-n55-enchanted-cta-size="small"
+                    data-n55-sodapop-id="soda__proof"
+                    data-n55-theme="primary" data-n55-flash-theme="danger"
+                    ><span>Learn More</span><span>Learn More</span>
+                    </a>
+                </nav>
+            </article>
+        </div>
+        <div class="content-row__panel">
+            <article class="h-center h-padding-16px">
+                <div class="h-left readampm__legal">
+                    <p class="h-margin_0">PROFICIENCIES</p>
+                    <p>Automated API and end-to-end Testing</p>
+                    <p>Codebase Architecture</p>
+                    <p>Codebase Audits</p>
+                    <p>DevOps</p>
+                    <p>Performance Tuning</p>
+                    <p>Sustained Development Service</p>
+                    <p class="h-margin_bottom_0">Tech Stack Upgrades</p>
+                </div>
+                <picture class="iconthumb">
+                    <img src="/img/to_future_proof.jpg" alt="I need to future-proof code">
+                </picture>   
+            </article>
+        </div>
+    </section>
+    <br><br class="h-ds-b__desktop--only">
+    <br><br class="h-ds-b__desktop--only">
+    <section  id="delight" class="l-content-row pfmf-grid pfmf-grid__40_60">
+        <div class="content-row__panel">
+            <article class="h-center h-padding-16px">
+                <div class="h-left readampm__legal">
+                    <p class="h-margin_0">PROFICIENCIES</p>
+                    <p>Casino Loyalty</p>
+                    <p>Co-op Leaderboards</p>
+                    <p>Event Kiosks</p>
+                    <p>Mobile Games</p>
+                    <p>Multi-player Bingo</p>
+                    <p>Shopify Engagement</p>
+                    <p class="h-margin_bottom_0">Wordle Style Puzzles</p>
+                </div>
+                <picture class="iconthumb">
+                    <img src="/img/to_delight.jpg" alt="I need to delight Gamification">
+                </picture>   
+            </article>
+        </div>
+        <div class="h-left h-padding-16px">
+          <h2 class="hd2 i-need-tag">
+    
+            I Need to Delight
+            <!--<span class="tagline">Bring users back with purpose, not noise.</span>-->
+          </h2>
+                <p class="readampm">Gamification that drives loyalty. Our mobile games make your brand interactive, memorable, and worth sharing. We design playful experiences that match your brand's style and give visitors a reason to come back, share, and spread the word.</p>
+                <br>
+                <nav class="h-right">
+                    <a tabindex="0" aria-haspopup="true"
+                    data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="true" data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
+                    data-n55-enchanted-cta-size="small"
+                    data-n55-sodapop-id="soda__delight"
+                    data-n55-theme="primary" data-n55-flash-theme="danger"
+                    ><span>Learn More</span><span>Learn More</span>
+                    </a>
+                </nav>
+            </article>
+        </div>
+    </section>
+    <br><br class="h-ds-b__desktop--only">
+    <br><br class="h-ds-b__desktop--only">
+
+    <section class="final-cta-section">
+      <div class="final-cta-container">
+        <h2 class="final-cta-title">Let’s Build Something Real</h2>
+        <p class="final-cta-text">
+          If you're ready to move faster, reduce risk, and launch with confidence—we're ready to help. 
+          Let’s talk about your project, your goals, and how we can partner to build software that works.
+        </p>
+        <nav class="final-cta-action">
+          <nav class="foot-nav-cta">
+              <a tabindex="0" aria-haspopup="true"
+              data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="false" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="true"
+              data-n55-enchanted-cta-size="large" data-n55-enchanted-cta-ambient="emit"
+              onClick="contact_form_iframe_sfdc.openCTA()"
+              data-n55-theme="danger"
+              ><span>Contact</span><span>Let's Talk</span>
+              </a>
+          </nav>
+        </nav>
+      </div>
+    </section>
+    
+</main>
+<!-- 
+<footer class="l-foot">
+    <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_two_word_rotate"></neodigm-widget>
+    <br><br>
+    <nav class="foot-nav-cta">
+        <a tabindex="0" aria-haspopup="true"
+        data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="false" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="true"
+        data-n55-enchanted-cta-size="small" data-n55-enchanted-cta-ambient="emit"
+        onClick="contact_form_iframe_sfdc.openCTA()"
+        data-n55-theme="night"
+        ><span>Contact</span><span>Let's Talk</span>
+        </a>
+    </nav>
+</footer>
+-->
+<footer class="m5t-footer">
+  <div class="m5t-footer__top">
+    <div>
+      <neodigm-widget style="width: 40%;""{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_two_word_rotate"></neodigm-widget>
+      <p>We are a technical consulting and development team helping companies move faster and build smarter through architecture, automation, and app delivery.</p>
+      <p>Headquartered in Chicago. Supporting clients nationwide.</p>
+      <p><span class="footer-icon">✉</span> <a href="mailto:support@machfivetech.com">support@machfivetech.com</a></p>
+    </div>
+    <div>
+      <h4>Services</h4>
+        <ul>
+          <li><a href="#plan">Planning</a></li>
+          <li><a href="#code">Coding</a></li>
+          <li><a href="#culture">Team Coaching</a></li>
+          <li><a href="#minds">Embedded Team</a></li>
+          <li><a href="#future">Software Resilience</a></li>
+          <li><a href="#delight">Gamification</a></li>
+          <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Our Family</h4>
+      <ul>
+        <li><a href="https://www.machfivegroup.com" target="_blank">Mach Five Group</a></li>
+        <li><a href="https://www.machvive.com" target="_blank">Machvive</a></li>
+        <li><a href="https://www.webtooltoys.com" target="_blank">Web Tool Toys</a></li>
+        <li><a href="https://www.machfivemarketing.com" target="_blank">Mach Five Marketing</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="m5t-footer__bottom">
+ 
+  <p>Mach Five Tech is part of the <a href="https://www.machfivegroup.com" target="_blank" rel="noopener">Mach Five Group</a>.</p>
+    <p>©2025 Mach Five Tech &nbsp;•&nbsp; <a href="/privacy-policy">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<template id="soda__plan"    data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
+    <div class="h-left readampm__legal" style="padding: 12px;">
+        <p class="readampm">Every great build starts with a great blueprint. We help you align business goals with engineering realities—translating vision into actionable steps without the fluff. </p><br>
+        <p class="readampm">When you need a plan, you’re likely standing at a crossroads: too many ideas, too little structure, or simply not enough time to pause and plot the course. That’s where we come in. We dig deep to understand your product, your people, and your purpose—turning business needs into technical blueprints. We audit your existing systems, dig into your codebase, and assess the gaps—technical, operational, and cultural.</p><br>
+        <p class="readampm">From stakeholder interviews to thoughtful user research and A/B testing, we combine data and dialogue to shape a roadmap that works in the real world. Whether you're scaling fast or rethinking your architecture, we audit what exists, uncover blind spots, and help prioritize your next move.</p><br>
+        <p class="readampm">With clarity comes confidence. We document the system, architect the approach, and provide engineering leadership when it matters most. You walk away with a plan you can actually use—and a team that knows how to deliver it.</p><br>
+    </div>
+</template>
+<template id="soda__code"    data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
+    <div class="h-left readampm__legal" style="padding: 12px;">
+        <p class="readampm">From kickoff to launch, we partner closely with your team to build web and mobile applications that are performant, secure, and genuinely enjoyable to use.</p><br>
+        <p class="readampm">We begin by understanding your product and users through focused UX research and usability audits. Then we move into technical architecture—mapping out infrastructure needs, development timelines, and delivery milestones. During development, we prioritize transparency, pairing clean code with thoughtful project management so you’re always in the loop. From DevOps to design, we sweat the details. We refactor when needed, secure every layer, and make sure your tech foundation can grow with your business. </p><br>
+        <p class="readampm">The result? A product you're proud to ship, backed by a team that’s in it with you from day one.</p><br>
+    </div> 
+</template>
+<template id="soda__culture" data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
+    <div class="h-left readampm__legal" style="padding: 12px;">
+        <p class="readampm">A strong engineering culture doesn’t happen by accident. It’s built—deliberately, over time—with the right guidance, tools, and support. We help teams embrace quality as a shared mindset, not just a box to check.</p><br>
+        <p class="readampm">It starts with listening. We assess how your team works today—code hygiene, delivery practices, leadership gaps—and identify areas holding back velocity or quality. </p><br>
+        <p class="readampm">From there, we work with you to refine development processes, coach emerging leaders, and deliver hands-on workshops that inspire confidence and accountability.</p><br>
+        <p class="readampm">We don’t preach from the sidelines. We embed. We model best practices, mentor your developers, and help reshape hiring and onboarding to support long-term excellence. Whether you’re scaling fast or recalibrating your culture, we help you turn potential into process—and process into pride. The result is a self-sustaining team that builds better software faster, with less friction and greater confidence.</p><br>
+    </div>
+</template>
+<template id="soda__minds"   data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
+    <div class="h-left readampm__legal" style="padding: 12px;">
+        <p class="readampm">When your roadmap moves faster than your hiring pipeline, we help you bridge the gap—with high-trust experts who slot into your team and hit the ground running.</p><br>
+        <p class="readampm">We begin by identifying where you need the most leverage: is it front-end polish? Infrastructure expertise? UX research or architecture support? Then we match you with engineers and managers who bring not just skills, but sharp instincts and a strong sense of ownership.</p><br>
+        <p class="readampm">We work your way: agile, async, integrated or adjacent. No hand-holding required. Our process is consultative and adaptive. We assess your existing architecture, identify bottlenecks, and strategically deploy full-stack developers, UX engineers, or project managers where they’ll have the greatest impact. Throughout the engagement, we stay aligned on velocity, quality, and delivery goals. And as we collaborate, we leave behind stronger systems, cleaner interfaces, and development practices that your team can build on long after we’ve shipped.</p><br>
+    </div>
+</template>
+<template id="soda__proof"   data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
+    <div class="h-left readampm__legal" style="padding: 12px;">
+        <p class="readampm">Technical debt is natural. Letting it run the show isn’t. We help product teams take back control—refactoring and rebuilding in a way that restores confidence and paves the way for progress.</p><br>
+        <p class="readampm">We begin by diagnosing technical pain points through structured code audits and performance profiling. Then, we develop a strategy to fix what’s broken and reinforce what works: reworking fragile areas, modernizing infrastructure, and introducing automation to reduce human error.</p><br>
+        <p class="readampm">We build automated tests to protect your investment and layer in DevOps improvements to keep things humming. Simply put, when your systems are fragile, your business slows down. We help teams clean up the mess. In the long run, you’ll gain more than maintainability—you’ll gain the momentum to actually move your product forward.</p><br>
+    </div>
+</template>
+<template id="soda__delight" data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
+    <div class="h-left readampm__legal" style="padding: 12px;">
+        <p class="readampm">We make your brand fun to engage with—and easy to promote. Our gamification services help you turn casual visitors into brand advocates by offering experiences that reward, surprise, and delight.</p><br>
+        <p class="readampm">Our process begins with a strategy session: we identify your audience triggers, map your engagement funnels, and propose gameplay loops tailored to your platform—be it Shopify, mobile, kiosk, or beyond. Whether it's multiplayer bingo, puzzle games, or casino-style rewards, each element is designed to reinforce your story and amplify social sharing.</p><br>
+        <p class="readampm">We handle design, development, and launch—while you enjoy the ripple effects.</p><br>
+        <p class="readampm">This is how memorable brands are built: through interaction, emotion, and experiences your audience can’t help but talk about.</p><br>
+    </div>
+</template>
+
+</body>
+<style>
+/*  Global Helpers | Launch Complete Overrides */
+
+:root {
+  --m5lc-theme-brand:  #DD4124; --m5lc-theme-brand-alt:  #810000;  /* Custom Override */
+  --m5lc-theme-danger: #DD4124; --m5lc-theme-danger-alt: #810000;  /* Tangerine Tango */
+  --m5lc-theme-info:   #7BC4C4; --m5lc-theme-info-alt:   #1F6868;  /* Aqua Sky */
+  --m5lc-theme-night:  var( --neodigm-theme-disabled-alt ); --m5lc-theme-night-alt:  #242424;  --m5lc-theme-night-mid:  #323232;  /* Charcoal */
+}
+*::-webkit-scrollbar-track { background: #fff; }
+*::-webkit-scrollbar-thumb { background: #000; }
+</style>
+<style>
+/*  Overrides  */
+[data-n55-enchanted-cta][data-n55-theme='primary'] { background: linear-gradient(var( --m5lc-theme-night-mid ), var( --m5lc-theme-night-mid )) !important; }
+body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
+.l-hero {
+    QQQQdisplay: block; width: 100%; height: 100vh;
+    background-color: var( --m5lc-theme-night-mid );
+}
+.lgo-banner {
+    position: sticky; top: 0px; z-index: 256;
+    margin-bottom: -1px;
+    background-color: var( --m5lc-theme-night-mid );
+}
+.lgo-banner .lgo-banner__image{
+    float: left;
+    user-select: none;
+    padding-top: 14px;
+    width: 112px;
+}
+.lgo-banner .lgo-banner-cta { margin: 4px; }
+.hero__img {
+    width: 380px;
+    height: auto;
+    position: absolute;
+    display: block;
+    top: calc(50vh - 196px);
+    margin: 8px;
+    left: calc(50vw - 196px);
+    user-select: none;
+}
+.l-foot {
+    position: relative;
+    display: block; width: 100%; height: 32vh;
+    background-color: var( --m5lc-theme-night-mid );
+}
+.l-foot .foot-nav-cta {
+    position: absolute;
+    bottom: 56px;
+    left: calc( 50vw - 86px);
+}
+.foot-copy {
+    position: relative;
+    display: block; width: 100%; height: 48px;
+    background-color: #161616;
+}
+.foot-copy p {
+    color: #fff !important;
+    margin: 0;
+}
+
+.l-content-row .content-row__panel { background-color: var(--m5lc-theme-night-mid); border-radius: 8px; margin: 12px; height: min-content; }
+.l-content-row .content-row__panel p { color: #fff; }
+.l-content-row > div > article { padding: 8px; }
+.l-content-row p.readampm { line-height: 1.4; }
+.l-content-row .hd2,
+ .hd2 { font-family: "Helvetica", "Roboto", sans-serif; }
+ .l-content-row .hd2 {font-size: 34px;}
+.l-content-row [data-n55-enchanted-cta]{ margin: 0; }
+.l-content-row .h-padding-16px { padding: 16px; }
+.l-content-row .h-margin_bottom_0 { margin-bottom: 0; }
+.l-content-row .h-margin_0 { margin: 0; }
+.l-content-row .readampm { color: #000; letter-spacing: .4px; }
+
+.l-content-row .hd2 { font-size: 42px !important; line-height: .94;}
+
+.l-content-row:hover .iconthumb IMG{
+    rotate: 0deg;
+}
+
+.l-content-row:hover [data-n55-enchanted-cta][data-n55-theme='primary'] {
+    background: linear-gradient(var(  --m5lc-theme-brand ), var(  --m5lc-theme-brand-alt )) !important;
+}
+
+.iconthumb {
+    position: absolute;
+}
+.iconthumb IMG {
+    display: none;
+    transition: all 1s;
+}
+
+
+
+
+
+#txt-rotate,
+#txt-rotate__verb {
+  font-size: clamp(36px, 8vw, 96px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin: 0;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  #txt-rotate,
+  #txt-rotate__verb {
+    font-size: 56px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #txt-rotate,
+  #txt-rotate__verb {
+    font-size: 72px;
+  }
+}
+
+
+
+
+
+/*  MQ  */
+@media only screen and (min-width:48.1em){/* med *//* lg */
+   
+
+    .lgo-banner .lgo-banner__image { padding-top: 6px; width: 176px; }
+    .lgo-banner .lgo-banner-cta { margin: 8px 12px 4px 1px; }
+
+    .hd2 {
+    font-size: 56px;
+    }
+    .l-content-row .hd2 {
+    font-size: 72px !important;
+    }
+
+    .iconthumb IMG {
+  position: relative;
+  display: block;
+  max-width: 256px;
+  width: 16cqw;
+  top: -196px;
+  right: -22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: rotate(-2.5deg) translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content-row__panel:nth-of-type(even) .iconthumb IMG {
+  transform: rotate(2.5deg) translateY(-6px);
+}
+
+
+}
+
+.content-row__panel {
+  perspective: 1000px;
+}
+
+.iconthumb IMG {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.content-row__panel:hover .iconthumb IMG {
+  transform: rotateY(6deg) rotateX(3deg) scale(1.02);
+}
+
+
+
+.content-row__panel {
+  background: linear-gradient(180deg, #181818 0%, #000 100%);
+  border-top: 4px solid var(--m5lc-theme-brand);
+  border-radius: 6px;
+  margin: 12px;
+  padding: 24px;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  color: #ccc;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.content-row__panel:hover {
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.6),
+    0 0 8px rgba(221, 65, 36, 0.3); /* glow effect */
+  border-top-color: var(--m5lc-theme-brand); /* keeps orange vivid */
+}
+
+
+
+.content-row__panel {
+  transform: rotate(-0.3deg);
+}
+
+@keyframes wipeIn {
+  0%   { width: 0; opacity: 0; }
+  100% { width: 100%; opacity: 1; }
+}
+.content-row__panel p:first-child {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: wipeIn 0.6s ease-in-out forwards;
+}
+
+
+
+.vignette {
+  position: relative;
+  z-index: 0;
+}
+
+.vignette::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vignette-mask {
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+.note-pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle, #444 40%, #222 100%);
+  border: 2px solid #000;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+
+/* Align nav font with site typography */
+.nav-main,
+.nav-title,
+.nav-links a,
+.nav-cta {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Refine nav title */
+.nav-title {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Refine nav link style */
+.nav-links li a {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Refine nav button style */
+.nav-cta {
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 24px;
+  padding: 6px 18px;
+  background: linear-gradient(var(--m5lc-theme-brand), var(--m5lc-theme-brand-alt));
+  transition: background 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: linear-gradient(var(--m5lc-theme-info), var(--m5lc-theme-info-alt));
+}
+
+
+    
+.nav-main {
+  background: linear-gradient(180deg, #181818 0%, #000 100%);
+  border-bottom: 3px solid var(--m5lc-theme-brand);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  width: 100%;
+  left: 0;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: box-shadow 0.3s ease, background-color 0.3s, background 0.3s;
+  backdrop-filter: blur(6px);
+}
+
+.nav-main.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: #222;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.6px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a {
+  position: relative;
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  padding: 4px 2px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--m5lc-theme-brand);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  background-color: var(--m5lc-theme-brand);
+  color: #fff !important;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Hamburger menu */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  z-index: 1001;
+}
+
+.nav-toggle-label span {
+  background: #fff;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    background-color: #1e1e1e;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    padding: 16px 0;
+    align-items: center;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+}
+
+.l-content-row {
+  position: relative;
+  z-index: 1;
+}
+
+.l-content-row::before {
+  content: "";
+  position: absolute;
+  top: -48px;
+  bottom: -48px;
+  left: -32px;
+  right: -32px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='rgba(128,128,128,0.08)' stroke-width='1'%3E%3Cline x1='0' y1='0' x2='100' y2='0' /%3E%3Cline x1='0' y1='20' x2='100' y2='20' /%3E%3Cline x1='0' y1='40' x2='100' y2='40' /%3E%3Cline x1='0' y1='60' x2='100' y2='60' /%3E%3Cline x1='0' y1='80' x2='100' y2='80' /%3E%3Cline x1='0' y1='100' x2='100' y2='100' /%3E%3Cline x1='0' y1='0' x2='0' y2='100' /%3E%3Cline x1='20' y1='0' x2='20' y2='100' /%3E%3Cline x1='40' y1='0' x2='40' y2='100' /%3E%3Cline x1='60' y1='0' x2='60' y2='100' /%3E%3Cline x1='80' y1='0' x2='80' y2='100' /%3E%3Cline x1='100' y1='0' x2='100' y2='100' /%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+              linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+                      linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: destination-in;
+}
+
+
+
+#txt-rotate__verb::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+#txt-rotate {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+
+
+
+
+@keyframes dashedPulse {
+  0% { border-color: rgba(123,196,196,0.4); }
+  50% { border-color: rgba(123,196,196,0.6); }
+  100% { border-color: rgba(123,196,196,0.4); }
+}
+
+
+
+
+@keyframes blipPulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+
+
+
+.we-help-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-bottom: 32px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.8s ease;
+}
+
+
+.we-help-wrapper.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.reticle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03), transparent 70%);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.05);
+  animation: pulseReticle 5s ease-in-out infinite;
+  z-index: 1;
+}
+
+
+
+
+@keyframes pulseReticle {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0.65;
+  }
+}
+
+.i-need-tag {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 72px;
+  line-height: 1.1;
+  color: #000;
+  position: relative;
+}
+
+.i-need-tag .tag-icon {
+  color: var(--m5lc-theme-brand);
+  position: absolute;
+  left: -36px;
+  top: 12px;
+  opacity: 0.75;
+}
+
+.i-need-tag .tagline {
+  font-size: 0.5em;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  color: #ccc;
+  margin-left: 2px;
+  letter-spacing: 0.5px;
+}
+
+
+/* Fade-up staggered nav animation */
+@keyframes navFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-main.fade-in .nav-title {
+  animation: navFadeIn 0.6s ease forwards;
+  animation-delay: 0.15s;
+}
+
+.nav-main.fade-in .nav-links li:nth-child(1) {
+  animation: navFadeIn 0.6s ease forwards;
+  animation-delay: 0.25s;
+}
+.nav-main.fade-in .nav-links li:nth-child(2) {
+  animation: navFadeIn 0.6s ease forwards;
+  animation-delay: 0.35s;
+}
+.nav-main.fade-in .nav-links li:nth-child(3) {
+  animation: navFadeIn 0.6s ease forwards;
+  animation-delay: 0.45s;
+}
+.nav-main.fade-in .nav-links li:nth-child(4) {
+  animation: navFadeIn 0.6s ease forwards;
+  animation-delay: 0.55s;
+}
+.nav-main.fade-in .nav-links li:nth-child(5) {
+  animation: navFadeIn 0.6s ease forwards;
+  animation-delay: 0.65s;
+}
+
+.nav-main.fade-in .nav-title,
+.nav-main.fade-in .nav-links li {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.m5t-footer {
+  background: #000;
+  color: #ccc;
+  padding: 48px 24px 24px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.9em;
+}
+
+.m5t-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #222;
+  padding-bottom: 32px;
+}
+
+.m5t-footer__top div {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+.m5t-footer__top h3, .m5t-footer__top h4 {
+  color: #fff;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.m5t-footer__top p {
+  margin: 6px 0;
+}
+
+.m5t-footer__top a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.m5t-footer__top a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.m5t-footer__top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.m5t-footer__top li {
+  margin-bottom: 6px;
+}
+
+.footer-icon {
+  font-size: 1em;
+  margin-right: 6px;
+}
+
+.m5t-footer__bottom {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.8em;
+  color: #888;
+}
+
+.m5t-footer__bottom a {
+  color: #888;
+  text-decoration: underline;
+}
+
+/* Add a subtle gradient or brand accent bar at the top */
+.m5t-footer {
+  background: linear-gradient(180deg, #181818 0%, #000 100%);
+  border-top: 4px solid var(--m5lc-theme-brand);
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.3);
+}
+
+/* Make headings more distinct */
+.m5t-footer__top h3, .m5t-footer__top h4 {
+  color: var(--m5lc-theme-brand);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+/* Add icon color accent */
+.footer-icon {
+  color: var(--m5lc-theme-brand);
+}
+
+/* Add hover effect to all footer links */
+.m5t-footer__top a, .m5t-footer__bottom a {
+  color: #ccc;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 1px solid transparent;
+}
+.m5t-footer__top a:hover, .m5t-footer__bottom a:hover {
+  color: var(--m5lc-theme-brand);
+  border-bottom: 1px solid var(--m5lc-theme-brand);
+}
+
+/* Add spacing between columns on desktop */
+.m5t-footer__top > div {
+  padding: 0 16px;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 600px) {
+  .m5t-footer {
+    padding: 32px 8px 16px;
+  }
+  .m5t-footer__top {
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  .m5t-footer__top > div {
+    padding: 0;
+  }
+}
+
+   
+.final-cta-section {
+  background: repeating-linear-gradient(
+    45deg,
+    #f8f8f8,
+    #f8f8f8 10px,
+    #f7f7f7 10px,
+    #f7f7f7 20px
+  );
+  border-top: 1px solid #ddd;
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.final-cta-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.final-cta-title {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+
+.final-cta-text {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 32px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+.final-cta-action [data-n55-enchanted-cta] {
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 32px;
+}
+
+@media (max-width: 768px) {
+  .note-block {
+    font-size: 1rem;
+    padding: 24px 16px;
+    margin: 24px auto;
+  }
+}
+
+.readampm__legal {
+ font-family: 'Permanent Marker', 'Comic Neue', 'Segoe Print', 'Chalkboard SE', 'Arial Rounded MT Bold', cursive, sans-serif;
+
+}
+
+@media (max-width: 768px) {
+  .l-content-row .h-left.h-padding-16px {
+    padding: 32px 24px !important;
+  }
+
+  .l-content-row article > p.readampm {
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .i-need-tag {
+    font-size: 42px !important;
+  }
+
+  .i-need-tag .tagline {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  section.l-content-row {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .l-content-row::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 4px;
+    margin: 48px auto 48px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(216, 62, 34, 0.6),
+      transparent
+    );
+    border-radius: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .l-content-row nav.h-left,
+  .l-content-row nav.h-right {
+    text-align: center;
+  }
+
+  .l-content-row nav.h-left a,
+  .l-content-row nav.h-right a {
+    margin: 0 auto;
+    display: inline-block;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#txt-rotate__verb {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.6s ease;
+}
+
+#txt-rotate__verb.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.we-help-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.we-help-subline {
+  font-size: 1.25rem;
+  color: #888;
+  font-family: 'Roboto', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.we-help-wrapper {
+  position: relative;
+  padding: 96px 24px;
+  margin: 12px auto;
+  background-color: #fff;
+  text-align: center;
+  z-index: 1;
+  max-width: 960px;
+}
+
+@media (max-width: 768px) {
+  .we-help-wrapper {
+    padding: 48px 16px;
+    margin: 0 auto;
+  }
+}
+
+
+  .we-help-line h2 {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+
+
+  .we-help-wrapper p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+.we-help-wrapper::before,
+.we-help-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.12), transparent);
+  z-index: 0;
+}
+
+.we-help-wrapper::before {
+  top: 0;
+}
+
+.we-help-wrapper::after {
+  bottom: 0;
+}
+
+
+
+.we-help-line {
+  white-space: nowrap;
+  overflow-x: auto;
+  text-align: center;
+}
+
+#txt-rotate {
+  display: inline-block;
+}
+
+
+
+</style>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('m5tNav');
+    if (window.scrollY > 10) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    document.querySelectorAll('.content-row__panel, .we-help-wrapper').forEach(el => {
+  observer.observe(el);
+});
+    document.querySelectorAll('.content-row__panel').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+
+    
+    <script>
+    const contact_form_iframe_sfdcCustom = {"contact_cta_theme": ["danger"],"contact_cta_theme_hex": ["#DD4124"],"contact_cta_oid": ["00D6A000002intt"]}
+    function contactSodaPop(){  //  Contact onClick set background to gray, the onClose back to normal.
+        document.body.dataset.cta = "true"
+        neodigmSodaPop.setOnClose( function(){
+            document.body.dataset.cta = "false"
+        }, "contact_templ_wdgt_CTA__id")
+    }
+
+</script>
+
+<neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="contact_form_iframe_sfdc"></neodigm-widget>
+
+<script>
+    setTimeout(()=>{
+        const verbs = ["Architect", "Be Awesome", "Code", "Communicate", "Deliver", "Design", "Develop", "Envision", "Ideate", "Level Up", "Plan", "Scale", "Test", "Thrive", "Understand"]
+        neodigmUtils.typeOn({"q1st":"#txt-rotate__verb", "msg": verbs.join("|"), "mode":"LOOP","uniqueDelay":203})        
+    }, 2e3)
+    setTimeout(() => {
+  const verbSpan = document.getElementById("txt-rotate__verb");
+  verbSpan.classList.add("fade-in");
+}, 1800); // trigger after brief delay
+
+</script>
+    
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".nav-main").classList.add("fade-in");
+  });
+</script>
+
+
+<template src="js/noise.min.js"></template>
+<template src="js/util.js"></template>
+<template src="js/shift.js"></template>
+</html>
+
