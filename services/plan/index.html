@@ -208,7 +208,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+<section class="l-content-row pfmf-grid pfmf-grid__100 vignette">
+  <div class="h-left h-padding-16px">
+    <article>
+      <h2 class="hd2 i-need-tag">From Sticky Notes to Strategy
+       <span class="tagline">Your ideas are valid. Your blockers are real.</span></h2>
+      <p class="readampm">
+        Until they're sorted, prioritized, and mapped to outcomes, ideas are just noise.
+        We turn fragmented input like sticky notes, whiteboard scribbles, and raw feedback into clear technical direction your whole team can act on.
+      </p>
+      <br>
+      <nav class="h-left">
+      </nav>
+    </article>
+  </div>
+  <div class="vignette-mask">
+    <article class="h-center">
+      <div class="sticky-note-wall">
+            <div class="note note-in" style="top: 10px; left: 20px; --note-rotate: -4deg;">"API redesign?"</div>
+            <div class="note note-in" style="top: 60px; left: 90px; --note-rotate: 3deg;">"Legacy JS issues"</div>
+            <div class="note note-in" style="top: 30px; left: 160px; --note-rotate: -2deg;">"Team overlap"</div>
+            <div class="note note-in" style="top: 110px; left: 50px; --note-rotate: 2deg;">"No shared doc"</div>
 
+        <div class="note note-aligned">"Scalable plan"</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="l-content-row pfmf-grid pfmf-grid__50_50 before-after-section">
+  <!-- Before -->
+  <div class="before-col">
+    <h2 class="hd2">Before</h2>
+    <div class="sticky-stack">
+      <div class="note before-note" style="--note-rotate: -2deg;">No shared doc</div>
+      <div class="note before-note" style="--note-rotate: 3deg;">Unprioritized tickets</div>
+      <div class="note before-note" style="--note-rotate: -1.5deg;">Slack decisions</div>
+      <div class="note before-note" style="--note-rotate: 2deg;">Legacy code tangle</div>
+      <div class="note before-note" style="--note-rotate: -3deg;">Confused delivery dates</div>
+    </div>
+  </div>
+
+  <!-- After -->
+  <div class="after-col content-row__panel dark-after">
+    <h2 class="hd2">After</h2>
+    <div class="blueprint-stack">
+      <div class="blueprint-card">📘 Shared Technical Specs</div>
+      <div class="blueprint-card">📘 Prioritized Roadmap</div>
+      <div class="blueprint-card">📘 Actionable Meeting Notes</div>
+      <div class="blueprint-card">📘 Refactored, Documented Code</div>
+      <div class="blueprint-card">📘 Clear Milestones</div>
+    </div>
+  </div>
+</section>
+
+<br>
+<Br>
+  <br>
+<section class="final-cta-section">
+      <div class="final-cta-container">
+        <h2 class="final-cta-title">Your Next Launch Starts Here</h2>
+        <p class="final-cta-text">
+          If you're ready to move faster, reduce risk, and launch with confidence—we're ready to help. 
+          Let’s talk about your project, your goals, and how we can partner to build software that works.
+        </p>
+        <nav class="final-cta-action">
+          <nav class="foot-nav-cta">
+              <a tabindex="0" aria-haspopup="true"
+              data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="false" data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="true"
+              data-n55-enchanted-cta-size="large" data-n55-enchanted-cta-ambient="emit"
+              onClick="contact_form_iframe_sfdc.openCTA()"
+              data-n55-theme="danger"
+              ><span>Contact</span><span>Let's Talk</span>
+              </a>
+          </nav>
+        </nav>
+      </div>
+    </section>
 
 
 <footer class="m5t-footer">
@@ -293,6 +369,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="readampm">This is how memorable brands are built: through interaction, emotion, and experiences your audience can’t help but talk about.</p><br>
     </div>
 </template>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const notes = document.querySelectorAll('.note-in, .note-aligned');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, idx * 200); // staggered entry
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    notes.forEach(note => observer.observe(note));
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const beforeNotes = document.querySelectorAll('.before-note');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, idx) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, idx * 200); // staggered delay
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  beforeNotes.forEach(note => observer.observe(note));
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const blueprintCards = document.querySelectorAll('.blueprint-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, idx) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, idx * 150);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  blueprintCards.forEach(card => observer.observe(card));
+});
+
+  </script>
 
 </body>
 <style>
@@ -507,25 +641,8 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
 
 
 
-.vignette {
-  position: relative;
-  z-index: 0;
-}
 
-.vignette::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.9);
-  pointer-events: none;
-  z-index: 1;
-}
 
-.vignette-mask {
-  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-}
 
 .note-pin {
   position: absolute;
@@ -836,6 +953,241 @@ body[data-cta='true'] neodigm-sodapop{ background-color: #333; }
     opacity: 0.65;
   }
 }
+
+
+.sticky-note-wall {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 240px;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+.note {
+  position: absolute;
+  width: 140px;
+  padding: 10px;
+  font-family: 'Permanent Marker', cursive;
+  color: red;
+  font-size: 1.05rem;
+  background: #fffde7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-left: 6px solid #f44336;
+  opacity: 0;
+  transform: translateY(16px) scale(0.98) rotate(-4deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.6s ease;
+  animation: floatAmbient 6s ease-in-out infinite alternate;
+  border-radius: 4px;
+  will-change: transform;
+}
+
+.note:nth-child(2) {
+  background: #fff9c4;
+  border-left-color: #ff9800;
+  transform: translateY(16px) scale(0.98) rotate(3deg);
+  animation-delay: 0.4s;
+}
+.note:nth-child(3) {
+  background: #fff8e1;
+  border-left-color: #ff5722;
+  transform: translateY(16px) scale(0.98) rotate(-2deg);
+  animation-delay: 0.8s;
+}
+.note:nth-child(4) {
+  background: #f1f8e9;
+  border-left-color: #8bc34a;
+  transform: translateY(16px) scale(0.98) rotate(2deg);
+  animation-delay: 1.2s;
+}
+
+/* Aligned note: only animates on visible, not ambient */
+.note-aligned {
+  position: relative;
+  top: 180px;
+  color: green;
+  left: 0;
+  width: 100%;
+  background: #e8f5e9;
+  border-left: 6px solid #4caf50;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  border-radius: 4px;
+  transition: all 0.6s ease-out;
+}
+
+/* Float motion */
+@keyframes floatAmbient {
+  0% {
+    transform: translateY(0px) rotate(var(--note-rotate, -3deg));
+  }
+  100% {
+    transform: translateY(6px) rotate(calc(var(--note-rotate, -3deg) + 1deg));
+  }
+}
+
+/* Hover effect — stronger float and shadow */
+.note:hover {
+  transform: translateY(-4px) scale(1.02) rotate(var(--note-rotate, -3deg));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+
+.note-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.note-aligned.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1.02);
+}
+
+
+
+.before-after-section {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.before-col {
+  background: #fdfdf7;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.after-col.dark-after {
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+  color: #fff;
+}
+
+.sticky-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.before-note {
+  position: relative;
+  margin-left: 8px;
+  padding: 12px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1rem;
+  background: #fffde7;
+  border-left: 6px solid #f44336;
+  width: fit-content;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(24px) scale(0.96) rotate(var(--note-rotate));
+  transition: transform 0.5s ease, opacity 0.6s ease;
+}
+
+
+.blueprint-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.blueprint-card {
+  background: #1a1a1a;
+  border-left: 4px solid var(--m5lc-theme-brand);
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blueprint-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+}
+
+.before-note.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(var(--note-rotate));
+}
+
+.blueprint-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.blueprint-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .before-after-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .before-col,
+  .after-col {
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .after-col {
+    order: 2;
+  }
+
+  .before-col {
+    order: 1;
+  }
+
+  .blueprint-card {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .before-after-section {
+    display: flex;
+    flex-direction: column;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+
+  .before-col,
+  .after-col {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 0;
+  }
+
+  .blueprint-card {
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+
+  .after-col {
+    order: 2;
+  }
+
+  .before-col {
+    order: 1;
+  }
+}
+
+
 
 .i-need-tag {
   display: inline-flex;
