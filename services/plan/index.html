@@ -126,22 +126,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </nav>
             </article>
         </div>
-        <div class="content-row__panel">
-            <article class="h-center h-padding-16px">
-                <div class="h-left readampm__legal">
-                    <p class="h-margin_0">PROFICIENCIES</p>
-                    <p>Codebase Architecture</p>
-                    <p>Engineering Leadership</p>
-                    <p>Product Roadmapping</p>
-                    <p>Stakeholder Interviews</p>
-                    <p>Technical Documentation</p>
-                    <p class="h-margin_bottom_0">User Research & A/B testing</p>
-                </div>
-                <picture class="iconthumb">
-                    <img src="/img/a_plan.jpg" alt="I need a plan">
-                </picture>     
-            </article>
-        </div>
+<div class="proficiencies-sticky-container">
+  <div class="content-row__panel proficiencies-sticky">
+    <article class="h-center h-padding-16px">
+      <div class="h-left readampm__legal">
+        <p class="h-margin_0">PROFICIENCIES</p>
+        <p>Codebase Architecture</p>
+        <p>Engineering Leadership</p>
+        <p>Product Roadmapping</p>
+        <p>Stakeholder Interviews</p>
+        <p>Technical Documentation</p>
+        <p class="h-margin_bottom_0">User Research & A/B testing</p>
+      </div>
+      <picture class="iconthumb">
+        <img src="/img/a_plan.jpg" alt="I need a plan">
+      </picture>     
+    </article>
+  </div>
+</div>
+
     </section>
     <br><br class="h-ds-b__desktop--only">
     <br><br class="h-ds-b__desktop--only">
@@ -235,6 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="l-content-row pfmf-grid pfmf-grid__100">
   <div class="h-padding-16px h-left">
+    <div id="plan-stop-anchor"></div>
     <h2 class="hd2 i-need-tag">
       Planning Without Guesswork
       <span class="tagline">Clarity before code. Strategy before spend.</span>
@@ -1995,6 +1999,16 @@ html {
   transform: translateY(0);
 }
 
+.proficiencies-sticky-container {
+  position: relative;
+  z-index: 2;
+}
+
+.proficiencies-sticky {
+  position: sticky;
+  top: 96px; /* Adjust based on your navbar height */
+  z-index: 1;
+}
 
 
 </style>
