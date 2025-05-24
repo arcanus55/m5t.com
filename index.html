@@ -188,20 +188,28 @@
             left: -5%;
             width: 110%;
             height: 110%;
-            background-image: url('/img/mt5-hero.png');
+            background-image: url('/img/m5t_hero-01.jpg');
             background-size: cover;
             background-position: center;
             will-change: transform;
         }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(24, 24, 24, 0.7) 0%, rgba(221, 65, 36, 0.3) 50%, rgba(24, 24, 24, 0.8) 100%);
-        }
+
+
+/* REPLACE your .hero-overlay rule with this */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* An elliptical gradient, clearer in the middle, dark on the edges */
+    background: radial-gradient(
+        ellipse at center,
+        rgba(24, 24, 24, 0.2) 0%,
+        rgba(24, 24, 24, 0.9) 100%
+    );
+}
 
         .hero-content {
             text-align: center;
@@ -752,6 +760,117 @@
             outline: 2px solid var(--m5-brand);
             outline-offset: 2px;
         }
+
+
+/* Features Section */
+
+
+.features-section {
+    padding: 100px 0 120px 0;
+    position: relative;
+    background-color: #ffffff;
+    background-image:
+      
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 0 H50 V50 H100 M50 50 L100 100 M0 50 L50 100' fill='none' stroke='%23DD4124' stroke-width='0.4' stroke-opacity='0.7'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 0 H50 V50 H100 M50 50 L100 100 M0 50 L50 100' fill='none' stroke='%23e0e0e0' stroke-width='0.8' stroke-opacity='0.9'/%3E%3C/svg%3E");
+    background-position:
+        25px 25px,
+        -25px -25px,
+        0 0;
+
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+    mask-image:
+        linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    -webkit-backdrop-filter: blur(10px);  /* The "frosted glass" blur effect */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 32px;
+    border-radius: var(--m5-radius); /* Uses your existing 8px radius variable */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px); /* Lifts the card on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+.features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.features-headline {
+    text-align: center;
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 700;
+    color: var(--m5-dark);
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0 auto 80px auto;
+    max-width: 800px;
+    line-height: 1.3;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.feature-item {
+    text-align: left;
+}
+
+.feature-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--m5-dark);
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 24px;
+}
+
+.feature-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 100%;
+    background-color: var(--m5-brand);
+    border-radius: 3px;
+}
+
+.feature-description {
+    color: var(--m5-text-light);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Make the new section responsive for mobile */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .features-headline {
+        margin-bottom: 60px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -782,7 +901,6 @@
                     <li><a href="/services/minds">Minds</a></li>
                     <li><a href="/services/future-proof">Future-Proof</a></li>
                     <li><a href="/services/delight">Delight</a></li>
-                    <li><a href="https://www.machfivegroup.com">Group</a></li>
                     <li><a href="#contact" onclick="openContactForm()">Contact</a></li>
                     <li><a href="/customer-portal/">Login</a></li>
                 </ul>
@@ -806,7 +924,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">
                     <span class="hero-title-line1">
-                        <span class="typewriter" id="heroLine1">We Help You</span>
+                        <span style="color: white;!important" class="typewriter" id="heroLine1">We Help You</span>
                     </span>
                     <span class="hero-title-line2">
                         <span id="heroVerb">Thrive</span>
@@ -814,7 +932,7 @@
                     </span>
                 </h1>
                 <p class="hero-subtitle">
-                    Mach Five Tech partners with high-velocity teams to design, deliver, and refine software that scales.
+                    Partnering with high-velocity teams to design, deliver, and refine software that scales.
                 </p>
                 <div class="hero-cta">
                     <a href="#services" class="hero-button hero-button-primary">Explore Services</a>
@@ -1023,9 +1141,36 @@
             </div>
         </section>
 
+
+<section class="features-section" id="features">
+    <div class="features-container">
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3 class="feature-title">Strategic Technical Leadership</h3>
+                <p class="feature-description">
+                    We provide the high-level expertise to architect scalable systems, define clear product roadmaps, and mentor your team. We help you build a culture of quality and innovation from the ground up.
+                </p>
+            </div>
+            <div class="feature-item">
+                <h3 class="feature-title">Full-Stack Development</h3>
+                <p class="feature-description">
+                    Our high-trust, elite engineers are your partners in execution. We build, test, and deploy robust, performant web and mobile applications, taking ownership of the entire development lifecycle to bring your vision to life.
+                </p>
+            </div>
+            <div class="feature-item">
+                <h3 class="feature-title">Future-Proofing & Optimization</h3>
+                <p class="feature-description">
+                    We build solutions designed for the long haul. By eliminating technical debt, implementing automated quality gates, and focusing on scalable infrastructure, we ensure your software is reliable, maintainable, and ready for future growth.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
         <section class="final-cta" id="contact">
             <div class="final-cta-content">
-                <h2>Your Next Launch Starts Here</h2>
+                <h2>Ready to Build, Refactor, or Scale?</h2>
                 <p>
                     If you're ready to move faster, reduce risk, and launch with confidence, we're ready to help. 
                     Let's talk about your project, your goals, and how we can partner to build software that works.
@@ -1037,7 +1182,7 @@
                        data-n55-enchanted-cta-size="large" data-n55-enchanted-cta-ambient="emit"
                        onclick="contact_form_iframe_sfdc.openCTA()"
                        data-n55-theme="danger">
-                        <span>Contact</span><span>Let's Talk</span>
+                        <span>Let's Talk</span><span>Contact</span>
                     </a>
                 </nav>
             </div>
