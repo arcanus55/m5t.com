@@ -390,20 +390,130 @@
             margin-bottom: 40px;
         }
 
-        .content-row__panel {
-            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
-            border-top: 4px solid var(--m5-brand);
-            border-radius: 6px;
-            padding: 56px 48px 100px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-            color: #ccc;
-            transition: all 0.3s ease;
-            position: relative;
-            opacity: 0;
-            transform: translateY(40px) rotate(-0.3deg);
-            min-height: 420px;
-            overflow: visible;
-        }
+
+
+
+        
+ .content-row__panel {
+    background: #000000;
+    border: none;
+    border-radius: 0;
+    padding: 56px 48px 100px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(40px) rotate(-0.3deg);
+    min-height: 420px;
+    overflow: visible;
+}
+
+/* Aluminum frame */
+.content-row__panel::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: 8px;
+    z-index: -1;
+    
+    box-shadow: 
+        0 8px 25px rgba(0,0,0,0.3),
+        inset 0 2px 4px rgba(255,255,255,0.5),
+        inset 0 -2px 4px rgba(0,0,0,0.2);
+    border: 2px solid #8a8e96;
+}
+
+/* Brand colored magnetic dots */
+.content-row__panel::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    width: 18px;
+    height: 18px;
+    background: 
+        radial-gradient(ellipse at 25% 25%, #ff7a4a 0%, #DD4124 20%, #c23616 50%, #a5281a 80%, #7d1e14 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 5px 10px rgba(0,0,0,0.6),
+        inset 0 3px 6px rgba(255,255,255,0.5),
+        inset 0 -2px 4px rgba(0,0,0,0.4),
+        inset 0 0 8px rgba(255,255,255,0.2);
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+/* Corner brackets on the frame */
+.corner-brackets {
+    position: absolute;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    top: -15px;
+    left: -15px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.corner-bracket {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #888;
+}
+
+.corner-bracket.top-left {
+    top: 4px;
+    left: 4px;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 3px 0 0 0;
+}
+
+.corner-bracket.top-right {
+    top: 4px;
+    right: 4px;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 3px 0 0;
+}
+
+.corner-bracket.bottom-left {
+    bottom: 4px;
+    left: 4px;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 3px;
+}
+
+.corner-bracket.bottom-right {
+    bottom: 4px;
+    right: 4px;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 3px 0;
+}
+
+/* Blue magnetic dot */
+.blue-dot {
+    position: absolute;
+    top: 35px;
+    right: 45px;
+    width: 18px;
+    height: 18px;
+    background: 
+        radial-gradient(ellipse at 25% 25%, #5a6c7d 0%, #34495E 20%, #2c3e50 50%, #24303d 80%, #1a252f 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 5px 10px rgba(0,0,0,0.6),
+        inset 0 3px 6px rgba(255,255,255,0.5),
+        inset 0 -2px 4px rgba(0,0,0,0.4),
+        inset 0 0 8px rgba(255,255,255,0.2);
+    border: 1px solid rgba(0,0,0,0.3);
+    z-index: 2;
+}
 
         .content-row__panel.in-view {
             opacity: 1;
@@ -880,11 +990,11 @@
                 <div class="top-bar-right">
                     <a href="/blog" class="top-bar-link">
                         <span class="material-symbols-outlined">rss_feed</span>
-                        Blog
+                        Knowledge Base
                     </a>
                     <a href="tel:+1234567890" class="top-bar-link">
-                        <span class="material-symbols-outlined">call</span>
-                        Call Us
+                        <span class="material-symbols-outlined">person</span>
+                        Careers
                     </a>
                 </div>
             </div>
@@ -954,24 +1064,31 @@
                            data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
                            data-n55-enchanted-cta-size="medium"
                            data-n55-theme="primary" data-n55-flash-theme="danger">
-                            <span>Learn More</span><span>Learn More</span>
+                            <span>Get Strategic</span><span>Learn More</span>
                         </a>
                     </nav>
                 </div>
-                <div class="content-row__panel">
-                    <div class="readampm__legal">
-                        <p data-text="PROFICIENCIES">PROFICIENCIES</p>
-                        <p data-text="Codebase Architecture">Codebase Architecture</p>
-                        <p data-text="Engineering Leadership">Engineering Leadership</p>
-                        <p data-text="Product Roadmapping">Product Roadmapping</p>
-                        <p data-text="Stakeholder Interviews">Stakeholder Interviews</p>
-                        <p data-text="Technical Documentation">Technical Documentation</p>
-                        <p data-text="User Research & A/B testing">User Research & A/B testing</p>
-                    </div>
-                    <picture class="iconthumb">
-                        <img src="/img/a_plan.jpg" alt="I need a plan">
-                    </picture>
-                </div>
+              <div class="content-row__panel">
+    <div class="corner-brackets">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket top-right"></div>
+        <div class="corner-bracket bottom-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+    </div>
+    <div class="blue-dot"></div>
+    <div class="readampm__legal">
+        <p data-text="PROFICIENCIES">PROFICIENCIES</p>
+        <p data-text="Codebase Architecture">Codebase Architecture</p>
+        <p data-text="Engineering Leadership">Engineering Leadership</p>
+        <p data-text="Product Roadmapping">Product Roadmapping</p>
+        <p data-text="Stakeholder Interviews">Stakeholder Interviews</p>
+        <p data-text="Technical Documentation">Technical Documentation</p>
+        <p data-text="User Research & A/B testing">User Research & A/B testing</p>
+    </div>
+    <picture class="iconthumb">
+        <img src="/img/a_plan.jpg" alt="I need a plan">
+    </picture>
+</div>
             </div>
 
             <div class="l-content-row">
@@ -1002,7 +1119,7 @@
                            data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
                            data-n55-enchanted-cta-size="medium"
                            data-n55-theme="primary" data-n55-flash-theme="danger">
-                            <span>Learn More</span><span>Learn More</span>
+                            <span>Start Building</span><span>Learn More</span>
                         </a>
                     </nav>
                 </div>
@@ -1020,7 +1137,7 @@
                            data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
                            data-n55-enchanted-cta-size="medium"
                            data-n55-theme="primary" data-n55-flash-theme="danger">
-                            <span>Learn More</span><span>Learn More</span>
+                            <span>Transform Team</span><span>Learn More</span>
                         </a>
                     </nav>
                 </div>
@@ -1068,7 +1185,7 @@
                            data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
                            data-n55-enchanted-cta-size="medium"
                            data-n55-theme="primary" data-n55-flash-theme="danger">
-                            <span>Learn More</span><span>Learn More</span>
+                            <span>Meet Experts</span><span>Learn More</span>
                         </a>
                     </nav>
                 </div>
@@ -1086,7 +1203,7 @@
                            data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
                            data-n55-enchanted-cta-size="medium"
                            data-n55-theme="primary" data-n55-flash-theme="danger">
-                            <span>Learn More</span><span>Learn More</span>
+                            <span>Modernize</span><span>Learn More</span>
                         </a>
                     </nav>
                 </div>
@@ -1134,7 +1251,7 @@
                            data-n55-enchanted-cta-shape-off="false" data-n55-enchanted-cta-hover-an="true"
                            data-n55-enchanted-cta-size="medium"
                            data-n55-theme="primary" data-n55-flash-theme="danger">
-                            <span>Learn More</span><span>Learn More</span>
+                            <span>Create Magic</span><span>Learn More</span>
                         </a>
                     </nav>
                 </div>
