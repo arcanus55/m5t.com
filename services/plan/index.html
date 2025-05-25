@@ -439,10 +439,67 @@
             font-style: italic;
         }
 
-        /* Process Steps */
+        /* Process Section - Updated Styles */
         .process-section {
             padding: 100px 0;
             background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--m5-border) 10%, var(--m5-border) 90%, transparent 100%);
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        /* Anti-patterns bar */
+        .anti-patterns {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .anti-pattern {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--m5-text-light);
+            font-size: 14px;
+            position: relative;
+        }
+
+        .anti-pattern::before {
+            content: '✗';
+            color: var(--m5-brand);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Timeline indicator */
+        .timeline-indicator {
+            background: var(--m5-light);
+            padding: 12px 24px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--m5-brand);
+            border: 2px solid var(--m5-brand);
+            margin-top: 16px;
+        }
+
+        .timeline-indicator .material-symbols-outlined {
+            font-size: 20px;
         }
 
         .process-grid {
@@ -450,38 +507,40 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-top: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .process-card {
-            text-align: center;
-            padding: 40px 24px;
             background: white;
             border-radius: 12px;
+            padding: 40px 32px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .process-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--m5-brand);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+            overflow: visible;
+            border: 2px solid transparent;
         }
 
         .process-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--m5-brand);
         }
 
-        .process-card:hover::before {
-            transform: scaleX(1);
+        /* Week indicator badge */
+        .week-badge {
+            position: absolute;
+            top: -16px;
+            right: 24px;
+            background: var(--m5-brand);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .process-number {
@@ -495,42 +554,214 @@
             justify-content: center;
             font-size: 24px;
             font-weight: 700;
-            margin: 0 auto 24px;
+            margin-bottom: 24px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(221, 65, 36, 0.3);
         }
 
         .process-card h4 {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 600;
             color: var(--m5-dark);
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .process-tagline {
+            font-size: 14px;
+            color: var(--m5-brand);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
         }
 
         .process-card p {
             color: var(--m5-text-light);
             line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .process-metrics {
+            background: var(--m5-light);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .metric-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--m5-text);
+        }
+
+        .metric-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .metric-item .material-symbols-outlined {
+            color: var(--m5-accent);
+            font-size: 20px;
+        }
+
+        .metric-value {
+            font-weight: 600;
+            color: var(--m5-dark);
+        }
+
+        .deliverables-list {
+            border-top: 1px solid var(--m5-border);
+            padding-top: 20px;
+        }
+
+        .deliverable-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--m5-text-light);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .deliverable-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--m5-text);
+        }
+
+        .deliverable-item::before {
+            content: '→';
+            color: var(--m5-brand);
+            font-weight: bold;
+        }
+
+        /* Client quote */
+        .client-quote {
+            background: linear-gradient(135deg, var(--m5-light) 0%, white 100%);
+            border-left: 4px solid var(--m5-brand);
+            padding: 24px 32px;
+            margin: 60px auto 0;
+            max-width: 900px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .client-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 80px;
+            color: var(--m5-brand);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .client-quote p {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--m5-text);
+            margin-bottom: 12px;
+        }
+
+        .client-quote cite {
+            font-size: 14px;
+            color: var(--m5-text-light);
+            font-style: normal;
         }
 
         /* CTA Section */
         .cta-section {
-            background: var(--m5-dark);
+            background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             color: white;
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('/img/m5t_hero-01.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
         }
 
         .cta-content h2 {
             font-size: clamp(36px, 5vw, 48px);
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
         .cta-content p {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
             margin: 0 auto 40px;
             line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: white;
+            color: var(--m5-brand);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button .material-symbols-outlined {
+            font-size: 20px;
         }
 
         /* Footer */
@@ -605,6 +836,23 @@
         }
 
         /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .process-section::before {
+                display: none;
+            }
+
+            .anti-patterns {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+        }
+
         @media (max-width: 768px) {
             body {
                 padding-top: 70px;
@@ -674,6 +922,17 @@
             .blackboard-content p {
                 white-space: normal;
                 font-size: 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
             }
         }
 
@@ -979,34 +1238,147 @@
             </div>
         </section>
 
-        <!-- Process Section -->
+        <!-- Process Section - Updated -->
         <section class="process-section">
             <div class="content-container">
                 <div class="section-header">
-                    <h2 class="section-title fade-in">How We Work</h2>
+                    <h2 class="section-title fade-in">How We Actually Work</h2>
                     <p class="section-subtitle fade-in">
-                        We don't vanish into research mode or flood you with slide decks. We collaborate closely, 
-                        share our thinking as we go, and deliver plans built for the real world.
+                        Four weeks. Three phases. Zero fluff. We embed with your team from day one, 
+                        share our findings as we go, and deliver actionable blueprints—not slide decks.
                     </p>
+                    <div class="anti-patterns fade-in">
+                        <span class="anti-pattern">No 200-slide PowerPoints</span>
+                        <span class="anti-pattern">No ivory tower recommendations</span>
+                        <span class="anti-pattern">No "it depends" without alternatives</span>
+                    </div>
+                    <div class="timeline-indicator fade-in">
+                        <span class="material-symbols-outlined">schedule</span>
+                        Typical engagement: 4 weeks
+                    </div>
                 </div>
 
                 <div class="process-grid">
                     <div class="process-card fade-in">
+                        <span class="week-badge">Week 1-2</span>
                         <div class="process-number">1</div>
-                        <h4>Discovery</h4>
-                        <p>We start by listening. Understanding your business, your team, and your technical landscape through interviews, audits, and analysis.</p>
+                        <h4>Diagnose the Real Problems</h4>
+                        <p class="process-tagline">Not Just Symptoms</p>
+                        <p>
+                            We embed with your team immediately. No lengthy kickoffs—we're in your 
+                            Slack, attending your standups, and reading your code by day two.
+                        </p>
+                        
+                        <div class="process-metrics">
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">groups</span>
+                                <span><span class="metric-value">15+</span> stakeholder interviews</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">code</span>
+                                <span><span class="metric-value">100%</span> codebase coverage</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">update</span>
+                                <span><span class="metric-value">48hr</span> update cycles</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">security</span>
+                                <span><span class="metric-value">3-day</span> security audit</span>
+                            </div>
+                        </div>
+
+                        <div class="deliverables-list">
+                            <p class="deliverable-label">What you get:</p>
+                            <div class="deliverable-item">Gap analysis with risk scores</div>
+                            <div class="deliverable-item">Technical debt inventory</div>
+                            <div class="deliverable-item">Team health assessment</div>
+                        </div>
                     </div>
+
                     <div class="process-card fade-in">
+                        <span class="week-badge">Week 3</span>
                         <div class="process-number">2</div>
-                        <h4>Strategy</h4>
-                        <p>We synthesize findings into clear insights, identify opportunities, and develop a strategic roadmap aligned with your goals.</p>
+                        <h4>Design Your Shortest Path</h4>
+                        <p class="process-tagline">From Chaos to Clarity</p>
+                        <p>
+                            We synthesize findings into clear choices. Every recommendation comes with 
+                            trade-offs, timelines, and total cost of ownership projections.
+                        </p>
+                        
+                        <div class="process-metrics">
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">route</span>
+                                <span><span class="metric-value">3</span> implementation paths</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">attach_money</span>
+                                <span><span class="metric-value">5-year</span> TCO analysis</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">speed</span>
+                                <span><span class="metric-value">10+</span> quick wins identified</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">insights</span>
+                                <span><span class="metric-value">ROI</span> projections included</span>
+                            </div>
+                        </div>
+
+                        <div class="deliverables-list">
+                            <p class="deliverable-label">What you get:</p>
+                            <div class="deliverable-item">Prioritized roadmap (6-24 months)</div>
+                            <div class="deliverable-item">Architecture decision records</div>
+                            <div class="deliverable-item">Build vs buy analysis</div>
+                        </div>
                     </div>
+
                     <div class="process-card fade-in">
+                        <span class="week-badge">Week 4</span>
                         <div class="process-number">3</div>
-                        <h4>Delivery</h4>
-                        <p>You receive actionable documentation, architecture diagrams, and a concrete plan your team can immediately implement.</p>
+                        <h4>Deploy with Confidence</h4>
+                        <p class="process-tagline">Ready on Day One</p>
+                        <p>
+                            Your team gets everything needed to start immediately: technical blueprints, 
+                            populated backlogs, and hands-on knowledge transfer sessions.
+                        </p>
+                        
+                        <div class="process-metrics">
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">description</span>
+                                <span><span class="metric-value">50+</span> page blueprint</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">task_alt</span>
+                                <span><span class="metric-value">Ready</span> Jira backlog</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">school</span>
+                                <span><span class="metric-value">2-day</span> team workshop</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="material-symbols-outlined">support</span>
+                                <span><span class="metric-value">30-day</span> follow-up support</span>
+                            </div>
+                        </div>
+
+                        <div class="deliverables-list">
+                            <p class="deliverable-label">What you get:</p>
+                            <div class="deliverable-item">Complete technical documentation</div>
+                            <div class="deliverable-item">Reference implementation code</div>
+                            <div class="deliverable-item">Onboarding playbooks</div>
+                        </div>
                     </div>
                 </div>
+<!--
+                <div class="client-quote fade-in">
+                    <p>
+                        "Finally, consultants who actually understand our code. They found issues our team 
+                        missed and delivered a roadmap we could start using the next day. No fluff, just results."
+                    </p>
+                    <cite>— Sarah Chen, VP Engineering at TechCorp</cite>
+                </div>
+-->
             </div>
         </section>
 
@@ -1014,21 +1386,24 @@
         <section class="cta-section">
             <div class="content-container">
                 <div class="cta-content">
-                    <h2>Ready to Build Your Blueprint?</h2>
+                    <h2>Get in touch</h2>
                     <p>
-                        Let's turn your vision into a plan that actually works. 
-                        Schedule a discovery session and see how we can help.
+                       We help teams move faster, reduce risk, and launch with confidence. Contact us to discuss your project and explore how we can partner together.
                     </p>
-                    <nav>
-                        <a tabindex="0" aria-haspopup="true"
-                           data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="false" 
-                           data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="true"
-                           data-n55-enchanted-cta-size="large" data-n55-enchanted-cta-ambient="emit"
-                           onclick="contact_form_iframe_sfdc.openCTA()"
-                           data-n55-theme="danger">
-                            <span>Get Started</span><span>Contact Us</span>
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-button" onclick="openContactForm()">
+                            <span class="material-symbols_outlined">send</span>
+                            Get a quote
                         </a>
-                    </nav>
+                        <a href="tel:+13125551234" class="cta-button">
+                            <span class="material-symbols-outlined">phone</span>
+                            Talk to us
+                        </a>
+                        <a href="/newsletter" class="cta-button">
+                            <span class="material-symbols-outlined">mail</span>
+                            Newsletter
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
