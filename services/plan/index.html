@@ -53,6 +53,33 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: 120px;
+            position: relative;
+        }
+
+        /* Grid texture with fade effect - same as home page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Neodigm button overrides */
@@ -202,6 +229,7 @@
             padding: 50px 0;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .plan-hero::before {
@@ -243,6 +271,8 @@
         /* Content Sections */
         .content-section {
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .content-section:last-of-type {
@@ -414,6 +444,8 @@
         .discovery-tables {
             background: #f8f8f8;
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .table-container {
@@ -511,6 +543,7 @@
             background: white;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .process-section::before {
@@ -750,6 +783,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .cta-section::before {
@@ -836,6 +870,8 @@
             border-top: 4px solid var(--m5-brand);
             color: #ccc;
             padding: 50px 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-content {
@@ -912,6 +948,8 @@
             padding: 20px 0;
             background: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 1;
         }
 
         .breadcrumb-container {
@@ -1481,7 +1519,7 @@
         </div>
     </footer>
 
-    <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="contact_form_iframe_sfdc"></neodigm-widget>
+    <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="contact_form_iframe_sfdc"></noeigm-widget>
 
     <script>
         // Mobile menu

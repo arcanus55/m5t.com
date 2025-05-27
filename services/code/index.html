@@ -37,6 +37,33 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: 120px;
+            position: relative;
+        }
+
+        /* Grid texture with fade effect - same as home page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Header - Fixed */
@@ -113,13 +140,7 @@
             align-items: center;
         }
 
-        /* Hide nav logo on desktop */
         .main-nav .nav-logo {
-            display: none;
-        }
-
-        /* Desktop only logo */
-        .nav-logo.desktop-only {
             display: none;
         }
 
@@ -181,6 +202,7 @@
             padding: 50px 0;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .code-hero::before {
@@ -222,10 +244,8 @@
         /* Content Sections */
         .content-section {
             padding: 40px 0;
-        }
-
-        .content-section:last-of-type {
-            padding: 20px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .content-container {
@@ -259,6 +279,8 @@
         .tools-section {
             background: var(--m5-light);
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .tool-tabs {
@@ -573,8 +595,6 @@
             font-size: 14px;
             color: var(--m5-text-light);
         }
-
-        /* Grid Layout */
         .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -811,7 +831,7 @@
             line-height: 1.5;
         }
 
-        /* FIXED CTA Section */
+        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             color: white;
@@ -821,12 +841,7 @@
             overflow: hidden;
             margin: 0;
             width: 100%;
-        }
-
-        .cta-section .content-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 24px;
+            z-index: 1;
         }
 
         .cta-content {
@@ -883,7 +898,7 @@
             font-size: 20px;
         }
 
-        /* FIXED Footer */
+        /* Footer */
         .footer {
             background: linear-gradient(180deg, var(--m5-dark) 0%, var(--m5-darker) 100%);
             border-top: 4px solid var(--m5-brand);
@@ -891,6 +906,8 @@
             padding: 50px 0 20px;
             margin: 0;
             width: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-content {
@@ -999,6 +1016,8 @@
             padding: 20px 0;
             background: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 1;
         }
 
         .breadcrumb-container {
@@ -1046,6 +1065,23 @@
                 display: none;
             }
 
+            .main-nav .nav-logo {
+                display: inline-flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                font-size: 26px;
+            }
+
+            .main-nav .nav-logo span {
+                font-size: 22px;
+                padding: 4px 12px;
+            }
+
+            .nav-container {
+                justify-content: space-between;
+                padding: 0 16px;
+            }
+
             .nav-menu {
                 position: fixed;
                 top: 0;
@@ -1068,28 +1104,32 @@
             }
 
             .mobile-menu-toggle {
-                display: block;
-                background: none;
+                display: block !important;
+                background: transparent;
                 border: none;
                 cursor: pointer;
                 padding: 8px;
+                z-index: 1001;
+                position: relative;
+                visibility: visible !important;
+                opacity: 1 !important;
             }
 
             .mobile-menu-toggle span {
-                display: block;
-                width: 24px;
-                height: 2px;
-                background: var(--m5-dark);
-                margin: 5px 0;
-                transition: 0.3s;
+                display: block !important;
+                width: 28px;
+                height: 3px;
+                background-color: #181818 !important;
+                margin: 6px 0;
+                transition: all 0.3s ease;
+                border-radius: 2px;
+                visibility: visible !important;
+                opacity: 1 !important;
+                transform-origin: center;
             }
 
             .content-section {
                 padding: 25px 0;
-            }
-
-            .content-section:last-of-type {
-                padding: 15px 0;
             }
 
             .code-hero {
@@ -1128,16 +1168,6 @@
 
             .tool-content {
                 padding: 15px;
-            }
-
-            .comparison-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .providers {
-                grid-template-columns: 1fr;
-                gap: 8px;
             }
 
             .metrics {
@@ -1277,7 +1307,6 @@
 
     <div class="menu-overlay"></div>
 
-    <!-- Breadcrumb -->
     <nav class="breadcrumb">
         <div class="breadcrumb-container">
             <ul class="breadcrumb-list">
@@ -1289,7 +1318,6 @@
     </nav>
 
     <main id="main">
-        <!-- Hero Section -->
         <section class="code-hero">
             <div class="code-hero-content">
                 <h1 class="fade-in">Ship Code That Scales</h1>
@@ -1300,7 +1328,6 @@
             </div>
         </section>
 
-        <!-- Interactive Tools Section -->
         <section class="tools-section">
             <div class="content-container">
                 <div class="section-header">
@@ -1322,7 +1349,6 @@
                 </div>
 
                 <div class="tool-content">
-                    <!-- Project Estimator -->
                     <div id="estimator" class="tool-panel active">
                         <div class="estimator-step">
                             <h3>What type of project do you need?</h3>
@@ -1411,7 +1437,6 @@
                         </div>
                     </div>
 
-                    <!-- Comparison Tool -->
                     <div id="comparison" class="tool-panel">
                         <h3>Choose the Right Development Approach</h3>
                         <p style="text-align: center; color: var(--m5-text-light); margin-bottom: 30px;">
@@ -1553,7 +1578,6 @@
             </div>
         </section>
 
-        <!-- Main Content -->
         <section class="content-section">
             <div class="content-container">
                 <div class="content-grid fade-in">
@@ -1615,7 +1639,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section class="content-section">
             <div class="content-container">
                 <div class="section-header">
@@ -1689,11 +1712,10 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section class="cta-section">
             <div class="content-container">
                 <div class="cta-content">
-                    <h2>Ready to Build Something Great?</h2>
+                    <h2>Get in Touch</h2>
                     <p>
                         Let's talk about your project. We'll help you choose the right technologies, 
                         plan your architecture, and deliver code that exceeds expectations.
@@ -1701,11 +1723,11 @@
                     <div class="cta-buttons">
                         <a href="#" class="cta-button" onclick="openContactForm()">
                             <span class="material-symbols-outlined">send</span>
-                            Start Your Project
+                            Contact Us
                         </a>
-                        <a href="tel:+13125551234" class="cta-button">
-                            <span class="material-symbols-outlined">phone</span>
-                            Call Us Today
+                        <a href="/blog" class="cta-button">
+                            <span class="material-symbols-outlined">rss_feed</span>
+                            Knowledge Base
                         </a>
                     </div>
                 </div>
@@ -1713,7 +1735,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
@@ -1757,14 +1778,12 @@
     </footer>
 
     <script>
-        // Project data
         let projectData = {
             type: '',
             complexity: '',
             timeline: ''
         };
 
-        // Provider data
         const providerData = {
             machfive: {
                 scores: [5, 5, 5, 5, 4, 4],
@@ -1835,32 +1854,25 @@
             }
         };
 
-        // Show tool function
         function showTool(toolName) {
-            // Update tabs
             document.querySelectorAll('.tool-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             event.target.classList.add('active');
             
-            // Update panels
             document.querySelectorAll('.tool-panel').forEach(panel => {
                 panel.classList.remove('active');
             });
             document.getElementById(toolName).classList.add('active');
         }
 
-        // Select option function
         function selectOption(groupId, value, element) {
-            // Clear other selections in group
-            document.querySelectorAll(`#${groupId} .option`).forEach(opt => {
+            document.querySelectorAll('#' + groupId + ' .option').forEach(opt => {
                 opt.classList.remove('selected');
             });
             
-            // Select current
             element.classList.add('selected');
             
-            // Update project data
             if (groupId === 'project-types') {
                 projectData.type = value;
             } else if (groupId === 'complexity-levels') {
@@ -1869,13 +1881,11 @@
                 projectData.timeline = value;
             }
             
-            // Check if we can show estimate
             if (projectData.type && projectData.complexity && projectData.timeline) {
                 showEstimate();
             }
         }
 
-        // Show estimate function
         function showEstimate() {
             const typeMultipliers = {
                 'mvp': { weeks: 1, price: 1 },
@@ -1898,13 +1908,12 @@
             const team = weeks > 12 ? 4 : weeks > 8 ? 3 : 2;
             
             document.getElementById('weeks').textContent = weeks;
-            document.getElementById('cost').textContent = ' + (cost / 1000) + 'K';
+            document.getElementById('cost').textContent = '$' + (cost / 1000) + 'K';
             document.getElementById('team').textContent = team;
             
             document.getElementById('estimate-results').style.display = 'block';
         }
 
-        // Reset estimator function
         function resetEstimator() {
             projectData = { type: '', complexity: '', timeline: '' };
             document.querySelectorAll('.option.selected').forEach(opt => {
@@ -1913,98 +1922,84 @@
             document.getElementById('estimate-results').style.display = 'none';
         }
 
-        // Select provider function
         function selectProvider(providerKey, element) {
-            // Update selection
             document.querySelectorAll('.provider').forEach(p => {
                 p.classList.remove('selected');
             });
             element.classList.add('selected');
             
-            // Update comparison
             const data = providerData[providerKey];
             const scoreIds = ['code-quality', 'speed', 'scalability', 'communication', 'risk', 'cost-efficiency'];
             
-            // Update scores
-            scoreIds.forEach((id, index) => {
+            scoreIds.forEach(function(id, index) {
                 const scoreEl = document.getElementById(id);
-                const dots = scoreEl.querySelectorAll('.score-dot');
-                dots.forEach((dot, dotIndex) => {
-                    if (dotIndex < data.scores[index]) {
-                        dot.classList.add('filled');
-                    } else {
-                        dot.classList.remove('filled');
-                    }
-                });
+                if (scoreEl) {
+                    const dots = scoreEl.querySelectorAll('.score-dot');
+                    dots.forEach(function(dot, dotIndex) {
+                        if (dotIndex < data.scores[index]) {
+                            dot.classList.add('filled');
+                        } else {
+                            dot.classList.remove('filled');
+                        }
+                    });
+                }
             });
             
-            // Update pros
             const prosList = document.getElementById('pros-list');
-            prosList.innerHTML = '';
-            data.pros.forEach(pro => {
-                const li = document.createElement('li');
-                li.innerHTML = '<span class="material-symbols-outlined pro">check</span>' + pro;
-                prosList.appendChild(li);
-            });
+            if (prosList) {
+                prosList.innerHTML = '';
+                data.pros.forEach(function(pro) {
+                    const li = document.createElement('li');
+                    li.innerHTML = '<span class="material-symbols-outlined pro">check</span>' + pro;
+                    prosList.appendChild(li);
+                });
+            }
             
-            // Update cons
             const consList = document.getElementById('cons-list');
-            consList.innerHTML = '';
-            data.cons.forEach(con => {
-                const li = document.createElement('li');
-                li.innerHTML = '<span class="material-symbols-outlined con">close</span>' + con;
-                consList.appendChild(li);
-            });
+            if (consList) {
+                consList.innerHTML = '';
+                data.cons.forEach(function(con) {
+                    const li = document.createElement('li');
+                    li.innerHTML = '<span class="material-symbols-outlined con">close</span>' + con;
+                    consList.appendChild(li);
+                });
+            }
             
-            // Update best for
-            document.getElementById('best-for-text').textContent = data.bestFor;
+            const bestForEl = document.getElementById('best-for-text');
+            if (bestForEl) {
+                bestForEl.textContent = data.bestFor;
+            }
         }
 
-        // Contact form function
         function openContactForm() {
             alert('Contact form would open here. Please call (312) 555-1234 or email support@machfivetech.com');
         }
 
-        // Mobile menu with proper cleanup
-        let mobileToggle, navMenu, overlay;
-        
         function initializeMobileMenu() {
-            // Clean up existing listeners first
-            if (window.mobileMenuCleanup) {
-                window.mobileMenuCleanup();
-            }
-            
-            mobileToggle = document.querySelector('.mobile-menu-toggle');
-            navMenu = document.querySelector('.nav-menu');
-            overlay = document.querySelector('.menu-overlay');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const overlay = document.querySelector('.menu-overlay');
             
             if (mobileToggle && navMenu && overlay) {
-                const toggleHandler = () => {
+                mobileToggle.addEventListener('click', function() {
                     navMenu.classList.toggle('active');
                     overlay.classList.toggle('active');
                     document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-                };
+                });
 
-                const overlayHandler = () => {
+                overlay.addEventListener('click', function() {
                     navMenu.classList.remove('active');
                     overlay.classList.remove('active');
                     document.body.style.overflow = '';
-                };
-
-                mobileToggle.addEventListener('click', toggleHandler);
-                overlay.addEventListener('click', overlayHandler);
-                
-                // Store cleanup function
-                window.mobileMenuCleanup = () => {
-                    if (mobileToggle) mobileToggle.removeEventListener('click', toggleHandler);
-                    if (overlay) overlay.removeEventListener('click', overlayHandler);
-                };
+                });
             }
         }
 
-        // Initialize on DOM ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initializeMobileMenu);
         } else {
             initializeMobileMenu();
         }
+    </script>
+</body>
+</html>
