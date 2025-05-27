@@ -84,9 +84,14 @@
             margin: 0 auto;
             padding: 0 24px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             min-height: 36px;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
         }
 
         .top-bar-right {
@@ -125,8 +130,18 @@
             margin: 0 auto;
             padding: 0 24px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+        }
+
+        /* Hide nav logo on desktop */
+        .main-nav .nav-logo {
+            display: none;
+        }
+
+        /* Desktop only logo */
+        .nav-logo.desktop-only {
+            display: none;
         }
 
         .nav-logo {
@@ -135,10 +150,28 @@
             color: var(--m5-dark);
             text-decoration: none;
             font-family: 'Roboto Condensed', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: -0.5px;
         }
 
         .nav-logo span {
-            color: var(--m5-brand);
+            color: white;
+            background: var(--m5-brand);
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 20px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            line-height: 1.2;
+            vertical-align: baseline;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo:hover span {
+            /* Remove hover effect - no transform or shadow */
         }
 
         .nav-menu {
@@ -170,7 +203,7 @@
         /* Hero Section */
         .future-hero {
             background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-            padding: 80px 0;
+            padding: 50px 0;
             position: relative;
             overflow: hidden;
         }
@@ -197,15 +230,15 @@
         }
 
         .future-hero h1 {
-            font-size: clamp(48px, 6vw, 72px);
+            font-size: clamp(40px, 6vw, 64px);
             font-weight: 700;
             color: var(--m5-dark);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
         .future-hero-subtitle {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--m5-text-light);
             max-width: 800px;
             line-height: 1.5;
@@ -214,31 +247,35 @@
         /* Impact Points */
         .impact-points {
             display: flex;
-            gap: 48px;
-            margin-top: 40px;
+            gap: 32px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
 
         .impact-point {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .impact-icon {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--m5-brand);
         }
 
         .impact-text {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--m5-text);
             font-weight: 500;
         }
 
         /* Content Sections */
         .content-section {
-            padding: 80px 0;
+            padding: 40px 0;
+        }
+
+        .content-section:last-of-type {
+            padding: 20px 0;
         }
 
         .content-container {
@@ -249,7 +286,7 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
 
         .section-title {
@@ -272,9 +309,9 @@
         .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 40px;
             align-items: center;
-            margin-bottom: 120px;
+            margin-bottom: 30px;
         }
 
         .content-grid:nth-child(even) {
@@ -286,162 +323,156 @@
         }
 
         .content-text h3 {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 600;
             color: var(--m5-dark);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .content-text p {
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 17px;
+            line-height: 1.7;
             color: var(--m5-text);
-            margin-bottom: 32px;
+            margin-bottom: 20px;
         }
 
-        /* Human Cost Panel */
-        .human-cost-panel {
-            background: linear-gradient(135deg, var(--m5-dark) 0%, #000 100%);
+        /* Updated Proficiencies Panel to match standard styling */
+        .proficiencies-panel {
+            background: #ffffff;
             border-radius: 12px;
-            padding: 48px;
-            color: white;
+            padding: 40px 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            transform: rotate(-0.5deg);
+            min-height: 320px;
+            overflow: visible;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .human-cost-panel::before {
+        .proficiencies-panel:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .proficiencies-header {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ffffff;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+            padding: 8px 24px;
+            transform: rotate(-2deg);
+        }
+
+        .proficiencies-header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(221, 65, 36, 0.1) 0%, transparent 70%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #DD4124;
+            z-index: -1;
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
         }
 
-        .human-cost-content {
-            position: relative;
-            z-index: 1;
+        .proficiencies-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            z-index: -1;
         }
 
-        .human-cost-title {
-            font-size: 28px;
-            margin-bottom: 32px;
-            color: var(--m5-brand);
+        /* Different angles for variety */
+        .content-grid:nth-child(1) .proficiencies-header {
+            transform: rotate(-3deg);
         }
 
-        .cost-list {
+        .content-grid:nth-child(2) .proficiencies-header {
+            transform: rotate(2deg);
+        }
+
+        .proficiencies-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .cost-item {
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .cost-item:last-child {
-            border-bottom: none;
-        }
-
-        .cost-icon {
-            font-size: 24px;
-            color: var(--m5-accent);
-            flex-shrink: 0;
-        }
-
-        .cost-text {
+        .proficiencies-list li {
+            font-family: 'Roboto', sans-serif;
             font-size: 16px;
             line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Resilience Panel */
-        .resilience-panel {
-            background: var(--m5-light);
-            border-radius: 12px;
-            padding: 48px;
+            margin-bottom: 10px;
+            padding-left: 28px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            color: #2c3e50;
+            transition: all 0.2s ease;
+            font-weight: 400;
         }
 
-        .resilience-header {
-            text-align: center;
-            margin-bottom: 40px;
+        .proficiencies-list li:hover {
+            color: #DD4124;
+            transform: translateX(4px);
         }
 
-        .resilience-header h4 {
-            font-size: 24px;
-            color: var(--m5-dark);
-            margin-bottom: 12px;
+        .proficiencies-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #DD4124;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.2s ease;
         }
 
-        .resilience-header p {
-            color: var(--m5-text-light);
+        .proficiencies-list li:hover::before {
+            opacity: 1;
+            transform: translateX(0);
         }
 
-        .resilience-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-
-        .resilience-item {
-            background: white;
-            padding: 24px;
-            border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .resilience-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .resilience-item h5 {
-            font-size: 18px;
-            color: var(--m5-dark);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .resilience-item p {
-            font-size: 14px;
-            color: var(--m5-text-light);
-            line-height: 1.6;
-        }
-
-        /* Warning Signs Section */
+        /* Warning Signs Section - Updated with masonry layout and tape headers */
         .warning-section {
             background: #f8f8f8;
-            padding: 80px 0;
+            padding: 40px 0;
         }
 
         .warning-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin-top: 60px;
+            column-count: 3;
+            column-gap: 24px;
+            margin-top: 40px;
         }
 
         .warning-card {
             background: white;
-            padding: 40px;
+            padding: 32px;
             border-radius: 12px;
-            text-align: center;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-            border-top: 4px solid var(--m5-brand);
+            overflow: visible;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            break-inside: avoid;
+            margin-bottom: 24px;
+            display: inline-block;
+            width: 100%;
         }
 
         .warning-card:hover {
@@ -449,72 +480,184 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
+        .warning-card h4 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            transform: rotate(-2deg);
+        }
+
+        .warning-card h4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #DD4124;
+            z-index: -1;
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .warning-card h4::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            z-index: -1;
+        }
+
+        /* Different angles for each card to create variety */
+        .warning-card:nth-child(1) h4 {
+            transform: rotate(-3deg);
+        }
+
+        .warning-card:nth-child(2) h4 {
+            transform: rotate(1deg);
+        }
+
+        .warning-card:nth-child(3) h4 {
+            transform: rotate(-1deg);
+        }
+
+        .warning-card:nth-child(4) h4 {
+            transform: rotate(2deg);
+        }
+
+        .warning-card:nth-child(5) h4 {
+            transform: rotate(-2deg);
+        }
+
+        .warning-card:nth-child(6) h4 {
+            transform: rotate(1deg);
+        }
+
+        /* Vary card heights for more organic masonry feel */
+        .warning-card:nth-child(1) {
+            padding: 36px 32px 28px;
+        }
+
+        .warning-card:nth-child(2) {
+            padding: 28px 32px 40px;
+        }
+
+        .warning-card:nth-child(3) {
+            padding: 40px 32px 24px;
+        }
+
+        .warning-card:nth-child(4) {
+            padding: 24px 32px 44px;
+        }
+
+        .warning-card:nth-child(5) {
+            padding: 44px 32px 32px;
+        }
+
+        .warning-card:nth-child(6) {
+            padding: 32px 32px 36px;
+        }
+
         .warning-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(221, 65, 36, 0.1);
-            color: var(--m5-brand);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 24px;
-        }
-
-        .warning-card h4 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--m5-dark);
-            margin-bottom: 16px;
+            font-size: 28px;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 12px rgba(221, 65, 36, 0.3);
         }
 
         .warning-card p {
             color: var(--m5-text-light);
             line-height: 1.6;
+            font-size: 15px;
+            text-align: left;
         }
 
         /* Approach Section */
         .approach-section {
-            padding: 100px 0;
+            padding: 60px 0;
             background: white;
         }
 
+        /* Updated approach visual to align with site colors */
         .approach-visual {
-            background: linear-gradient(135deg, var(--m5-accent) 0%, #1F6868 100%);
+            background: linear-gradient(135deg, var(--m5-dark) 0%, var(--m5-darker) 100%);
             border-radius: 12px;
-            padding: 60px;
+            padding: 48px;
             color: white;
-            text-align: center;
-            margin-bottom: 80px;
+            text-align: left;
+            margin-bottom: 60px;
             position: relative;
             overflow: hidden;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 3px solid var(--m5-brand);
         }
 
         .approach-visual::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23DD4124' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
+        }
+
+        .approach-visual::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background: var(--m5-brand);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 1;
         }
 
         .approach-visual-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .approach-visual h3 {
-            font-size: 36px;
-            margin-bottom: 24px;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: white;
         }
 
         .approach-visual p {
-            font-size: 20px;
-            line-height: 1.8;
+            font-size: 18px;
+            line-height: 1.7;
             max-width: 800px;
             margin: 0 auto;
             color: rgba(255, 255, 255, 0.95);
@@ -522,14 +665,14 @@
 
         .approach-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
 
         .approach-card {
             background: white;
             border-radius: 12px;
-            padding: 40px;
+            padding: 32px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 2px solid transparent;
@@ -542,241 +685,53 @@
         }
 
         .approach-number {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             background: var(--m5-brand);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .approach-card h4 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--m5-dark);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .approach-card p {
             color: var(--m5-text-light);
             line-height: 1.6;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            font-size: 15px;
         }
 
         .approach-benefits {
             list-style: none;
             border-top: 1px solid var(--m5-border);
-            padding-top: 20px;
+            padding-top: 16px;
+            margin: 0;
+            padding-left: 0;
         }
 
         .approach-benefit {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 12px;
-            font-size: 14px;
+            margin-bottom: 10px;
+            font-size: 13px;
             color: var(--m5-text);
         }
 
         .approach-benefit::before {
             content: '→';
-            color: var(--m5-accent);
-            font-weight: bold;
-        }
-
-        /* Investment Section */
-        .investment-section {
-            background: linear-gradient(135deg, var(--m5-dark) 0%, #000 100%);
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .investment-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .investment-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .investment-header h2 {
-            font-size: 48px;
-            margin-bottom: 32px;
-        }
-
-        .investment-text {
-            font-size: 20px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 60px;
-        }
-
-        .investment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            text-align: left;
-        }
-
-        .investment-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 32px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .investment-card:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .investment-icon {
-            font-size: 36px;
-            color: var(--m5-accent);
-            margin-bottom: 16px;
-        }
-
-        .investment-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: white;
-        }
-
-        .investment-card p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Process Section */
-        .process-section {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .process-philosophy {
-            background: var(--m5-light);
-            padding: 40px;
-            border-radius: 12px;
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .process-philosophy h3 {
-            font-size: 32px;
-            color: var(--m5-dark);
-            margin-bottom: 20px;
-        }
-
-        .process-philosophy p {
-            font-size: 18px;
-            color: var(--m5-text);
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .process-card {
-            background: white;
-            border-radius: 12px;
-            padding: 40px 32px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: visible;
-            border: 2px solid transparent;
-        }
-
-        .process-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-            border-color: var(--m5-brand);
-        }
-
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: var(--m5-brand);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            position: relative;
-            box-shadow: 0 4px 12px rgba(221, 65, 36, 0.3);
-        }
-
-        .process-card h4 {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--m5-dark);
-            margin-bottom: 8px;
-            font-family: 'Roboto Condensed', sans-serif;
-        }
-
-        .process-tagline {
-            font-size: 14px;
             color: var(--m5-brand);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-        }
-
-        .process-card p {
-            color: var(--m5-text-light);
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .process-focus {
-            list-style: none;
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid var(--m5-border);
-        }
-
-        .process-focus-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 12px;
-            font-size: 14px;
-            color: var(--m5-text);
-        }
-
-        .process-focus-item::before {
-            content: '✓';
-            color: var(--m5-accent);
             font-weight: bold;
         }
 
@@ -784,7 +739,7 @@
         .cta-section {
             background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -823,7 +778,7 @@
         .cta-content h2 {
             font-size: clamp(36px, 5vw, 48px);
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
@@ -831,7 +786,7 @@
             font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             line-height: 1.6;
         }
 
@@ -846,11 +801,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 24px;
+            padding: 14px 28px;
             background: white;
             color: var(--m5-brand);
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 500;
             font-size: 16px;
             transition: all 0.3s ease;
@@ -861,7 +816,7 @@
             background: transparent;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button .material-symbols-outlined {
@@ -873,18 +828,18 @@
             background: linear-gradient(180deg, var(--m5-dark) 0%, var(--m5-darker) 100%);
             border-top: 4px solid var(--m5-brand);
             color: #ccc;
-            padding: 80px 24px 32px;
+            padding: 50px 0 20px;
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 24px 40px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 48px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 48px;
+            gap: 40px;
+            border-bottom: 1px solid #333;
         }
 
         .footer-brand {
@@ -899,7 +854,8 @@
             color: var(--m5-brand);
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            font-size: 14px;
         }
 
         .footer-section ul {
@@ -907,13 +863,14 @@
         }
 
         .footer-section li {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .footer-section a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.2s;
+            font-size: 14px;
         }
 
         .footer-section a:hover {
@@ -922,9 +879,13 @@
 
         .footer-bottom {
             text-align: center;
-            margin-top: 32px;
-            font-size: 0.8em;
+            padding-top: 20px;
+            font-size: 13px;
             color: #888;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
         }
 
         /* Animations */
@@ -941,13 +902,20 @@
 
         /* Mobile Responsive */
         @media (max-width: 968px) {
-            .process-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
+            .warning-cards {
+                column-count: 1;
             }
 
             .approach-cards {
                 grid-template-columns: 1fr;
+            }
+
+            .warning-section {
+                padding: 25px 0;
+            }
+
+            .approach-section {
+                padding: 40px 0;
             }
         }
 
@@ -956,8 +924,81 @@
                 padding-top: 70px;
             }
 
+            .content-section {
+                padding: 25px 0;
+            }
+
+            .content-section:last-of-type {
+                padding: 15px 0;
+            }
+
+            .future-hero {
+                padding: 30px 0;
+            }
+
+            .cta-section {
+                padding: 40px 0;
+            }
+
+            /* Show nav logo on mobile, hide top bar */
             .top-bar {
                 display: none;
+            }
+
+            .main-nav .nav-logo {
+                display: inline-flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                font-size: 26px;
+            }
+
+            .main-nav .nav-logo span {
+                font-size: 22px;
+                padding: 4px 12px;
+            }
+
+            .nav-container {
+                justify-content: space-between;
+                padding: 0 16px;
+            }
+
+            .mobile-menu-toggle {
+                display: block !important;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+                z-index: 1001;
+                position: relative;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .mobile-menu-toggle span {
+                display: block !important;
+                width: 28px;
+                height: 3px;
+                background-color: #181818 !important;
+                margin: 6px 0;
+                transition: all 0.3s ease;
+                border-radius: 2px;
+                visibility: visible !important;
+                opacity: 1 !important;
+                transform-origin: center;
+            }
+
+            /* Hamburger to X animation */
+            .nav-menu.active ~ .mobile-menu-toggle span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .nav-menu.active ~ .mobile-menu-toggle span:nth-child(2) {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            .nav-menu.active ~ .mobile-menu-toggle span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -8px);
             }
 
             .nav-menu {
@@ -981,26 +1022,10 @@
                 right: 0;
             }
 
-            .mobile-menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 8px;
-            }
-
-            .mobile-menu-toggle span {
-                display: block;
-                width: 24px;
-                height: 2px;
-                background: var(--m5-dark);
-                margin: 5px 0;
-                transition: 0.3s;
-            }
-
             .content-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 25px;
+                margin-bottom: 20px;
             }
 
             .content-grid:nth-child(even) {
@@ -1009,29 +1034,75 @@
 
             .impact-points {
                 justify-content: center;
-            }
-
-            .resilience-grid {
-                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .warning-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .investment-grid {
-                grid-template-columns: 1fr;
+                column-count: 1;
             }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 12px;
             }
 
             .cta-button {
-                width: 100%;
-                max-width: 280px;
+                width: auto;
+                min-width: 200px;
                 justify-content: center;
+            }
+
+            .proficiencies-panel {
+                padding: 25px 20px;
+                min-height: 250px;
+            }
+
+            .proficiencies-header {
+                margin-bottom: 15px;
+            }
+
+            .proficiencies-list li {
+                font-size: 15px;
+                margin-bottom: 8px;
+            }
+
+            .section-header {
+                margin-bottom: 20px;
+            }
+
+            .footer {
+                padding: 30px 0 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                padding-bottom: 24px;
+                border-bottom: 1px solid #333;
+            }
+
+            .footer-brand,
+            .footer-section {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                padding-top: 15px;
+            }
+
+            .approach-visual {
+                padding: 32px 24px;
+                margin-bottom: 40px;
+            }
+
+            .approach-visual h3 {
+                font-size: 24px;
+            }
+
+            .approach-visual p {
+                font-size: 16px;
             }
         }
 
@@ -1110,14 +1181,21 @@
     <header class="header-wrapper">
         <div class="top-bar">
             <div class="top-bar-inner">
+                <div class="top-bar-left">
+                    <a href="/" class="nav-logo">Mach Five <span>Tech</span></a>
+                </div>
                 <div class="top-bar-right">
                     <a href="/blog" class="top-bar-link">
                         <span class="material-symbols-outlined">rss_feed</span>
                         Knowledge Base
                     </a>
-                    <a href="/careers" class="top-bar-link">
+                    <a href="tel:+1234567890" class="top-bar-link">
                         <span class="material-symbols-outlined">person</span>
                         Careers
+                    </a>
+                    <a href="/customer-portal/" class="top-bar-link">
+                        <span class="material-symbols-outlined">login</span>
+                        Login
                     </a>
                 </div>
             </div>
@@ -1135,7 +1213,6 @@
                     <li><a href="/services/future-proof">Future-Proof</a></li>
                     <li><a href="/services/delight">Delight</a></li>
                     <li><a href="#contact" onclick="openContactForm()">Contact</a></li>
-                    <li><a href="/customer-portal/">Login</a></li>
                 </ul>
 
                 <button class="mobile-menu-toggle">
@@ -1166,7 +1243,7 @@
             <div class="future-hero-content">
                 <h1 class="fade-in">Software Ages Like Milk, Not Wine</h1>
                 <p class="future-hero-subtitle fade-in">
-                    Technical debt isn't just a metaphor—it's a daily tax on your team's morale and momentum. 
+                    Technical debt isn't just a metaphor - it's a daily tax on your team's morale and momentum. 
                     We help you pay it down strategically, so your developers can stop fighting fires and start 
                     building features that matter.
                 </p>
@@ -1199,109 +1276,43 @@
                             properly later." The workarounds built on workarounds.
                         </p>
                         <p>
-                            Technical debt isn't just about code quality—it's about human cost. It's the talented 
+                            Technical debt isn't just about code quality - it's about human cost. It's the talented 
                             developer who leaves because they're tired of fighting the system. It's the simple feature 
                             that takes weeks because touching anything might break everything.
                         </p>
                     </div>
-                    <div class="human-cost-panel fade-in">
-                        <div class="human-cost-content">
-                            <h4 class="human-cost-title">The Real Cost of Fragile Systems</h4>
-                            <ul class="cost-list">
-                                <li class="cost-item">
-                                    <span class="material-symbols-outlined cost-icon">sentiment_frustrated</span>
-                                    <div class="cost-text">
-                                        Developers spend more time working around problems than solving them
-                                    </div>
-                                </li>
-                                <li class="cost-item">
-                                    <span class="material-symbols-outlined cost-icon">schedule</span>
-                                    <div class="cost-text">
-                                        Simple changes become multi-day adventures in regression testing
-                                    </div>
-                                </li>
-                                <li class="cost-item">
-                                    <span class="material-symbols-outlined cost-icon">warning</span>
-                                    <div class="cost-text">
-                                        Fear of deployment leads to bigger, riskier releases
-                                    </div>
-                                </li>
-                                <li class="cost-item">
-                                    <span class="material-symbols-outlined cost-icon">person_off</span>
-                                    <div class="cost-text">
-                                        Your best people leave for companies where they can actually ship code
-                                    </div>
-                                </li>
-                                <li class="cost-item">
-                                    <span class="material-symbols-outlined cost-icon">trending_down</span>
-                                    <div class="cost-text">
-                                        Innovation stalls as teams focus on keeping the lights on
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="proficiencies-panel fade-in">
+                        <div class="proficiencies-header">The Real Cost of Fragile Systems</div>
+                        <ul class="proficiencies-list">
+                            <li>Developers spend more time working around problems than solving them</li>
+                            <li>Simple changes become multi-day adventures in regression testing</li>
+                            <li>Fear of deployment leads to bigger, riskier releases</li>
+                            <li>Your best people leave for companies where they can actually ship code</li>
+                            <li>Innovation stalls as teams focus on keeping the lights on</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="content-grid fade-in">
-                    <div class="resilience-panel">
-                        <div class="resilience-header">
-                            <h4>Building Systems That Support Your People</h4>
-                            <p>Resilient software enables resilient teams</p>
-                        </div>
-                        <div class="resilience-grid">
-                            <div class="resilience-item">
-                                <h5>
-                                    <span class="material-symbols-outlined">confidence</span>
-                                    Confidence to Change
-                                </h5>
-                                <p>
-                                    When your test coverage is solid and your architecture is clean, developers 
-                                    can make changes without fear.
-                                </p>
-                            </div>
-                            <div class="resilience-item">
-                                <h5>
-                                    <span class="material-symbols-outlined">speed</span>
-                                    Velocity That Lasts
-                                </h5>
-                                <p>
-                                    Teams maintain consistent delivery speed instead of the boom-bust cycle of 
-                                    technical debt accumulation.
-                                </p>
-                            </div>
-                            <div class="resilience-item">
-                                <h5>
-                                    <span class="material-symbols-outlined">psychology</span>
-                                    Room to Think
-                                </h5>
-                                <p>
-                                    When systems are stable, developers can focus on solving business problems 
-                                    instead of fighting infrastructure.
-                                </p>
-                            </div>
-                            <div class="resilience-item">
-                                <h5>
-                                    <span class="material-symbols-outlined">group_add</span>
-                                    Easier Onboarding
-                                </h5>
-                                <p>
-                                    New team members can contribute quickly when codebases are well-organized 
-                                    and patterns are consistent.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="proficiencies-panel">
+                        <div class="proficiencies-header">Building Systems That Support Your People</div>
+                        <ul class="proficiencies-list">
+                            <li>When your test coverage is solid and your architecture is clean, developers can make changes without fear</li>
+                            <li>Teams maintain consistent delivery speed instead of the boom-bust cycle of technical debt accumulation</li>
+                            <li>When systems are stable, developers can focus on solving business problems instead of fighting infrastructure</li>
+                            <li>New team members can contribute quickly when codebases are well-organized and patterns are consistent</li>
+                        </ul>
                     </div>
                     <div class="content-text">
                         <h3>Invest in Your Future Self</h3>
                         <p>
-                            Every shortcut taken today is a debt your future team will pay—with interest. But the 
+                            Every shortcut taken today is a debt your future team will pay - with interest. But the 
                             opposite is also true: every improvement you make compounds over time.
                         </p>
                         <p>
                             We help you break the cycle. Not with grand rewrites that never finish, but with 
                             strategic improvements that deliver value immediately while setting you up for long-term 
-                            success. Because resilient systems aren't just about uptime—they're about creating an 
+                            success. Because resilient systems aren't just about uptime - they're about creating an 
                             environment where your team can do their best work.
                         </p>
                     </div>
@@ -1396,17 +1407,6 @@
                     <h2 class="section-title fade-in">A Human-Centered Approach to Technical Excellence</h2>
                 </div>
 
-                <div class="approach-visual fade-in">
-                    <div class="approach-visual-content">
-                        <h3>We Don't Just Fix Code—We Enable People</h3>
-                        <p>
-                            Great software comes from teams that have the tools, knowledge, and confidence to do 
-                            their best work. Our approach focuses on sustainable improvements that make your 
-                            developers' lives better while delivering business value.
-                        </p>
-                    </div>
-                </div>
-
                 <div class="approach-cards">
                     <div class="approach-card fade-in">
                         <div class="approach-number">1</div>
@@ -1447,128 +1447,6 @@
                             <li class="approach-benefit">Document as we improve</li>
                             <li class="approach-benefit">Pair with your developers</li>
                             <li class="approach-benefit">Build lasting capabilities</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Investment Section -->
-        <section class="investment-section">
-            <div class="content-container">
-                <div class="investment-content">
-                    <div class="investment-header">
-                        <h2 class="fade-in">The ROI of Developer Happiness</h2>
-                    </div>
-                    <p class="investment-text fade-in">
-                        When developers spend less time fighting the system and more time solving problems, 
-                        everything improves. Feature velocity increases. Quality goes up. Retention improves. 
-                        The best investment you can make is in the tools and systems that enable your team.
-                    </p>
-
-                    <div class="investment-grid">
-                        <div class="investment-card fade-in">
-                            <span class="material-symbols-outlined investment-icon">timer</span>
-                            <h3>Time Reclaimed</h3>
-                            <p>
-                                Reduce the hours lost to workarounds, debugging mysterious failures, and 
-                                navigating complex deployments. Give that time back to innovation.
-                            </p>
-                        </div>
-                        <div class="investment-card fade-in">
-                            <span class="material-symbols-outlined investment-icon">trending_up</span>
-                            <h3>Compound Improvements</h3>
-                            <p>
-                                Unlike features that deliver value once, system improvements pay dividends 
-                                every single day. The earlier you start, the more you gain.
-                            </p>
-                        </div>
-                        <div class="investment-card fade-in">
-                            <span class="material-symbols-outlined investment-icon">diversity_1</span>
-                            <h3>Team Retention</h3>
-                            <p>
-                                Developers stay where they can do meaningful work without constant friction. 
-                                A clean codebase is a powerful recruiting and retention tool.
-                            </p>
-                        </div>
-                        <div class="investment-card fade-in">
-                            <span class="material-symbols-outlined investment-icon">shield_with_heart</span>
-                            <h3>Reduced Risk</h3>
-                            <p>
-                                Resilient systems handle change gracefully. When your foundation is solid, 
-                                you can move fast without breaking things.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section class="process-section">
-            <div class="content-container">
-                <div class="section-header">
-                    <h2 class="section-title fade-in">How We Build Resilience Together</h2>
-                </div>
-
-                <div class="process-philosophy">
-                    <h3>Every System Is Unique</h3>
-                    <p>
-                        We don't believe in one-size-fits-all solutions. Your technical challenges are shaped by 
-                        your history, your team, and your business needs. Our approach adapts to your context while 
-                        focusing on sustainable improvements that last.
-                    </p>
-                </div>
-
-                <div class="process-grid">
-                    <div class="process-card fade-in">
-                        <div class="process-number">1</div>
-                        <h4>Understand the Pain</h4>
-                        <p class="process-tagline">Listen First, Fix Second</p>
-                        <p>
-                            We start by talking to your team, reviewing your codebase, and understanding your 
-                            deployment processes. The goal is to identify what's causing the most friction.
-                        </p>
-                        
-                        <ul class="process-focus">
-                            <li class="process-focus-item">Developer interviews and surveys</li>
-                            <li class="process-focus-item">Codebase and architecture review</li>
-                            <li class="process-focus-item">Process and tooling assessment</li>
-                            <li class="process-focus-item">Risk and opportunity mapping</li>
-                        </ul>
-                    </div>
-
-                    <div class="process-card fade-in">
-                        <div class="process-number">2</div>
-                        <h4>Strategic Improvements</h4>
-                        <p class="process-tagline">Progress, Not Perfection</p>
-                        <p>
-                            We work alongside your team to implement improvements that deliver immediate value 
-                            while building toward long-term resilience.
-                        </p>
-                        
-                        <ul class="process-focus">
-                            <li class="process-focus-item">Automated testing where it matters most</li>
-                            <li class="process-focus-item">Refactoring critical pathways</li>
-                            <li class="process-focus-item">Streamlining deployment processes</li>
-                            <li class="process-focus-item">Building developer tools that help</li>
-                        </ul>
-                    </div>
-
-                    <div class="process-card fade-in">
-                        <div class="process-number">3</div>
-                        <h4>Sustain the Gains</h4>
-                        <p class="process-tagline">Culture Over Code</p>
-                        <p>
-                            Real resilience comes from teams that understand and own their systems. We ensure 
-                            improvements stick by building knowledge and processes that last.
-                        </p>
-                        
-                        <ul class="process-focus">
-                            <li class="process-focus-item">Knowledge sharing and documentation</li>
-                            <li class="process-focus-item">Team training and mentorship</li>
-                            <li class="process-focus-item">Process improvements that stick</li>
-                            <li class="process-focus-item">Metrics that matter</li>
                         </ul>
                     </div>
                 </div>

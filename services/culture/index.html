@@ -84,9 +84,14 @@
             margin: 0 auto;
             padding: 0 24px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             min-height: 36px;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
         }
 
         .top-bar-right {
@@ -125,8 +130,18 @@
             margin: 0 auto;
             padding: 0 24px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+        }
+
+        /* Hide nav logo on desktop */
+        .main-nav .nav-logo {
+            display: none;
+        }
+
+        /* Desktop only logo */
+        .nav-logo.desktop-only {
+            display: none;
         }
 
         .nav-logo {
@@ -135,10 +150,24 @@
             color: var(--m5-dark);
             text-decoration: none;
             font-family: 'Roboto Condensed', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: -0.5px;
         }
 
         .nav-logo span {
-            color: var(--m5-brand);
+            color: white;
+            background: var(--m5-brand);
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 20px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            line-height: 1.2;
+            vertical-align: baseline;
+            letter-spacing: -0.5px;
         }
 
         .nav-menu {
@@ -170,7 +199,7 @@
         /* Hero Section */
         .culture-hero {
             background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-            padding: 80px 0;
+            padding: 50px 0;
             position: relative;
             overflow: hidden;
         }
@@ -197,15 +226,15 @@
         }
 
         .culture-hero h1 {
-            font-size: clamp(48px, 6vw, 72px);
+            font-size: clamp(40px, 6vw, 64px);
             font-weight: 700;
             color: var(--m5-dark);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
         .culture-hero-subtitle {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--m5-text-light);
             max-width: 800px;
             line-height: 1.5;
@@ -214,31 +243,35 @@
         /* Results Indicators */
         .culture-results {
             display: flex;
-            gap: 48px;
-            margin-top: 40px;
+            gap: 32px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
 
         .result-item {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .result-icon {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--m5-brand);
         }
 
         .result-label {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--m5-text);
             font-weight: 500;
         }
 
         /* Content Sections */
         .content-section {
-            padding: 80px 0;
+            padding: 40px 0;
+        }
+
+        .content-section:last-of-type {
+            padding: 20px 0;
         }
 
         .content-container {
@@ -249,7 +282,7 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
 
         .section-title {
@@ -272,9 +305,9 @@
         .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 40px;
             align-items: center;
-            margin-bottom: 120px;
+            margin-bottom: 30px;
         }
 
         .content-grid:nth-child(even) {
@@ -286,155 +319,177 @@
         }
 
         .content-text h3 {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 600;
             color: var(--m5-dark);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .content-text p {
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 17px;
+            line-height: 1.7;
             color: var(--m5-text);
-            margin-bottom: 32px;
+            margin-bottom: 20px;
         }
 
-        /* Philosophy Panel */
-        .philosophy-panel {
-            background: linear-gradient(135deg, var(--m5-accent) 0%, #1F6868 100%);
+        /* Updated Proficiencies Panel to match standard styling */
+        .proficiencies-panel {
+            background: #ffffff;
             border-radius: 12px;
-            padding: 48px;
-            color: white;
+            padding: 40px 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-            transform: rotate(-0.5deg);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            min-height: 320px;
+            overflow: visible;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .philosophy-panel::before {
+        .proficiencies-panel:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .proficiencies-header {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ffffff;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+            padding: 8px 24px;
+            transform: rotate(-2deg);
+        }
+
+        .proficiencies-header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #DD4124;
+            z-index: -1;
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
         }
 
-        .philosophy-content {
+        .proficiencies-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            z-index: -1;
+        }
+
+        /* Different angles for variety */
+        .content-grid:nth-child(1) .proficiencies-header {
+            transform: rotate(-3deg);
+        }
+
+        .content-grid:nth-child(2) .proficiencies-header {
+            transform: rotate(2deg);
+        }
+
+        .proficiencies-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .proficiencies-list li {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            padding-left: 28px;
+            position: relative;
+            color: #2c3e50;
+            transition: all 0.2s ease;
+            font-weight: 400;
+        }
+
+        .proficiencies-list li:hover {
+            color: #DD4124;
+            transform: translateX(4px);
+        }
+
+        .proficiencies-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #DD4124;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .proficiencies-list li:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+
+        /* Impact Section - Enhanced styling */
+        .impact-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
+        }
+
+        .impact-section .content-container {
             position: relative;
             z-index: 1;
         }
 
-        .philosophy-title {
-            font-size: 28px;
-            margin-bottom: 24px;
-            color: white;
-        }
-
-        .philosophy-points {
-            list-style: none;
-        }
-
-        .philosophy-point {
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .philosophy-point:last-child {
-            border-bottom: none;
-        }
-
-        /* Approach Panel */
-        .approach-panel {
-            background: #1e1e1e;
-            border-radius: 12px;
-            padding: 40px;
-            color: #ccc;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .approach-header {
-            border-bottom: 2px solid var(--m5-brand);
-            padding-bottom: 20px;
-            margin-bottom: 32px;
-        }
-
-        .approach-header h4 {
-            font-size: 24px;
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        .approach-header p {
-            color: #999;
-            font-size: 14px;
-        }
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .approach-item {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .approach-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .approach-icon {
-            font-size: 24px;
-            color: var(--m5-accent);
-            margin-bottom: 12px;
-        }
-
-        .approach-title {
-            font-size: 16px;
-            color: white;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .approach-desc {
-            font-size: 14px;
-            color: #999;
-            line-height: 1.5;
-        }
-
-        /* Impact Section */
-        .impact-section {
-            background: #f8f8f8;
-            padding: 80px 0;
-        }
-
         .impact-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 32px;
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .impact-card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 36px 24px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .impact-card::before {
@@ -444,14 +499,17 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: var(--m5-brand);
+            background: linear-gradient(90deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             transform: scaleX(0);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .impact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-12px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                0 8px 24px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 1);
         }
 
         .impact-card:hover::before {
@@ -459,33 +517,50 @@
         }
 
         .impact-icon {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
+            font-size: 32px;
             margin: 0 auto 24px;
+            box-shadow: 0 8px 24px rgba(221, 65, 36, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover .impact-icon {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(221, 65, 36, 0.4);
         }
 
         .impact-card h4 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             color: var(--m5-dark);
             margin-bottom: 16px;
+            font-family: 'Roboto Condensed', sans-serif;
         }
 
         .impact-card p {
             color: var(--m5-text-light);
             line-height: 1.6;
+            font-size: 15px;
         }
+
+        /* Enhanced card specific styling */
+        .impact-card:nth-child(1) { animation-delay: 0.1s; }
+        .impact-card:nth-child(2) { animation-delay: 0.2s; }
+        .impact-card:nth-child(3) { animation-delay: 0.3s; }
+        .impact-card:nth-child(4) { animation-delay: 0.4s; }
+        .impact-card:nth-child(5) { animation-delay: 0.5s; }
+        .impact-card:nth-child(6) { animation-delay: 0.6s; }
 
         /* Relationship Section */
         .relationship-section {
-            padding: 100px 0;
+            padding: 60px 0;
             background: linear-gradient(135deg, var(--m5-dark) 0%, #000 100%);
             color: white;
             position: relative;
@@ -511,27 +586,27 @@
         }
 
         .relationship-header h2 {
-            font-size: 48px;
-            margin-bottom: 32px;
+            font-size: 40px;
+            margin-bottom: 24px;
         }
 
         .relationship-text {
-            font-size: 20px;
-            line-height: 1.8;
+            font-size: 18px;
+            line-height: 1.7;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 48px;
+            margin-bottom: 36px;
         }
 
         .relationship-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 36px;
         }
 
         .relationship-card {
             text-align: left;
-            padding: 32px;
+            padding: 24px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             backdrop-filter: blur(10px);
@@ -545,41 +620,41 @@
         }
 
         .relationship-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
+            font-size: 20px;
+            margin-bottom: 12px;
             color: var(--m5-accent);
         }
 
         .relationship-card p {
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 14px;
+            line-height: 1.5;
             color: rgba(255, 255, 255, 0.9);
         }
 
         /* Process Section */
         .process-section {
-            padding: 100px 0;
+            padding: 60px 0;
             background: white;
         }
 
         .process-philosophy {
             background: var(--m5-light);
-            padding: 40px;
+            padding: 32px;
             border-radius: 12px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             text-align: center;
         }
 
         .process-philosophy h3 {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--m5-dark);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .process-philosophy p {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--m5-text);
-            line-height: 1.8;
+            line-height: 1.7;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -587,14 +662,14 @@
         .process-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 60px;
+            gap: 32px;
+            margin-top: 40px;
         }
 
         .process-card {
             background: white;
             border-radius: 12px;
-            padding: 40px 32px;
+            padding: 32px 24px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
@@ -609,48 +684,48 @@
         }
 
         .process-number {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: var(--m5-brand);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             position: relative;
             box-shadow: 0 4px 12px rgba(221, 65, 36, 0.3);
         }
 
         .process-card h4 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
             color: var(--m5-dark);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
         .process-tagline {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--m5-brand);
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .process-card p {
             color: var(--m5-text-light);
             line-height: 1.6;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .process-outcomes {
             list-style: none;
-            margin-top: 24px;
-            padding-top: 24px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid var(--m5-border);
         }
 
@@ -658,8 +733,8 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 12px;
-            font-size: 14px;
+            margin-bottom: 10px;
+            font-size: 13px;
             color: var(--m5-text);
         }
 
@@ -673,7 +748,7 @@
         .cta-section {
             background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -712,7 +787,7 @@
         .cta-content h2 {
             font-size: clamp(36px, 5vw, 48px);
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
@@ -720,7 +795,7 @@
             font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             line-height: 1.6;
         }
 
@@ -735,11 +810,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 24px;
+            padding: 14px 28px;
             background: white;
             color: var(--m5-brand);
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 500;
             font-size: 16px;
             transition: all 0.3s ease;
@@ -750,7 +825,7 @@
             background: transparent;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button .material-symbols-outlined {
@@ -762,18 +837,18 @@
             background: linear-gradient(180deg, var(--m5-dark) 0%, var(--m5-darker) 100%);
             border-top: 4px solid var(--m5-brand);
             color: #ccc;
-            padding: 80px 24px 32px;
+            padding: 50px 0 20px;
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 24px 40px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 48px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 48px;
+            gap: 40px;
+            border-bottom: 1px solid #333;
         }
 
         .footer-brand {
@@ -788,7 +863,8 @@
             color: var(--m5-brand);
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            font-size: 14px;
         }
 
         .footer-section ul {
@@ -796,24 +872,41 @@
         }
 
         .footer-section li {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .footer-section a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.2s;
+            font-size: 14px;
         }
 
         .footer-section a:hover {
             color: var(--m5-brand);
         }
 
+        .footer-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-contact:hover {
+            color: var(--m5-brand);
+        }
+
         .footer-bottom {
             text-align: center;
-            margin-top: 32px;
-            font-size: 0.8em;
+            padding-top: 20px;
+            font-size: 13px;
             color: #888;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
         }
 
         /* Animations */
@@ -826,126 +919,6 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 968px) {
-            .process-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
-            }
-
-            .top-bar {
-                display: none;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 320px;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                padding: 80px 32px;
-                gap: 24px;
-                box-shadow: -2px 0 16px rgba(0, 0, 0, 0.1);
-                transition: right 0.3s;
-                z-index: 999;
-                align-items: flex-start;
-            }
-
-            .nav-menu.active {
-                right: 0;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 8px;
-            }
-
-            .mobile-menu-toggle span {
-                display: block;
-                width: 24px;
-                height: 2px;
-                background: var(--m5-dark);
-                margin: 5px 0;
-                transition: 0.3s;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .content-grid:nth-child(even) {
-                direction: ltr;
-            }
-
-            .culture-results {
-                justify-content: center;
-            }
-
-            .approach-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .relationship-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .impact-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-button {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-        }
-
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 998;
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        a:focus,
-        button:focus {
-            outline: 2px solid var(--m5-brand);
-            outline-offset: 2px;
         }
 
         /* Breadcrumb */
@@ -989,20 +962,249 @@
             color: var(--m5-brand);
             font-weight: 500;
         }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .impact-section {
+                padding: 40px 0;
+            }
+
+            .relationship-section {
+                padding: 40px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .content-section {
+                padding: 25px 0;
+            }
+
+            .content-section:last-of-type {
+                padding: 15px 0;
+            }
+
+            .culture-hero {
+                padding: 30px 0;
+            }
+
+            .cta-section {
+                padding: 40px 0;
+            }
+
+            /* Show nav logo on mobile, hide top bar */
+            .top-bar {
+                display: none;
+            }
+
+            .main-nav .nav-logo {
+                display: inline-flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                font-size: 26px;
+            }
+
+            .main-nav .nav-logo span {
+                font-size: 22px;
+                padding: 4px 12px;
+            }
+
+            .nav-container {
+                justify-content: space-between;
+                padding: 0 16px;
+            }
+
+            .mobile-menu-toggle {
+                display: block !important;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+                z-index: 1001;
+                position: relative;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .mobile-menu-toggle span {
+                display: block !important;
+                width: 28px;
+                height: 3px;
+                background-color: #181818 !important;
+                margin: 6px 0;
+                transition: all 0.3s ease;
+                border-radius: 2px;
+                visibility: visible !important;
+                opacity: 1 !important;
+                transform-origin: center;
+            }
+
+            /* Hamburger to X animation */
+            .nav-menu.active ~ .mobile-menu-toggle span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .nav-menu.active ~ .mobile-menu-toggle span:nth-child(2) {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            .nav-menu.active ~ .mobile-menu-toggle span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -8px);
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 32px;
+                gap: 24px;
+                box-shadow: -2px 0 16px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s;
+                z-index: 999;
+                align-items: flex-start;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-bottom: 20px;
+            }
+
+            .content-grid:nth-child(even) {
+                direction: ltr;
+            }
+
+            .culture-results {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .relationship-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .cta-button {
+                width: auto;
+                min-width: 200px;
+                justify-content: center;
+            }
+
+            .proficiencies-panel {
+                padding: 25px 20px;
+                min-height: 250px;
+            }
+
+            .proficiencies-header {
+                margin-bottom: 15px;
+            }
+
+            .proficiencies-list li {
+                font-size: 15px;
+                margin-bottom: 8px;
+            }
+
+            .section-header {
+                margin-bottom: 20px;
+            }
+
+            .footer {
+                padding: 30px 0 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                padding-bottom: 24px;
+                border-bottom: 1px solid #333;
+            }
+
+            .footer-brand,
+            .footer-section {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                padding-top: 15px;
+            }
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 998;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--m5-brand);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
     <header class="header-wrapper">
         <div class="top-bar">
             <div class="top-bar-inner">
+                <div class="top-bar-left">
+                    <a href="/" class="nav-logo">Mach Five <span>Tech</span></a>
+                </div>
                 <div class="top-bar-right">
                     <a href="/blog" class="top-bar-link">
                         <span class="material-symbols-outlined">rss_feed</span>
                         Knowledge Base
                     </a>
-                    <a href="/careers" class="top-bar-link">
+                    <a href="tel:+1234567890" class="top-bar-link">
                         <span class="material-symbols-outlined">person</span>
                         Careers
+                    </a>
+                    <a href="/customer-portal/" class="top-bar-link">
+                        <span class="material-symbols-outlined">login</span>
+                        Login
                     </a>
                 </div>
             </div>
@@ -1020,7 +1222,6 @@
                     <li><a href="/services/future-proof">Future-Proof</a></li>
                     <li><a href="/services/delight">Delight</a></li>
                     <li><a href="#contact" onclick="openContactForm()">Contact</a></li>
-                    <li><a href="/customer-portal/">Login</a></li>
                 </ul>
 
                 <button class="mobile-menu-toggle">
@@ -1052,7 +1253,7 @@
                 <h1 class="fade-in">People Are Not Resources</h1>
                 <p class="culture-hero-subtitle fade-in">
                     Great software comes from great teams. We help you build engineering cultures where talented people 
-                    want to stay, grow, and do their best work—because treating developers as interchangeable parts is 
+                    want to stay, grow, and do their best work because treating developers as interchangeable parts is 
                     a recipe for mediocrity.
                 </p>
                 <div class="culture-results fade-in">
@@ -1079,7 +1280,7 @@
                     <div class="content-text">
                         <h3>The Real Cost of Treating People Like Cogs</h3>
                         <p>
-                            When companies treat developers as interchangeable resources, they lose more than just people—they 
+                            When companies treat developers as interchangeable resources, they lose more than just people they 
                             lose institutional knowledge, team cohesion, and the creative spark that drives innovation.
                         </p>
                         <p>
@@ -1087,66 +1288,29 @@
                             archaeological sites because everyone who understood them has left. There's a better way.
                         </p>
                     </div>
-                    <div class="philosophy-panel fade-in">
-                        <div class="philosophy-content">
-                            <h4 class="philosophy-title">Our Philosophy</h4>
-                            <ul class="philosophy-points">
-                                <li class="philosophy-point">
-                                    Developers are craftspeople with unique strengths, not fungible resources
-                                </li>
-                                <li class="philosophy-point">
-                                    Long-term relationships create exponentially more value than rotating contractors
-                                </li>
-                                <li class="philosophy-point">
-                                    Trust and psychological safety are prerequisites for high performance
-                                </li>
-                                <li class="philosophy-point">
-                                    Growth opportunities retain talent better than any retention bonus
-                                </li>
-                                <li class="philosophy-point">
-                                    Culture is what happens when no one is watching—and it matters
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="proficiencies-panel fade-in">
+                        <div class="proficiencies-header">Our Philosophy</div>
+                        <ul class="proficiencies-list">
+                            <li>Developers are craftspeople with unique strengths, not fungible resources</li>
+                            <li>Long-term relationships create exponentially more value than rotating contractors</li>
+                            <li>Trust and psychological safety are prerequisites for high performance</li>
+                            <li>Growth opportunities retain talent better than any retention bonus</li>
+                            <li>Culture is what happens when no one is watching and it matters</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="content-grid fade-in">
-                    <div class="approach-panel">
-                        <div class="approach-header">
-                            <h4>How We Help Build Better Cultures</h4>
-                            <p>Practical approaches that create lasting change</p>
-                        </div>
-                        <div class="approach-grid">
-                            <div class="approach-item">
-                                <span class="material-symbols-outlined approach-icon">psychology</span>
-                                <h5 class="approach-title">Understand First</h5>
-                                <p class="approach-desc">
-                                    Listen to your team's real experiences and challenges before prescribing solutions
-                                </p>
-                            </div>
-                            <div class="approach-item">
-                                <span class="material-symbols-outlined approach-icon">groups_3</span>
-                                <h5 class="approach-title">Model Behaviors</h5>
-                                <p class="approach-desc">
-                                    Embed with teams to demonstrate healthy practices through action, not just words
-                                </p>
-                            </div>
-                            <div class="approach-item">
-                                <span class="material-symbols-outlined approach-icon">trending_up</span>
-                                <h5 class="approach-title">Create Growth Paths</h5>
-                                <p class="approach-desc">
-                                    Design career progression that values depth of knowledge and mentorship skills
-                                </p>
-                            </div>
-                            <div class="approach-item">
-                                <span class="material-symbols-outlined approach-icon">celebration</span>
-                                <h5 class="approach-title">Celebrate Craft</h5>
-                                <p class="approach-desc">
-                                    Recognize and reward quality work, learning, and knowledge sharing
-                                </p>
-                            </div>
-                        </div>
+                    <div class="proficiencies-panel">
+                        <div class="proficiencies-header">How We Help</div>
+                        <ul class="proficiencies-list">
+                            <li>Listen to your team's real experiences and challenges before prescribing solutions</li>
+                            <li>Embed with teams to demonstrate healthy practices through action, not just words</li>
+                            <li>Design career progression that values depth of knowledge and mentorship skills</li>
+                            <li>Recognize and reward quality work, learning, and knowledge sharing</li>
+                            <li>Create feedback loops for continuous improvement</li>
+                            <li>Build internal champions and advocates</li>
+                        </ul>
                     </div>
                     <div class="content-text">
                         <h3>Building Teams That Last</h3>
@@ -1160,133 +1324,6 @@
                             and connected to the mission. Because when people feel like partners in building something 
                             meaningful, they stick around and do their best work.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Impact Section -->
-        <section class="impact-section">
-            <div class="content-container">
-                <div class="section-header">
-                    <h2 class="section-title fade-in">What Changes When You Get Culture Right</h2>
-                    <p class="section-subtitle fade-in">
-                        The benefits of treating developers as whole humans extend far beyond retention metrics.
-                    </p>
-                </div>
-
-                <div class="impact-cards">
-                    <div class="impact-card fade-in">
-                        <div class="impact-icon">
-                            <span class="material-symbols-outlined">architecture</span>
-                        </div>
-                        <h4>Better Technical Decisions</h4>
-                        <p>
-                            Teams with psychological safety challenge ideas constructively, leading to more robust architectures 
-                            and fewer costly mistakes.
-                        </p>
-                    </div>
-
-                    <div class="impact-card fade-in">
-                        <div class="impact-icon">
-                            <span class="material-symbols-outlined">lightbulb</span>
-                        </div>
-                        <h4>Innovation Flourishes</h4>
-                        <p>
-                            When people aren't afraid of failure, they experiment. When they have time to think, they 
-                            create elegant solutions instead of quick hacks.
-                        </p>
-                    </div>
-
-                    <div class="impact-card fade-in">
-                        <div class="impact-icon">
-                            <span class="material-symbols-outlined">diversity_3</span>
-                        </div>
-                        <h4>Knowledge Stays</h4>
-                        <p>
-                            Long-tenured team members become force multipliers, mentoring others and maintaining 
-                            institutional knowledge that makes everything faster.
-                        </p>
-                    </div>
-
-                    <div class="impact-card fade-in">
-                        <div class="impact-icon">
-                            <span class="material-symbols-outlined">shield</span>
-                        </div>
-                        <h4>Quality Improves</h4>
-                        <p>
-                            Teams that care about their craft and each other naturally hold higher standards. Code 
-                            reviews become learning opportunities, not gatekeeping exercises.
-                        </p>
-                    </div>
-
-                    <div class="impact-card fade-in">
-                        <div class="impact-icon">
-                            <span class="material-symbols-outlined">rocket_launch</span>
-                        </div>
-                        <h4>Velocity Increases</h4>
-                        <p>
-                            Stable teams with strong relationships communicate efficiently, make decisions quickly, 
-                            and spend less time on coordination overhead.
-                        </p>
-                    </div>
-
-                    <div class="impact-card fade-in">
-                        <div class="impact-icon">
-                            <span class="material-symbols-outlined">favorite</span>
-                        </div>
-                        <h4>Recruiting Gets Easier</h4>
-                        <p>
-                            Happy developers are your best recruiters. Strong cultures attract strong talent through 
-                            authentic word-of-mouth, not just job postings.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Relationship Section -->
-        <section class="relationship-section">
-            <div class="content-container">
-                <div class="relationship-content">
-                    <div class="relationship-header">
-                        <h2 class="fade-in">The Power of Long-Term Thinking</h2>
-                    </div>
-                    <p class="relationship-text fade-in">
-                        When you invest in people for the long haul, compound returns kick in. A developer who's been with 
-                        you for three years isn't just three times as valuable as a new hire—they're exponentially more 
-                        effective because they understand your domain, your codebase, and your team dynamics.
-                    </p>
-
-                    <div class="relationship-grid">
-                        <div class="relationship-card fade-in">
-                            <h3>Deep Context</h3>
-                            <p>
-                                Long-term team members understand not just what the code does, but why decisions were made. 
-                                This context makes them invaluable for complex problem-solving.
-                            </p>
-                        </div>
-                        <div class="relationship-card fade-in">
-                            <h3>Trust Networks</h3>
-                            <p>
-                                Teams that work together for years develop shorthand communication and deep trust, 
-                                enabling them to tackle ambitious projects with confidence.
-                            </p>
-                        </div>
-                        <div class="relationship-card fade-in">
-                            <h3>Mentorship Culture</h3>
-                            <p>
-                                Senior developers who feel valued naturally mentor juniors, creating a virtuous cycle 
-                                of knowledge transfer and team growth.
-                            </p>
-                        </div>
-                        <div class="relationship-card fade-in">
-                            <h3>Pride in Craft</h3>
-                            <p>
-                                People who plan to maintain code for years write it differently than those expecting 
-                                to hand it off. Quality becomes personal.
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1315,7 +1352,7 @@
                         <p class="process-tagline">Understanding Your Reality</p>
                         <p>
                             We start by embedding with your team, participating in your rituals, and having honest 
-                            conversations with people at all levels. No surveys or consultants in glass offices—just 
+                            conversations with people at all levels. No surveys or consultants in glass offices just 
                             real engagement.
                         </p>
                         
@@ -1350,14 +1387,14 @@
                         <p class="process-tagline">Making It Stick</p>
                         <p>
                             Real culture change takes time. We stay engaged to help navigate challenges, celebrate wins, 
-                            and ensure new practices become habits that outlast our involvement.
+                            and make new practices become habits that outlast our involvement.
                         </p>
                         
                         <ul class="process-outcomes">
                             <li class="process-outcome">Build internal champions and advocates</li>
                             <li class="process-outcome">Create feedback loops for continuous improvement</li>
                             <li class="process-outcome">Document practices that work</li>
-                            <li class="process-outcome">Ensure changes align with business goals</li>
+                            <li class="process-outcome">Make changes align with business goals</li>
                         </ul>
                     </div>
                 </div>
@@ -1398,7 +1435,7 @@
                 <neodigm-widget style="width: 40%;" data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_two_word_rotate"></neodigm-widget>
                 <p>We are a technical consulting and development team helping companies move faster and build smarter through architecture, automation, and app delivery.</p>
                 <p>Headquartered in Chicago. Supporting clients nationwide.</p>
-                <a href="mailto:support@machfivetech.com" style="color: #ccc; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <a href="mailto:support@machfivetech.com" class="footer-contact">
                     <span class="material-symbols-outlined">mail</span>
                     support@machfivetech.com
                 </a>
@@ -1442,17 +1479,19 @@
         const navMenu = document.querySelector('.nav-menu');
         const overlay = document.querySelector('.menu-overlay');
         
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        });
+        if (mobileToggle && navMenu && overlay) {
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
 
-        overlay.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+            overlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
 
         // Intersection Observer for animations
         const observerOptions = {
