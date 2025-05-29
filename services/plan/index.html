@@ -775,7 +775,7 @@
             font-style: normal;
         }
 
-        /* CTA Section */
+        /* CTA Section - Updated to match home page */
         .cta-section {
             background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             color: white;
@@ -783,37 +783,17 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            z-index: 1;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('/img/m5t_hero-01.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08;
-            z-index: 0;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            margin: 0;
+            width: 100%;
             z-index: 1;
         }
 
         .cta-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         .cta-content h2 {
@@ -826,7 +806,6 @@
         .cta-content p {
             font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
             margin: 0 auto 30px;
             line-height: 1.6;
         }
@@ -1449,29 +1428,23 @@
             </div>
         </section>
 
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="content-container">
-                <div class="cta-content">
-                    <h2>Get in touch</h2>
-                    <p>
-                       We help teams move faster, reduce risk, and launch with confidence. Contact us to discuss your project and explore how we can partner together.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#" class="cta-button" onclick="openContactForm()">
-                            <span class="material-symbols-outlined">send</span>
-                            Get a quote
-                        </a>
-                        <a href="tel:+13125551234" class="cta-button">
-                            <span class="material-symbols-outlined">phone</span>
-                            Talk to us
-                        </a>
-                        <a href="/newsletter" class="cta-button">
-                            <span class="material-symbols-outlined">mail</span>
-                            Newsletter
-                        </a>
-                    </div>
+        <!-- CTA Section - Updated to match home page -->
+        <section class="cta-section" id="contact">
+            <div class="cta-content">
+                <h2>Get in Touch</h2>
+                <p>
+                    Let's talk about your project. We'll help you choose the right technologies, 
+                    plan your architecture, and deliver code that exceeds expectations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button" onclick="openContactForm()">
+                        <span class="material-symbols-outlined">send</span>
+                        Contact Us
+                    </a>
+                    <a href="/blog" class="cta-button">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                        Knowledge Base
+                    </a>
                 </div>
             </div>
         </section>
@@ -1519,7 +1492,7 @@
         </div>
     </footer>
 
-    <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="contact_form_iframe_sfdc"></noeigm-widget>
+    <neodigm-widget data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="contact_form_iframe_sfdc"></neodigm-widget>
 
     <script>
         // Mobile menu

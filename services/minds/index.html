@@ -53,6 +53,33 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: 120px;
+            position: relative;
+        }
+
+        /* Grid texture with fade effect - from home page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Neodigm button overrides */
@@ -263,6 +290,8 @@
         /* Content Sections */
         .content-section {
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .content-section:last-of-type {
@@ -537,6 +566,8 @@
         .expertise-section {
             background: #f8f8f8;
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .expertise-cards {
@@ -768,6 +799,8 @@
         .integration-section {
             padding: 100px 0;
             background: white;
+            position: relative;
+            z-index: 1;
         }
 
         .integration-content {
@@ -923,6 +956,8 @@
         .process-section {
             padding: 100px 0;
             background: white;
+            position: relative;
+            z-index: 1;
         }
 
         .process-intro {
@@ -1040,36 +1075,17 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('/img/m5t_hero-01.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08;
-            z-index: 0;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            margin: 0;
+            width: 100%;
             z-index: 1;
         }
 
         .cta-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         .cta-content h2 {
@@ -1082,7 +1098,6 @@
         .cta-content p {
             font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
             margin: 0 auto 30px;
             line-height: 1.6;
         }
@@ -1360,11 +1375,12 @@
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 12px;
             }
 
             .cta-button {
-                width: 100%;
-                max-width: 280px;
+                width: auto;
+                min-width: 200px;
                 justify-content: center;
             }
 
@@ -1456,6 +1472,8 @@
             padding: 20px 0;
             background: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 1;
         }
 
         .breadcrumb-container {
@@ -1558,24 +1576,24 @@
         <!-- Hero Section -->
         <section class="minds-hero">
             <div class="minds-hero-content">
-                <h1 class="fade-in">Partners, Not Vendors</h1>
+                <h1 class="fade-in">When You Need More Hands, Not More Headaches</h1>
                 <p class="minds-hero-subtitle fade-in">
-                    When your roadmap moves faster than your hiring pipeline, we help you bridge the gap—with 
-                    high-trust experts who slot into your team and hit the ground running. No mercenaries, 
-                    no body shops. Just skilled professionals who care about your success.
+                    Your startup just raised Series A and needs to triple development velocity. Your enterprise team 
+                    is drowning in technical debt while building new features. You know exactly what needs to be done, 
+                    but hiring takes months and you need help now. We embed senior developers who actually ship code.
                 </p>
                 <div class="trust-points fade-in">
                     <div class="trust-point">
-                        <span class="material-symbols-outlined trust-icon">handshake</span>
-                        <span class="trust-text">True Partnership Model</span>
+                        <span class="material-symbols-outlined trust-icon">code</span>
+                        <span class="trust-text">Code From Day One</span>
                     </div>
                     <div class="trust-point">
-                        <span class="material-symbols-outlined trust-icon">verified</span>
-                        <span class="trust-text">Senior-Level Expertise</span>
+                        <span class="material-symbols-outlined trust-icon">schedule</span>
+                        <span class="trust-text">Weeks Not Months</span>
                     </div>
                     <div class="trust-point">
-                        <span class="material-symbols-outlined trust-icon">groups</span>
-                        <span class="trust-text">Seamless Integration</span>
+                        <span class="material-symbols-outlined trust-icon">trending_up</span>
+                        <span class="trust-text">Immediate Velocity</span>
                     </div>
                 </div>
             </div>
@@ -1586,40 +1604,40 @@
             <div class="content-container">
                 <div class="content-grid fade-in">
                     <div class="content-text">
-                        <h3>The Problem with Staff Augmentation</h3>
+                        <h3>Skip the Hiring Theater</h3>
                         <p>
-                            Traditional staffing treats developers like interchangeable parts. You get resumes, 
-                            conduct interviews, and hope for the best. When it doesn't work out, you start over. 
-                            It's exhausting, expensive, and rarely delivers the results you need.
+                            You know the drill. Post job descriptions that nobody reads. Screen 50 resumes for 2 decent 
+                            candidates. Spend weeks interviewing people who can't actually do the work. Meanwhile, your 
+                            product roadmap slips and competitors move faster.
                         </p>
                         <p>
-                            We believe there's a better way. Instead of throwing bodies at problems, we provide 
-                            thoughtful professionals who become genuine extensions of your team—people who understand 
-                            context, care about outcomes, and stick around long enough to see their work succeed.
+                            We skip all that. You tell us what you're building and what stack you're using. We send you 
+                            developers who've already built similar things, in similar stacks, at similar companies. They 
+                            start contributing code in their first week, not their third month.
                         </p>
                     </div>
                     <div class="difference-panel fade-in">
                         <div class="difference-content">
-                            <h4 class="difference-title">The Mach Five Difference</h4>
+                            <h4 class="difference-title">How We Actually Work</h4>
                             <div class="difference-columns">
                                 <div>
-                                    <h4>What We Don't Do</h4>
+                                    <h4>Traditional Hiring</h4>
                                     <ul class="difference-list">
-                                        <li class="difference-item">Flood you with junior resumes</li>
-                                        <li class="difference-item">Disappear after placement</li>
-                                        <li class="difference-item">Clock watch or count hours</li>
-                                        <li class="difference-item">Create dependency without knowledge transfer</li>
-                                        <li class="difference-item">Treat your project as just another gig</li>
+                                        <li class="difference-item">3-6 months to fill a role</li>
+                                        <li class="difference-item">Junior devs with senior titles</li>
+                                        <li class="difference-item">Months of onboarding and training</li>
+                                        <li class="difference-item">Hope they don't quit after 18 months</li>
+                                        <li class="difference-item">Expensive recruiters and job boards</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4>What We Do</h4>
+                                    <h4>Embedded Teams</h4>
                                     <ul class="difference-list">
-                                        <li class="difference-item">Match senior experts to your needs</li>
-                                        <li class="difference-item">Stay engaged throughout the partnership</li>
-                                        <li class="difference-item">Focus on outcomes and value</li>
-                                        <li class="difference-item">Share knowledge and level up your team</li>
-                                        <li class="difference-item">Invest in your long-term success</li>
+                                        <li class="difference-item">Contributing code within 2 weeks</li>
+                                        <li class="difference-item">Actually senior developers</li>
+                                        <li class="difference-item">Jump straight into your codebase</li>
+                                        <li class="difference-item">Scale up or down as needed</li>
+                                        <li class="difference-item">One conversation to get started</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1630,47 +1648,46 @@
                 <div class="content-grid fade-in">
                     <div class="partnership-panel">
                         <div class="partnership-content">
-                            <h4 class="partnership-title">How We Build Partnerships</h4>
+                            <h4 class="partnership-title">Types of Projects We Handle</h4>
                             <div class="partnership-grid">
                                 <div class="partnership-item">
-                                    <span class="material-symbols-outlined partnership-icon">psychology</span>
+                                    <span class="material-symbols-outlined partnership-icon">rocket_launch</span>
                                     <div class="partnership-text">
-                                        We start by understanding your technical challenges, team dynamics, and cultural values
+                                        High-growth companies scaling their backend systems to handle increased demand
                                     </div>
                                 </div>
                                 <div class="partnership-item">
-                                    <span class="material-symbols-outlined partnership-icon">person_search</span>
+                                    <span class="material-symbols-outlined partnership-icon">architecture</span>
                                     <div class="partnership-text">
-                                        We carefully match experts who have both the skills and the temperament to thrive in your environment
+                                        Legacy system modernization without disrupting existing business operations
+                                    </div>
+                                </div>
+                                <div class="partnership-item">
+                                    <span class="material-symbols-outlined partnership-icon">security</span>
+                                    <div class="partnership-text">
+                                        Regulated industries building compliant applications with proper security practices
                                     </div>
                                 </div>
                                 <div class="partnership-item">
                                     <span class="material-symbols-outlined partnership-icon">integration_instructions</span>
                                     <div class="partnership-text">
-                                        Our people integrate seamlessly, adopting your tools, processes, and communication styles
-                                    </div>
-                                </div>
-                                <div class="partnership-item">
-                                    <span class="material-symbols-outlined partnership-icon">trending_up</span>
-                                    <div class="partnership-text">
-                                        We stay involved, ensuring continuous alignment and addressing any challenges that arise
+                                        Custom business applications replacing inefficient manual processes and spreadsheets
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="content-text">
-                        <h3>Real Expertise, Real Commitment</h3>
+                        <h3>Developers Who've Been There</h3>
                         <p>
-                            Our team members aren't just technically skilled—they're professionals who understand 
-                            that great software comes from great collaboration. They ask the right questions, 
-                            challenge assumptions constructively, and bring fresh perspectives while respecting 
-                            your established practices.
+                            Our people have built the things you're trying to build. They've scaled applications to handle 
+                            serious load, migrated legacy systems to modern architectures, and solved complex production 
+                            problems under pressure. They know which patterns work and which ones create more problems.
                         </p>
                         <p>
-                            Most importantly, they're in it for the long haul. When you work with our people, 
-                            you're not getting contractors watching the clock. You're getting partners invested 
-                            in your success.
+                            Most importantly, they write code the way you want it written. Clean, tested, documented. They 
+                            leave your codebase better than they found it, and your team knows how to maintain everything 
+                            they built.
                         </p>
                     </div>
                 </div>
@@ -1681,10 +1698,10 @@
         <section class="expertise-section">
             <div class="content-container">
                 <div class="section-header">
-                    <h2 class="section-title fade-in">Not Your Average Consultants</h2>
+                    <h2 class="section-title fade-in">Who We Actually Send You</h2>
                     <p class="section-subtitle fade-in">
-                        We're not sending you generic "resources." These are professionals who care about outcomes, 
-                        not just deliverables.
+                        Not consultants who talk about best practices. Not junior developers with impressive LinkedIn 
+                        profiles. Actual senior developers who ship production code and solve real problems.
                     </p>
                 </div>
 
@@ -1692,114 +1709,113 @@
                     <div class="expertise-card fade-in">
                         <div class="expertise-header">
                             <div class="expertise-icon">
-                                <span class="material-symbols-outlined">psychology</span>
+                                <span class="material-symbols-outlined">terminal</span>
                             </div>
-                            <h4>Full-Stack Thinkers</h4>
-                            <p class="expertise-subtitle">(not just developers)</p>
+                            <h4>Backend Engineers</h4>
+                            <p class="expertise-subtitle">Who build systems that actually scale</p>
                         </div>
                         <p>
-                            People who care about the business impact of every line of code. They ask "why" before 
-                            "how" and build solutions that make sense for your users, your team, and your bottom line.
+                            Experienced developers who understand server-side architecture, database optimization, and 
+                            API design. They build robust backend systems using proven technologies and patterns that 
+                            can handle real-world load and complexity.
                         </p>
                     </div>
 
                     <div class="expertise-card fade-in">
                         <div class="expertise-header">
                             <div class="expertise-icon">
-                                <span class="material-symbols-outlined">favorite</span>
+                                <span class="material-symbols-outlined">web</span>
                             </div>
-                            <h4>User Experience Obsessives</h4>
-                            <p class="expertise-subtitle">(not just designers)</p>
+                            <h4>Frontend Engineers</h4>
+                            <p class="expertise-subtitle">Who create interfaces that work</p>
                         </div>
                         <p>
-                            Professionals who lose sleep over a confusing button. They fight for users in every meeting 
-                            and obsess over making complex things feel simple and intuitive.
+                            Developers who focus on building user interfaces that are fast, accessible, and maintainable. 
+                            They understand browser fundamentals, performance optimization, and how to create sustainable 
+                            frontend architectures without unnecessary complexity.
                         </p>
                     </div>
 
                     <div class="expertise-card fade-in">
                         <div class="expertise-header">
                             <div class="expertise-icon">
-                                <span class="material-symbols-outlined">architecture</span>
+                                <span class="material-symbols-outlined">cloud</span>
                             </div>
-                            <h4>Infrastructure Artists</h4>
-                            <p class="expertise-subtitle">(not just ops people)</p>
+                            <h4>DevOps Engineers</h4>
+                            <p class="expertise-subtitle">Who deploy reliably and consistently</p>
                         </div>
                         <p>
-                            Experts who make complex systems beautifully simple. They build infrastructure that just works, 
-                            scales gracefully, and makes your life easier instead of harder.
+                            Engineers who set up deployment pipelines, manage infrastructure, and ensure your applications 
+                            run reliably in production. They focus on automation, monitoring, and sustainable operational 
+                            practices that your team can maintain.
                         </p>
                     </div>
 
                     <div class="expertise-card fade-in">
                         <div class="expertise-header">
                             <div class="expertise-icon">
-                                <span class="material-symbols-outlined">translate</span>
+                                <span class="material-symbols-outlined">smartphone</span>
                             </div>
-                            <h4>Technical Translators</h4>
-                            <p class="expertise-subtitle">(not just managers)</p>
+                            <h4>Mobile Engineers</h4>
+                            <p class="expertise-subtitle">Who build apps that perform well</p>
                         </div>
                         <p>
-                            Leaders who speak fluent human and fluent code. They bridge the gap between business vision 
-                            and technical reality, making sure everyone's on the same page.
+                            Developers experienced in native mobile development who understand platform-specific best 
+                            practices. They build applications that work smoothly on real devices and follow established 
+                            patterns that users expect.
                         </p>
                     </div>
 
                     <div class="expertise-card fade-in">
                         <div class="expertise-header">
                             <div class="expertise-icon">
-                                <span class="material-symbols-outlined">search</span>
+                                <span class="material-symbols-outlined">analytics</span>
                             </div>
-                            <h4>Data Detectives</h4>
-                            <p class="expertise-subtitle">(not just analysts)</p>
+                            <h4>Data Engineers</h4>
+                            <p class="expertise-subtitle">Who make data actually useful</p>
                         </div>
                         <p>
-                            People who find the story your data is trying to tell. They turn numbers into insights, 
-                            insights into action, and make data-driven decisions actually make sense.
+                            Engineers who build data pipelines, optimize database performance, and create reporting 
+                            systems that provide genuine business insights. They understand how to work with messy 
+                            real-world data and turn it into something actionable.
                         </p>
                     </div>
 
                     <div class="expertise-card fade-in">
                         <div class="expertise-header">
                             <div class="expertise-icon">
-                                <span class="material-symbols-outlined">group</span>
+                                <span class="material-symbols-outlined">construction</span>
                             </div>
-                            <h4>Project Psychologists</h4>
-                            <p class="expertise-subtitle">(not just PMs)</p>
+                            <h4>Technical Leaders</h4>
+                            <p class="expertise-subtitle">Who've guided successful projects</p>
                         </div>
                         <p>
-                            Managers who understand that shipping software is really about people. They keep projects 
-                            on track without making anyone miserable and somehow make deadlines feel achievable.
+                            Experienced leads who can architect systems, guide technical decisions, and mentor teams. 
+                            They understand how to balance technical quality with business needs and have successfully 
+                            delivered complex projects from start to finish.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-      
         <!-- CTA Section -->
         <section class="cta-section">
-            <div class="content-container">
-                <div class="cta-content">
-                    <h2>Need Expert Minds on Your Team?</h2>
-                    <p>
-                        Let's talk about how we can help you build momentum without the overhead. 
-                        Our professionals are ready to become genuine partners in your success.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#" class="cta-button" onclick="openContactForm()">
-                            <span class="material-symbols-outlined">diversity_3</span>
-                            Discuss Your Team Needs
-                        </a>
-                        <a href="/resources/partnership-guide" class="cta-button">
-                            <span class="material-symbols-outlined">menu_book</span>
-                            Partnership Guide
-                        </a>
-                        <a href="/case-studies/partnerships" class="cta-button">
-                            <span class="material-symbols-outlined">star</span>
-                            Success Stories
-                        </a>
-                    </div>
+            <div class="cta-content">
+                <h2>Get in Touch</h2>
+                <p>
+                    Let's talk about your project. We'll help you choose the right technologies, 
+                    plan your architecture, and deliver code that exceeds expectations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button" onclick="openContactForm()">
+                        <span class="material-symbols-outlined">send</span>
+                        Contact Us
+                    </a>
+                    <a href="/blog" class="cta-button">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                        Knowledge Base
+                    </a>
                 </div>
             </div>
         </section>

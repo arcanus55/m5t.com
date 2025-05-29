@@ -53,6 +53,33 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: 120px;
+            position: relative;
+        }
+
+        /* Grid texture with fade effect - from home page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Neodigm button overrides */
@@ -273,6 +300,8 @@
         /* Content Sections */
         .content-section {
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .content-section:last-of-type {
@@ -306,7 +335,7 @@
             line-height: 1.6;
         }
 
-        /* Grid Layout */
+        /* Grid Layout - Full width for gamification content */
         .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -315,11 +344,22 @@
             margin-bottom: 30px;
         }
 
+        .content-grid.full-width {
+            grid-template-columns: 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
         .content-grid:nth-child(even) {
             direction: rtl;
         }
 
         .content-grid:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .content-grid.full-width:nth-child(even) {
             direction: ltr;
         }
 
@@ -513,9 +553,12 @@
             z-index: -1;
         }
 
-        .problem-grid {
+        .problem-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 16px;
         }
 
@@ -557,17 +600,17 @@
             display: none;
         }
 
-        /* Applications Panel */
+        /* Applications Panel - Full width styling */
         .applications-panel {
             background: white;
             border-radius: 12px;
-            padding: 40px 32px;
+            padding: 60px 40px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
-            min-height: 320px;
             overflow: visible;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
         }
 
         .applications-panel:hover {
@@ -582,7 +625,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             color: #ffffff;
-            margin-bottom: 24px;
+            margin-bottom: 40px;
             position: relative;
             display: inline-block;
             padding: 8px 24px;
@@ -623,8 +666,10 @@
 
         .applications-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .application-item {
@@ -661,26 +706,31 @@
             transition: color 0.3s ease;
         }
 
-        /* Process Section */
+        /* Process Section - Improved spacing */
         .process-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background: white;
+            position: relative;
+            z-index: 1;
         }
 
         .process-timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
             position: relative;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .process-timeline::before {
             content: '';
             position: absolute;
             top: 30px;
-            left: 10%;
-            right: 10%;
+            left: 8%;
+            right: 8%;
             height: 2px;
             background: var(--m5-border);
             z-index: 0;
@@ -729,36 +779,17 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('/img/m5t_hero-01.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08;
-            z-index: 0;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            margin: 0;
+            width: 100%;
             z-index: 1;
         }
 
         .cta-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         .cta-content h2 {
@@ -771,7 +802,6 @@
         .cta-content p {
             font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
             margin: 0 auto 30px;
             line-height: 1.6;
         }
@@ -899,6 +929,11 @@
 
             .applications-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .content-grid.full-width {
+                gap: 40px;
+                margin-bottom: 40px;
             }
         }
 
@@ -1109,6 +1144,8 @@
             padding: 20px 0;
             background: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 1;
         }
 
         .breadcrumb-container {
@@ -1211,27 +1248,28 @@
         <!-- Hero Section -->
         <section class="delight-hero">
             <div class="delight-hero-content">
-                <h1 class="fade-in">Your Users Are Leaving. Make Them Stay.</h1>
+                <h1 class="fade-in">Building Engaging Digital Experiences</h1>
                 <p class="delight-hero-subtitle fade-in">
-                    We turn passive users into active advocates through strategic gamification. Stop watching engagement 
-                    metrics decline—start building experiences that keep people coming back.
+                    We design gamification systems that naturally encourage user participation and create positive 
+                    engagement patterns. Our approach combines behavioral psychology with thoughtful design to build 
+                    experiences people genuinely enjoy using.
                 </p>
                 <div class="stat-grid fade-in">
                     <div class="stat-item">
-                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">trending_up</span>
-                        <span class="stat-number">Significant Engagement Improvements</span>
+                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">psychology</span>
+                        <span class="stat-number">Behavioral Design Expertise</span>
                     </div>
                     <div class="stat-item">
-                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">person_add</span>
-                        <span class="stat-label">Measurable Customer Acquisition</span>
+                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">build</span>
+                        <span class="stat-label">Custom Implementation</span>
                     </div>
                     <div class="stat-item">
-                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">attach_money</span>
-                        <span class="stat-label">Sustained Revenue Growth</span>
+                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">analytics</span>
+                        <span class="stat-label">Data-Driven Optimization</span>
                     </div>
                     <div class="stat-item">
-                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">group</span>
-                        <span class="stat-label">Reduced User Attrition</span>
+                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">integration_instructions</span>
+                        <span class="stat-label">Platform Integration</span>
                     </div>
                 </div>
             </div>
@@ -1242,64 +1280,86 @@
             <div class="content-container">
                 <div class="content-grid fade-in">
                     <div class="content-text">
-                        <h3>The Engagement Crisis Is Real</h3>
+                        <h3>Our Approach to Digital Engagement</h3>
                         <p>
-                            You've built a great product. Your marketing is on point. But users sign up, poke around for a 
-                            few minutes, and never come back. Sound familiar?
+                            We specialize in creating gamification systems that feel natural and purposeful. Rather than 
+                            adding superficial game elements, we study how people naturally interact with digital products 
+                            and design mechanics that enhance those existing behaviors.
                         </p>
                         <p>
-                            The truth is, attention is the scarcest resource in the digital economy. Without compelling 
-                            reasons to return, even satisfied customers drift away to competitors who understand how to 
-                            keep them engaged.
+                            Our team understands the psychology behind user motivation and applies proven behavioral design 
+                            principles to create experiences that encourage regular use and positive engagement patterns.
                         </p>
                         <p>
-                            That's where gamification comes in—not as a gimmick, but as a proven strategy to solve real 
-                            business problems through behavioral psychology and smart design.
+                            Every system we build is designed around your specific users and business objectives, ensuring 
+                            the mechanics we implement serve both user satisfaction and your organizational goals.
                         </p>
                     </div>
                     <div class="problem-panel fade-in">
-                        <div class="problem-header">Problems We Solve</div>
+                        <div class="problem-header">What We Help With</div>
                         <ul class="problem-list">
                             <li class="problem-item">
                                 <span class="material-symbols-outlined problem-icon">trending_down</span>
                                 <div class="problem-content">
-                                    <h5>High User Churn</h5>
-                                    <p>Users try your product once and never return, killing your CAC:LTV ratio</p>
+                                    <h5>User Engagement Systems</h5>
+                                    <p>Creating meaningful pathways that encourage users to return and explore more features</p>
                                 </div>
                             </li>
                             <li class="problem-item">
                                 <span class="material-symbols-outlined problem-icon">hourglass_empty</span>
                                 <div class="problem-content">
-                                    <h5>Low Feature Adoption</h5>
-                                    <p>Powerful features go unused because users never discover or understand them</p>
+                                    <h5>Feature Discovery Design</h5>
+                                    <p>Guiding users to discover and adopt valuable features through progressive engagement</p>
                                 </div>
                             </li>
                             <li class="problem-item">
                                 <span class="material-symbols-outlined problem-icon">cancel</span>
                                 <div class="problem-content">
-                                    <h5>Poor Trial Conversion</h5>
-                                    <p>Free users don't see enough value to upgrade to paid plans</p>
+                                    <h5>Value Demonstration</h5>
+                                    <p>Helping users understand and experience the full value of your product offerings</p>
                                 </div>
                             </li>
                             <li class="problem-item">
                                 <span class="material-symbols-outlined problem-icon">group_remove</span>
                                 <div class="problem-content">
-                                    <h5>Weak Community</h5>
-                                    <p>No sense of belonging or connection between users and your brand</p>
+                                    <h5>Community Building</h5>
+                                    <p>Fostering connections and shared experiences that create lasting user relationships</p>
                                 </div>
                             </li>
                             <li class="problem-item">
                                 <span class="material-symbols-outlined problem-icon">visibility_off</span>
                                 <div class="problem-content">
-                                    <h5>Limited Virality</h5>
-                                    <p>Users don't share or invite others, forcing expensive acquisition strategies</p>
+                                    <h5>Organic Growth Mechanics</h5>
+                                    <p>Designing systems that naturally encourage users to share and invite others</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="content-grid fade-in">
+
+
+ <div class="content-grid full-width fade-in">
+                    <div class="content-text" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                        <h3>Thoughtful Design Over Quick Fixes</h3>
+                        <p>
+                            We believe effective gamification goes beyond points and badges. Our approach focuses on 
+                            understanding user motivations and creating systems that naturally align with how people 
+                            prefer to interact with digital products.
+                        </p>
+                        <p>
+                            We start by studying your users' goals and behaviors, then design mechanics that make 
+                            achieving those goals more satisfying and clear. Each element we implement serves a specific 
+                            purpose in the overall user experience.
+                        </p>
+                        <p>
+                            The result is engagement that feels organic rather than forced. Users participate because 
+                            the experience is genuinely rewarding, not because they're being manipulated into activity.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-grid full-width fade-in">
                     <div class="applications-panel">
                         <div class="applications-header">Where Gamification Works</div>
                         <div class="applications-grid">
@@ -1337,23 +1397,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-text">
-                        <h3>Beyond Points and Badges</h3>
-                        <p>
-                            Most gamification fails because it's superficial—slapping a leaderboard on a boring experience 
-                            doesn't make it fun. We go deeper, designing systems that tap into core human motivations.
-                        </p>
-                        <p>
-                            We start by understanding your users' jobs-to-be-done, then craft mechanics that make achieving 
-                            those goals more satisfying. Every element—from onboarding flows to reward schedules—is carefully 
-                            calibrated to drive specific behaviors.
-                        </p>
-                        <p>
-                            The result? Users don't just tolerate your product—they actively enjoy using it and invite others 
-                            to join them.
-                        </p>
-                    </div>
                 </div>
+
+               
             </div>
         </section>
 
@@ -1361,9 +1407,9 @@
         <section class="process-section">
             <div class="content-container">
                 <div class="section-header">
-                    <h2 class="section-title fade-in">Our Focused Approach</h2>
+                    <h2 class="section-title fade-in">How We Approach Engagement Design</h2>
                     <p class="section-subtitle fade-in">
-                        We don't build games—we solve engagement problems through proven behavioral mechanics.
+                        We combine behavioral research with practical implementation to create sustainable engagement systems.
                     </p>
                 </div>
 
@@ -1372,36 +1418,36 @@
                         <div class="process-icon">
                             <span class="material-symbols-outlined">psychology</span>
                         </div>
-                        <h4>Behavioral Audit</h4>
-                        <p>Map user journeys, identify drop-off points, and understand motivations</p>
+                        <h4>User Research</h4>
+                        <p>We study how your users currently interact with your product and identify natural engagement patterns</p>
                     </div>
                     <div class="process-step fade-in">
                         <div class="process-icon">
                             <span class="material-symbols-outlined">architecture</span>
                         </div>
-                        <h4>Mechanic Design</h4>
-                        <p>Create systems that align user goals with business objectives</p>
+                        <h4>System Design</h4>
+                        <p>We design mechanics that enhance existing behaviors and create clear pathways for user progression</p>
                     </div>
                     <div class="process-step fade-in">
                         <div class="process-icon">
                             <span class="material-symbols-outlined">science</span>
                         </div>
-                        <h4>Rapid Testing</h4>
-                        <p>Validate concepts with real users before full implementation</p>
+                        <h4>Prototype Testing</h4>
+                        <p>We validate our concepts with real users to ensure the mechanics feel natural and effective</p>
                     </div>
                     <div class="process-step fade-in">
                         <div class="process-icon">
                             <span class="material-symbols-outlined">build</span>
                         </div>
-                        <h4>Integration</h4>
-                        <p>Seamlessly implement into existing platforms and workflows</p>
+                        <h4>Implementation</h4>
+                        <p>We integrate the engagement systems seamlessly into your existing platform and workflows</p>
                     </div>
                     <div class="process-step fade-in">
                         <div class="process-icon">
                             <span class="material-symbols-outlined">analytics</span>
                         </div>
-                        <h4>Optimization</h4>
-                        <p>Monitor metrics and continuously refine for maximum impact</p>
+                        <h4>Refinement</h4>
+                        <p>We monitor user behavior and continuously improve the system based on real usage patterns</p>
                     </div>
                 </div>
             </div>
@@ -1409,23 +1455,21 @@
 
         <!-- CTA Section -->
         <section class="cta-section">
-            <div class="content-container">
-                <div class="cta-content">
-                    <h2>Stop Losing Users. Start Building Advocates.</h2>
-                    <p>
-                        Let's discuss your engagement challenges and design a gamification strategy that drives real 
-                        business results. No gimmicks, no fluff—just proven mechanics that work.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#" class="cta-button" onclick="openContactForm()">
-                            <span class="material-symbols-outlined">sports_esports</span>
-                            Get Your Engagement Audit
-                        </a>
-                        <a href="/case-studies/gamification" class="cta-button">
-                            <span class="material-symbols-outlined">analytics</span>
-                            See Detailed Case Studies
-                        </a>
-                    </div>
+            <div class="cta-content">
+                <h2>Get in Touch</h2>
+                <p>
+                    Let's talk about your project. We'll help you choose the right technologies, 
+                    plan your architecture, and deliver code that exceeds expectations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button" onclick="openContactForm()">
+                        <span class="material-symbols-outlined">send</span>
+                        Contact Us
+                    </a>
+                    <a href="/blog" class="cta-button">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                        Knowledge Base
+                    </a>
                 </div>
             </div>
         </section>

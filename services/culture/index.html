@@ -53,6 +53,33 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: 120px;
+            position: relative;
+        }
+
+        /* Grid texture with fade effect - from home page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Neodigm button overrides */
@@ -268,6 +295,8 @@
         /* Content Sections */
         .content-section {
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .content-section:last-of-type {
@@ -443,8 +472,6 @@
             opacity: 1;
             transform: translateX(0);
         }
-
-
 
         /* Impact Section - Enhanced styling */
         .impact-section {
@@ -635,6 +662,8 @@
         .process-section {
             padding: 60px 0;
             background: white;
+            position: relative;
+            z-index: 1;
         }
 
         .process-philosophy {
@@ -752,36 +781,17 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('/img/m5t_hero-01.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08;
-            z-index: 0;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            margin: 0;
+            width: 100%;
             z-index: 1;
         }
 
         .cta-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         .cta-content h2 {
@@ -794,7 +804,6 @@
         .cta-content p {
             font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
             margin: 0 auto 30px;
             line-height: 1.6;
         }
@@ -926,6 +935,8 @@
             padding: 20px 0;
             background: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 1;
         }
 
         .breadcrumb-container {
@@ -1403,27 +1414,21 @@
 
         <!-- CTA Section -->
         <section class="cta-section">
-            <div class="content-container">
-                <div class="cta-content">
-                    <h2>Ready to Build a Team That Thrives?</h2>
-                    <p>
-                        Let's talk about creating an engineering culture where people want to stay and do their best work. 
-                        Because when you get culture right, everything else gets easier.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#" class="cta-button" onclick="openContactForm()">
-                            <span class="material-symbols-outlined">connect_without_contact</span>
-                            Start the Conversation
-                        </a>
-                        <a href="/resources/culture-guide" class="cta-button">
-                            <span class="material-symbols-outlined">menu_book</span>
-                            Culture Resources
-                        </a>
-                        <a href="/case-studies/culture" class="cta-button">
-                            <span class="material-symbols-outlined">workspace_premium</span>
-                            Success Stories
-                        </a>
-                    </div>
+            <div class="cta-content">
+                <h2>Get in Touch</h2>
+                <p>
+                    Let's talk about your project. We'll help you choose the right technologies, 
+                    plan your architecture, and deliver code that exceeds expectations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button" onclick="openContactForm()">
+                        <span class="material-symbols-outlined">send</span>
+                        Contact Us
+                    </a>
+                    <a href="/blog" class="cta-button">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                        Knowledge Base
+                    </a>
                 </div>
             </div>
         </section>

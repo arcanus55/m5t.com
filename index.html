@@ -649,6 +649,24 @@
                 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
+        /* Mobile Sticky Notes - Hidden on mobile, shown inline */
+        .mobile-sticky-note {
+            display: none; /* Hidden by default */
+            width: 200px;
+            height: 200px;
+            margin: 24px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .mobile-sticky-note img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.1) saturate(1.2);
+        }
+
         /* Rest of the sections remain unchanged */
         .embed-excellence {
             padding: 60px 0 120px 0;
@@ -1105,36 +1123,72 @@
             letter-spacing: 1px;
         }
 
-        .final-cta {
-            background: repeating-linear-gradient(
-                45deg,
-                #f8f8f8,
-                #f8f8f8 10px,
-                #f7f7f7 10px,
-                #f7f7f7 20px
-            );
-            border-top: 1px solid #ddd;
-            padding: 100px 24px;
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
+            color: white;
+            padding: 60px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            width: 100%;
+            z-index: 1;
         }
 
-        .final-cta-content {
-            max-width: 1100px;
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 0 24px;
         }
 
-        .final-cta h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 500;
-            margin-bottom: 24px;
+        .cta-content h2 {
+            font-size: clamp(36px, 5vw, 48px);
+            font-weight: 600;
+            margin-bottom: 20px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
-        .final-cta p {
-            font-size: 1.25rem;
-            color: #444;
-            margin-bottom: 48px;
-            line-height: 1.8;
+        .cta-content p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: white;
+            color: var(--m5-brand);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button .material-symbols-outlined {
+            font-size: 20px;
         }
 
         .footer {
@@ -1339,7 +1393,7 @@
             .l-content-row {
                 grid-template-columns: 1fr;
                 gap: 0;
-                margin-bottom: 80px;
+                margin-bottom: 24px;
                 padding: 0 24px;
             }
 
@@ -1361,6 +1415,16 @@
 
             .l-content-row:nth-child(even) .content-row__panel {
                 order: 2;
+            }
+
+            /* Hide desktop sticky notes on mobile */
+            .sticky-note {
+                display: none !important;
+            }
+
+            /* Show mobile sticky notes on mobile */
+            .mobile-sticky-note {
+                display: block;
             }
 
             .proficiencies-list li {
@@ -1507,6 +1571,22 @@
             .closing-subtitle {
                 font-size: 16px;
                 padding: 0 10px;
+            }
+
+            .cta-section {
+                padding: 40px 0;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .cta-button {
+                width: auto;
+                min-width: 200px;
+                justify-content: center;
             }
         }
 
@@ -1655,6 +1735,9 @@
                         <img src="/img/a_plan.jpg" alt="I need a plan">
                     </div>
                 </div>
+                <div class="mobile-sticky-note">
+                    <img src="/img/a_plan.jpg" alt="I need a plan">
+                </div>
             </div>
 
             <div class="l-content-row">
@@ -1673,6 +1756,9 @@
                     <div class="sticky-note">
                         <img src="/img/code.jpg" alt="I need code">
                     </div>
+                </div>
+                <div class="mobile-sticky-note">
+                    <img src="/img/code.jpg" alt="I need code">
                 </div>
                 <div class="service-content">
                     <h2 class="i-need-tag">I Need Code</h2>
@@ -1722,6 +1808,9 @@
                         <img src="/img/a_quality_culture.jpg" alt="I need a quality culture">
                     </div>
                 </div>
+                <div class="mobile-sticky-note">
+                    <img src="/img/a_quality_culture.jpg" alt="I need a quality culture">
+                </div>
             </div>
 
             <div class="l-content-row">
@@ -1739,6 +1828,9 @@
                     <div class="sticky-note">
                         <img src="/img/great_minds.jpg" alt="I need great minds">
                     </div>
+                </div>
+                <div class="mobile-sticky-note">
+                    <img src="/img/great_minds.jpg" alt="I need great minds">
                 </div>
                 <div class="service-content">
                     <h2 class="i-need-tag">I Need Great Minds</h2>
@@ -1788,6 +1880,9 @@
                         <img src="/img/to_future_proof.jpg" alt="I need to future-proof">
                     </div>
                 </div>
+                <div class="mobile-sticky-note">
+                    <img src="/img/to_future_proof.jpg" alt="I need to future-proof">
+                </div>
             </div>
 
             <div class="l-content-row">
@@ -1805,6 +1900,9 @@
                     <div class="sticky-note">
                         <img src="/img/to_delight.jpg" alt="I need to delight">
                     </div>
+                </div>
+                <div class="mobile-sticky-note">
+                    <img src="/img/to_delight.jpg" alt="I need to delight">
                 </div>
                 <div class="service-content">
                     <h2 class="i-need-tag">I Need to Delight</h2>
@@ -2048,23 +2146,23 @@ Software fails in spectacular ways. We've seen every one and fixed them all. Fiv
             </div>
         </section>
 
-        <section class="final-cta" id="contact">
-            <div class="final-cta-content">
-                <h2>Ready to Build, Refactor, or Scale?</h2>
+        <section class="cta-section" id="contact">
+            <div class="cta-content">
+                <h2>Get in Touch</h2>
                 <p>
-                    If you're ready to move faster, reduce risk, and launch with confidence, we're ready to help. 
-                    Let's talk about your project, your goals, and how we can partner to build software that works.
+                    Let's talk about your project. We'll help you choose the right technologies, 
+                    plan your architecture, and deliver code that exceeds expectations.
                 </p>
-                <nav>
-                    <a tabindex="0" aria-haspopup="true"
-                       data-n55-enchanted-cta data-n55-enchanted-cta-dont-touch="false" 
-                       data-n55-enchanted-cta-shape-off="true" data-n55-enchanted-cta-hover-an="true"
-                       data-n55-enchanted-cta-size="large" data-n55-enchanted-cta-ambient="emit"
-                       onclick="contact_form_iframe_sfdc.openCTA()"
-                       data-n55-theme="danger">
-                        <span>Let's Talk</span><span>Contact</span>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button" onclick="openContactForm()">
+                        <span class="material-symbols-outlined">send</span>
+                        Contact Us
                     </a>
-                </nav>
+                    <a href="/blog" class="cta-button">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                        Knowledge Base
+                    </a>
+                </div>
             </div>
         </section>
     </main>

@@ -53,6 +53,33 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: 120px;
+            position: relative;
+        }
+
+        /* Grid texture with fade effect - from home page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Neodigm button overrides */
@@ -272,6 +299,8 @@
         /* Content Sections */
         .content-section {
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .content-section:last-of-type {
@@ -452,6 +481,8 @@
         .warning-section {
             background: #f8f8f8;
             padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .warning-cards {
@@ -601,6 +632,8 @@
         .approach-section {
             padding: 60px 0;
             background: white;
+            position: relative;
+            z-index: 1;
         }
 
         /* Updated approach visual to align with site colors */
@@ -743,36 +776,17 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('/img/m5t_hero-01.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08;
-            z-index: 0;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            margin: 0;
+            width: 100%;
             z-index: 1;
         }
 
         .cta-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         .cta-content h2 {
@@ -785,7 +799,6 @@
         .cta-content p {
             font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
             margin: 0 auto 30px;
             line-height: 1.6;
         }
@@ -886,6 +899,19 @@
             margin: 0 auto;
             padding-left: 24px;
             padding-right: 24px;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 4px;
+        }
+
+        .footer-bottom a {
+            color: var(--m5-brand);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
         }
 
         /* Animations */
@@ -1139,6 +1165,8 @@
             padding: 20px 0;
             background: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 1;
         }
 
         .breadcrumb-container {
@@ -1241,24 +1269,24 @@
         <!-- Hero Section -->
         <section class="future-hero">
             <div class="future-hero-content">
-                <h1 class="fade-in">Software Ages Like Milk, Not Wine</h1>
+                <h1 class="fade-in">Building Software That Scales With Your Ambitions</h1>
                 <p class="future-hero-subtitle fade-in">
-                    Technical debt isn't just a metaphor - it's a daily tax on your team's morale and momentum. 
-                    We help you pay it down strategically, so your developers can stop fighting fires and start 
-                    building features that matter.
+                    We specialize in creating resilient systems and sustainable development practices that grow with your business. 
+                    Our approach focuses on architectural clarity, comprehensive testing, and developer productivity to ensure 
+                    your technology foundation supports long-term success.
                 </p>
                 <div class="impact-points fade-in">
                     <div class="impact-point">
-                        <span class="material-symbols-outlined impact-icon">trending_down</span>
-                        <span class="impact-text">Reduced Development Friction</span>
+                        <span class="material-symbols-outlined impact-icon">architecture</span>
+                        <span class="impact-text">Sustainable Architecture</span>
                     </div>
                     <div class="impact-point">
-                        <span class="material-symbols-outlined impact-icon">mood</span>
-                        <span class="impact-text">Happier Engineering Teams</span>
+                        <span class="material-symbols-outlined impact-icon">speed</span>
+                        <span class="impact-text">Enhanced Team Velocity</span>
                     </div>
                     <div class="impact-point">
-                        <span class="material-symbols-outlined impact-icon">rocket_launch</span>
-                        <span class="impact-text">Faster Feature Delivery</span>
+                        <span class="material-symbols-outlined impact-icon">shield</span>
+                        <span class="impact-text">Production Reliability</span>
                     </div>
                 </div>
             </div>
@@ -1269,98 +1297,99 @@
             <div class="content-container">
                 <div class="content-grid fade-in">
                     <div class="content-text">
-                        <h3>The Hidden Tax on Your Team</h3>
+                        <h3>Strategic Technical Improvement</h3>
                         <p>
-                            Every developer knows the feeling: that sinking sensation when they open a file and see 
-                            code that makes them question their career choices. The comments that say "TODO: fix this 
-                            properly later." The workarounds built on workarounds.
+                            Great software systems are built through deliberate, strategic choices about architecture, 
+                            testing, and code organization. We help teams establish patterns and practices that make 
+                            development more predictable and enjoyable.
                         </p>
                         <p>
-                            Technical debt isn't just about code quality - it's about human cost. It's the talented 
-                            developer who leaves because they're tired of fighting the system. It's the simple feature 
-                            that takes weeks because touching anything might break everything.
+                            Our experience spans diverse technology stacks and business contexts, allowing us to identify 
+                            the improvements that will deliver the most value for your specific situation. We focus on 
+                            changes that compound over time, creating momentum rather than just solving immediate problems.
                         </p>
                     </div>
                     <div class="proficiencies-panel fade-in">
-                        <div class="proficiencies-header">The Real Cost of Fragile Systems</div>
+                        <div class="proficiencies-header">Our Core Capabilities</div>
                         <ul class="proficiencies-list">
-                            <li>Developers spend more time working around problems than solving them</li>
-                            <li>Simple changes become multi-day adventures in regression testing</li>
-                            <li>Fear of deployment leads to bigger, riskier releases</li>
-                            <li>Your best people leave for companies where they can actually ship code</li>
-                            <li>Innovation stalls as teams focus on keeping the lights on</li>
+                            <li>System architecture design and modernization strategies</li>
+                            <li>Test automation frameworks and quality assurance processes</li>
+                            <li>Development workflow optimization and deployment pipelines</li>
+                            <li>Code organization principles and refactoring methodologies</li>
+                            <li>Performance monitoring and observability implementation</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="content-grid fade-in">
                     <div class="proficiencies-panel">
-                        <div class="proficiencies-header">Building Systems That Support Your People</div>
+                        <div class="proficiencies-header">What Sustainable Systems Enable</div>
                         <ul class="proficiencies-list">
-                            <li>When your test coverage is solid and your architecture is clean, developers can make changes without fear</li>
-                            <li>Teams maintain consistent delivery speed instead of the boom-bust cycle of technical debt accumulation</li>
-                            <li>When systems are stable, developers can focus on solving business problems instead of fighting infrastructure</li>
-                            <li>New team members can contribute quickly when codebases are well-organized and patterns are consistent</li>
+                            <li>Teams can add features confidently without unexpected side effects</li>
+                            <li>New developers become productive quickly with clear patterns and documentation</li>
+                            <li>Deployments happen regularly with minimal coordination and risk</li>
+                            <li>System performance remains consistent as usage and features grow</li>
+                            <li>Business requirements can be implemented efficiently without technical constraints</li>
                         </ul>
                     </div>
                     <div class="content-text">
-                        <h3>Invest in Your Future Self</h3>
+                        <h3>Investment in Long-Term Productivity</h3>
                         <p>
-                            Every shortcut taken today is a debt your future team will pay - with interest. But the 
-                            opposite is also true: every improvement you make compounds over time.
+                            Software systems that support rapid, confident development don't happen by accident. They 
+                            require intentional design choices, consistent practices, and ongoing attention to code quality 
+                            and system health.
                         </p>
                         <p>
-                            We help you break the cycle. Not with grand rewrites that never finish, but with 
-                            strategic improvements that deliver value immediately while setting you up for long-term 
-                            success. Because resilient systems aren't just about uptime - they're about creating an 
-                            environment where your team can do their best work.
+                            We work with your team to establish these foundations through incremental improvements that 
+                            deliver immediate value while building toward your long-term vision. The result is a development 
+                            environment where your team can focus on solving business problems rather than managing technical complexity.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Warning Signs Section -->
+        <!-- Opportunity Areas Section -->
         <section class="warning-section">
             <div class="content-container">
                 <div class="section-header">
-                    <h2 class="section-title fade-in">Warning Signs Your System Needs Help</h2>
+                    <h2 class="section-title fade-in">Common Opportunities for Improvement</h2>
                     <p class="section-subtitle fade-in">
-                        These symptoms indicate technical debt is actively harming your team's effectiveness.
+                        These patterns indicate areas where strategic technical investment can significantly improve team effectiveness.
                     </p>
                 </div>
 
                 <div class="warning-cards">
                     <div class="warning-card fade-in">
                         <div class="warning-icon">
-                            <span class="material-symbols-outlined">dangerous</span>
+                            <span class="material-symbols-outlined">schedule</span>
                         </div>
-                        <h4>Fear of Deployment</h4>
+                        <h4>Development Velocity</h4>
                         <p>
-                            If your team dreads releases and deployments happen at odd hours "just in case," 
-                            your system lacks the safety nets that enable confident delivery.
+                            When feature development takes longer than expected or simple changes require extensive 
+                            coordination, the system architecture may benefit from strategic refactoring.
                         </p>
                     </div>
 
                     <div class="warning-card fade-in">
                         <div class="warning-icon">
-                            <span class="material-symbols-outlined">hourglass_full</span>
+                            <span class="material-symbols-outlined">preview</span>
                         </div>
-                        <h4>Everything Takes Forever</h4>
+                        <h4>Testing Confidence</h4>
                         <p>
-                            Simple features require weeks of work because changing one thing risks breaking 
-                            ten others. Your architecture is fighting you.
+                            If your team hesitates to make changes or relies heavily on manual testing, implementing 
+                            comprehensive automated testing can unlock significant productivity gains.
                         </p>
                     </div>
 
                     <div class="warning-card fade-in">
                         <div class="warning-icon">
-                            <span class="material-symbols-outlined">person_remove</span>
+                            <span class="material-symbols-outlined">group</span>
                         </div>
-                        <h4>Developer Turnover</h4>
+                        <h4>Team Onboarding</h4>
                         <p>
-                            Good developers don't leave companies—they leave codebases. If your team is 
-                            constantly churning, the code might be the problem.
+                            When new developers take weeks to become productive, improving code organization, 
+                            documentation, and development environment setup can accelerate contribution.
                         </p>
                     </div>
 
@@ -1368,32 +1397,32 @@
                         <div class="warning-icon">
                             <span class="material-symbols-outlined">bug_report</span>
                         </div>
-                        <h4>Bug Whack-a-Mole</h4>
+                        <h4>Production Issues</h4>
                         <p>
-                            Fixing one bug creates two more. Your team spends more time on maintenance than 
-                            innovation because the foundation is unstable.
+                            Frequent production problems or difficulty diagnosing issues suggest opportunities to 
+                            improve monitoring, error handling, and system observability.
                         </p>
                     </div>
 
                     <div class="warning-card fade-in">
                         <div class="warning-icon">
-                            <span class="material-symbols-outlined">block</span>
+                            <span class="material-symbols-outlined">rocket_launch</span>
                         </div>
-                        <h4>"We Can't Touch That"</h4>
+                        <h4>Deployment Process</h4>
                         <p>
-                            Parts of your codebase are off-limits because no one understands them anymore. 
-                            Knowledge silos have become technical barriers.
+                            Complex or risky deployment procedures limit how quickly you can respond to business needs. 
+                            Streamlined pipelines enable more frequent, confident releases.
                         </p>
                     </div>
 
                     <div class="warning-card fade-in">
                         <div class="warning-icon">
-                            <span class="material-symbols-outlined">workspace_premium</span>
+                            <span class="material-symbols-outlined">trending_up</span>
                         </div>
-                        <h4>Hero Culture</h4>
+                        <h4>Performance Scaling</h4>
                         <p>
-                            You rely on a few "heroes" who understand the system. When they're unavailable, 
-                            progress stops. This isn't sustainable.
+                            If system performance degrades unpredictably with growth, implementing proper monitoring 
+                            and architectural improvements can ensure consistent user experience.
                         </p>
                     </div>
                 </div>
@@ -1404,49 +1433,49 @@
         <section class="approach-section">
             <div class="content-container">
                 <div class="section-header">
-                    <h2 class="section-title fade-in">A Human-Centered Approach to Technical Excellence</h2>
+                    <h2 class="section-title fade-in">Our Collaborative Approach</h2>
                 </div>
 
                 <div class="approach-cards">
                     <div class="approach-card fade-in">
                         <div class="approach-number">1</div>
-                        <h4>Listen to Your Team</h4>
+                        <h4>Assessment and Planning</h4>
                         <p>
-                            Your developers know where the pain points are. We start by understanding their 
-                            daily frustrations and what's blocking them from being productive.
+                            We begin by understanding your current system, team dynamics, and business goals. This includes 
+                            code review, architecture analysis, and conversations with your developers about their daily experience.
                         </p>
                         <ul class="approach-benefits">
-                            <li class="approach-benefit">Identify highest-impact improvements</li>
-                            <li class="approach-benefit">Build buy-in through participation</li>
-                            <li class="approach-benefit">Focus on developer experience</li>
+                            <li class="approach-benefit">Comprehensive system evaluation</li>
+                            <li class="approach-benefit">Developer experience assessment</li>
+                            <li class="approach-benefit">Priority-based improvement roadmap</li>
                         </ul>
                     </div>
 
                     <div class="approach-card fade-in">
                         <div class="approach-number">2</div>
-                        <h4>Incremental Progress</h4>
+                        <h4>Incremental Implementation</h4>
                         <p>
-                            No big-bang rewrites. We make strategic improvements that deliver value immediately 
-                            while moving toward your long-term vision.
+                            We implement improvements in carefully planned phases, ensuring each change delivers immediate 
+                            value while building toward larger architectural goals. Business features continue shipping throughout.
                         </p>
                         <ul class="approach-benefits">
-                            <li class="approach-benefit">Ship improvements continuously</li>
-                            <li class="approach-benefit">Maintain business momentum</li>
-                            <li class="approach-benefit">Learn and adjust as we go</li>
+                            <li class="approach-benefit">Continuous value delivery</li>
+                            <li class="approach-benefit">Minimal business disruption</li>
+                            <li class="approach-benefit">Iterative learning and adjustment</li>
                         </ul>
                     </div>
 
                     <div class="approach-card fade-in">
                         <div class="approach-number">3</div>
-                        <h4>Knowledge Transfer</h4>
+                        <h4>Knowledge Transfer and Documentation</h4>
                         <p>
-                            We don't just fix problems—we ensure your team understands the solutions and can 
-                            maintain them independently.
+                            Throughout the engagement, we ensure your team understands the rationale behind changes and 
+                            can maintain the improvements independently. We document patterns, decisions, and processes.
                         </p>
                         <ul class="approach-benefits">
-                            <li class="approach-benefit">Document as we improve</li>
-                            <li class="approach-benefit">Pair with your developers</li>
-                            <li class="approach-benefit">Build lasting capabilities</li>
+                            <li class="approach-benefit">Comprehensive documentation</li>
+                            <li class="approach-benefit">Developer training and mentoring</li>
+                            <li class="approach-benefit">Sustainable improvement practices</li>
                         </ul>
                     </div>
                 </div>
@@ -1455,27 +1484,21 @@
 
         <!-- CTA Section -->
         <section class="cta-section">
-            <div class="content-container">
-                <div class="cta-content">
-                    <h2>Ready to Stop Fighting Fires?</h2>
-                    <p>
-                        Let's talk about building systems that support your team instead of slowing them down. 
-                        Your developers—and your future self—will thank you.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#" class="cta-button" onclick="openContactForm()">
-                            <span class="material-symbols-outlined">build</span>
-                            Start Building Resilience
-                        </a>
-                        <a href="/resources/tech-debt-guide" class="cta-button">
-                            <span class="material-symbols-outlined">library_books</span>
-                            Tech Debt Guide
-                        </a>
-                        <a href="/case-studies/resilience" class="cta-button">
-                            <span class="material-symbols-outlined">auto_awesome</span>
-                            Transformation Stories
-                        </a>
-                    </div>
+            <div class="cta-content">
+                <h2>Get in Touch</h2>
+                <p>
+                    Let's talk about your project. We'll help you choose the right technologies, 
+                    plan your architecture, and deliver code that exceeds expectations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button" onclick="openContactForm()">
+                        <span class="material-symbols-outlined">send</span>
+                        Contact Us
+                    </a>
+                    <a href="/blog" class="cta-button">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                        Knowledge Base
+                    </a>
                 </div>
             </div>
         </section>
