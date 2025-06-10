@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css">
     <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
     
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:wght@100;300;400;700|Roboto+Slab:wght@300;400|Roboto+Mono:wght@300;400|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,0|Permanent+Marker">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:wght@200;300;400;500;600;700|Roboto+Condensed:wght@100;300;400;700|Roboto+Slab:wght@300;400|Roboto+Mono:wght@300;400|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,0|Permanent+Marker">
 
     <style>
         :root {
@@ -279,7 +279,7 @@
             display: none;
         }
 
-        /* Hero Section */
+        /* Hero Section - Updated to match Marketing style while keeping functionality */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -287,9 +287,10 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: var(--m5-dark);
+            background: #0A0A0A;
         }
 
+        /* Keep existing background with adjusted opacity */
         .hero-background {
             position: absolute;
             top: -10%;
@@ -300,8 +301,33 @@
             background-size: cover;
             background-position: center;
             will-change: transform;
+            opacity: 0.4;
+            z-index: 1;
         }
 
+        /* Add Marketing site's animated gradient overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(221, 65, 36, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(123, 196, 196, 0.15) 0%, transparent 40%);
+            animation: heroGradientShift 15s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes heroGradientShift {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            33% { transform: scale(1.1) rotate(120deg); }
+            66% { transform: scale(0.9) rotate(240deg); }
+        }
+
+        /* Update overlay for better contrast */
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -310,47 +336,55 @@
             height: 100%;
             background: radial-gradient(
                 ellipse at center,
-                rgba(24, 24, 24, 0.2) 0%,
-                rgba(24, 24, 24, 0.9) 100%
+                rgba(10, 10, 10, 0.4) 0%,
+                rgba(10, 10, 10, 0.85) 100%
             );
-        }
-
-        .hero-content {
-            text-align: center;
             z-index: 2;
-            max-width: 900px;
-            padding: 0 24px;
-            color: white;
         }
 
+        /* Hero content - left aligned like Marketing */
+        .hero-content {
+            text-align: left;
+            z-index: 3;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 48px;
+            color: white;
+            margin: 0 auto;
+        }
+
+        /* Update title with Inter font and Marketing style */
         .hero-title {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: clamp(48px, 8vw, 96px);
-            font-weight: 300;
-            line-height: 1.2;
+            font-weight: 200;
+            line-height: 1.1;
             margin-bottom: 24px;
-            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: -0.03em;
         }
 
         .hero-title-line1, .hero-title-line2 {
             display: block;
             overflow: hidden;
-            height: 1.2em;
             position: relative;
         }
 
         .hero-title-line1 {
             color: white;
-            font-weight: 300;
+            font-weight: 200;
         }
 
         .hero-title-line2 {
-            color: var(--m5-brand);
-            font-weight: 700;
+            color: white;
+            font-weight: 200;
         }
 
         #heroVerb {
-            color: var(--m5-brand);
-            font-weight: 700;
+            font-weight: 400;
+            background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .typewriter {
@@ -388,12 +422,15 @@
             50%, 100% { opacity: 0; }
         }
 
+        /* Update subtitle */
         .hero-subtitle {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: clamp(20px, 3vw, 28px);
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 48px;
             opacity: 0;
             animation: fadeIn 0.8s ease 0.2s forwards;
+            font-weight: 300;
         }
 
         .hero-cta {
@@ -434,6 +471,32 @@
         .hero-button-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Floating particles from Marketing site */
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+            z-index: 2;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 25s; }
+        .particle:nth-child(2) { left: 30%; animation-delay: 5s; animation-duration: 20s; }
+        .particle:nth-child(3) { left: 50%; animation-delay: 10s; animation-duration: 30s; }
+        .particle:nth-child(4) { left: 70%; animation-delay: 15s; animation-duration: 22s; }
+        .particle:nth-child(5) { left: 90%; animation-delay: 20s; animation-duration: 28s; }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) translateX(0);
+            }
+            to {
+                transform: translateY(-100px) translateX(100px);
+            }
         }
 
         /* Services Section */
@@ -1367,6 +1430,28 @@
                 padding-top: 70px;
             }
 
+            /* Hero mobile adjustments */
+            .hero-content {
+                text-align: center;
+                padding: 0 24px;
+            }
+
+            .hero-title {
+                font-size: clamp(36px, 10vw, 64px);
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .hero-button {
+                width: 100%;
+                text-align: center;
+            }
+
             /* Show nav logo on mobile, hide top bar */
             .top-bar {
                 display: none;
@@ -1475,22 +1560,6 @@
             .nav-logo span {
                 font-size: 18px;
                 padding: 2px 8px;
-            }
-
-            .hero-title {
-                font-size: clamp(36px, 10vw, 64px);
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .hero-button {
-                width: 100%;
-                text-align: center;
             }
 
             .services {
@@ -1789,6 +1858,13 @@
 
     <main id="main">
         <section class="hero">
+            <!-- Floating particles -->
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            
             <div class="hero-background" id="heroBackground"></div>
             <div class="hero-overlay"></div>
             
