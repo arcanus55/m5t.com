@@ -204,10 +204,34 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 12px;
             list-style: none;
         }
 
+        /* I Need prompt */
+        .nav-prompt {
+            color: var(--m5-brand);
+            font-size: 16px;
+            font-weight: 600;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-prompt::after {
+            content: '→';
+            font-size: 20px;
+            animation: pointRight 2s ease-in-out infinite;
+        }
+
+        @keyframes pointRight {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+
+        /* Updated nav menu with glassmorphic style from Marketing site */
         .nav-menu a {
             color: var(--m5-text);
             text-decoration: none;
@@ -215,12 +239,36 @@
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: all 0.2s;
-            padding: 8px 16px;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
         }
 
         .nav-menu a:hover {
             color: var(--m5-brand);
+            background: rgba(221, 65, 36, 0.05);
+            border-color: rgba(221, 65, 36, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(221, 65, 36, 0.1);
+        }
+
+        /* Special styling for Contact CTA */
+        .nav-menu a[onclick*="openContactForm"] {
+            background: rgba(221, 65, 36, 0.1) !important;
+            border-color: rgba(221, 65, 36, 0.2) !important;
+            color: var(--m5-brand) !important;
+        }
+
+        .nav-menu a[onclick*="openContactForm"]:hover {
+            background: var(--m5-brand) !important;
+            border-color: var(--m5-brand) !important;
+            color: white !important;
+            box-shadow: 0 4px 16px rgba(221, 65, 36, 0.3) !important;
         }
 
         .mobile-menu-toggle {
@@ -1234,12 +1282,13 @@
                 <a href="/" class="nav-logo">Mach Five <span>Tech</span></a>
                 
                 <ul class="nav-menu">
-                    <li><a href="/services/plan">Plan</a></li>
+                    <li class="nav-prompt">I Need...</li>
+                    <li><a href="/services/plan">A Plan</a></li>
                     <li><a href="/services/code">Code</a></li>
                     <li><a href="/services/culture">Culture</a></li>
                     <li><a href="/services/minds">Minds</a></li>
-                    <li><a href="/services/future-proof">Future-Proof</a></li>
-                    <li><a href="/services/delight">Delight</a></li>
+                    <li><a href="/services/future-proof">To Future-Proof</a></li>
+                    <li><a href="/services/delight">To Delight</a></li>
                     <li><a href="#contact" onclick="openContactForm()">Contact</a></li>
                 </ul>
 
