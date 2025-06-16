@@ -586,84 +586,124 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
         }
 
-        /* Proficiencies Header */
+        /* Heavy Wear Black Sticky Tab */
         .proficiencies-header {
-            font-family: 'Roboto Condensed', sans-serif;
+            position: absolute;
+            top: -5px;
+            left: -20px;
+            transform: rotate(-3deg);
+        }
+
+        .sticky-tab-scuffed {
+            padding: 8px 25px 8px 40px;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #ffffff;
-            margin-bottom: 36px;
+            letter-spacing: 2px;
             position: relative;
-            display: inline-block;
-            padding: 8px 24px;
-            transform: rotate(-2deg);
-        }
-
-        /* Scotch Tape Effect */
-        .proficiencies-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #DD4124;
-            z-index: -1;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            
+            /* Heavy wear pattern */
+            background: 
+                /* Bigger scratches */
+                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
+                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+                /* Multiple scuff marks */
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
+                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
+                /* Faded edges */
+                radial-gradient(ellipse at center, #1f1f1f 0%, #1a1a1a 100%);
+            
             box-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        /* Tape texture effect */
-        .proficiencies-header::after {
+        /* Left edge gradient for depth */
+        .sticky-tab-scuffed::before {
             content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.15) 0%, transparent 100%);
+        }
+
+        /* Arrow end */
+        .sticky-tab-scuffed::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 10px;
+            border-color: transparent transparent transparent #1d1d1d;
+            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Paper texture overlay */
+        .texture-noise {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.1) 2px,
-                rgba(255, 255, 255, 0.1) 4px
-            );
-            z-index: -1;
+            opacity: 0.15;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.02) 2px,
+                    rgba(255,255,255,0.02) 3px
+                );
+            mix-blend-mode: overlay;
+            pointer-events: none;
         }
 
-        /* Different angles for variety */
+        /* Different rotation angles for variety across panels */
         .l-content-row:nth-child(1) .proficiencies-header {
             transform: rotate(-3deg);
         }
 
         .l-content-row:nth-child(2) .proficiencies-header {
             transform: rotate(2deg);
+            top: 0px;
         }
 
         .l-content-row:nth-child(3) .proficiencies-header {
-            transform: rotate(-1deg);
+            transform: rotate(-2deg);
+            top: -10px;
         }
 
         .l-content-row:nth-child(4) .proficiencies-header {
             transform: rotate(3deg);
+            left: -15px;
         }
 
         .l-content-row:nth-child(5) .proficiencies-header {
-            transform: rotate(-2deg);
+            transform: rotate(-4deg);
+            top: -2px;
         }
 
         .l-content-row:nth-child(6) .proficiencies-header {
             transform: rotate(1deg);
+            left: -22px;
         }
 
         /* Proficiencies List */
         .proficiencies-list {
             list-style: none;
             padding: 0;
+            padding-top: 72px;
             margin: 0;
         }
 
@@ -1608,6 +1648,10 @@
                 margin-bottom: 12px;
             }
 
+            .proficiencies-list {
+                padding-top: 60px;
+            }
+
             .service-content nav {
                 text-align: center;
             }
@@ -1906,7 +1950,12 @@
                     </nav>
                 </div>
                 <div class="content-row__panel">
-                    <div class="proficiencies-header">Proficiencies</div>
+                    <div class="proficiencies-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Proficiencies
+                        </div>
+                    </div>
                     <ul class="proficiencies-list">
                         <li>Codebase Architecture</li>
                         <li>Engineering Leadership</li>
@@ -1926,7 +1975,12 @@
 
             <div class="l-content-row">
                 <div class="content-row__panel">
-                    <div class="proficiencies-header">Proficiencies</div>
+                    <div class="proficiencies-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Proficiencies
+                        </div>
+                    </div>
                     <ul class="proficiencies-list">
                         <li>Accessibility Auditing</li>
                         <li>Application Development</li>
@@ -1978,7 +2032,12 @@
                     </nav>
                 </div>
                 <div class="content-row__panel">
-                    <div class="proficiencies-header">Proficiencies</div>
+                    <div class="proficiencies-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Proficiencies
+                        </div>
+                    </div>
                     <ul class="proficiencies-list">
                         <li>Code Style and Hygiene</li>
                         <li>Developer Mentoring and Training</li>
@@ -1999,7 +2058,12 @@
 
             <div class="l-content-row">
                 <div class="content-row__panel">
-                    <div class="proficiencies-header">Proficiencies</div>
+                    <div class="proficiencies-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Proficiencies
+                        </div>
+                    </div>
                     <ul class="proficiencies-list">
                         <li>Application Development</li>
                         <li>Codebase Architecture</li>
@@ -2050,7 +2114,12 @@
                     </nav>
                 </div>
                 <div class="content-row__panel">
-                    <div class="proficiencies-header">Proficiencies</div>
+                    <div class="proficiencies-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Proficiencies
+                        </div>
+                    </div>
                     <ul class="proficiencies-list">
                         <li>Automated API and end-to-end Testing</li>
                         <li>Codebase Architecture</li>
@@ -2071,7 +2140,12 @@
 
             <div class="l-content-row">
                 <div class="content-row__panel">
-                    <div class="proficiencies-header">Proficiencies</div>
+                    <div class="proficiencies-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Proficiencies
+                        </div>
+                    </div>
                     <ul class="proficiencies-list">
                         <li>Casino Loyalty</li>
                         <li>Co-op Leaderboards</li>
