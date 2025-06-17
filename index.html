@@ -1140,95 +1140,110 @@
             margin-top: 20px;
         }
 
+        /* UPDATED CLOSING VALUE SECTION */
         .closing-value {
-            padding: 100px 0 80px 0;
+            padding: 120px 0;
             position: relative;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #0A0A0A 0%, #1a1a1a 100%);
             overflow: hidden;
         }
 
         .closing-value::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(
-                ellipse at 30% 70%, 
-                rgba(221, 65, 36, 0.08) 0%, 
-                transparent 50%
-            );
-            animation: gentleFloat 20s ease-in-out infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(221, 65, 36, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 50%, rgba(123, 196, 196, 0.05) 0%, transparent 40%);
             z-index: 0;
-        }
-
-        @keyframes gentleFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-20px, -30px) scale(1.1); }
         }
 
         .closing-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 48px;
             position: relative;
             z-index: 1;
         }
 
-        .closing-content {
+        .contrast-headline {
             text-align: center;
             margin-bottom: 80px;
         }
 
-        .closing-headline {
+        .contrast-word {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: clamp(36px, 5vw, 64px);
-            font-weight: 300;
-            line-height: 1.2;
-            color: white;
-            margin-bottom: 32px;
-        }
-
-        .closing-line1 {
             display: block;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 16px;
+            line-height: 0.85;
+            position: relative;
         }
 
-        .closing-line2 {
-            display: block;
+        .contrast-talking {
+            font-size: clamp(80px, 12vw, 180px);
+            font-weight: 100;
+            letter-spacing: -0.02em;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            text-stroke: 1px rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInSoft 0.8s ease forwards;
         }
 
-        .closing-contrast {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: line-through;
-            text-decoration-color: var(--m5-brand);
-            text-decoration-thickness: 3px;
+        @keyframes fadeInSoft {
+            to {
+                opacity: 1;
+            }
         }
 
-        .closing-and {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.8em;
-            margin: 0 20px;
+        .contrast-doing {
+            font-size: clamp(100px, 15vw, 220px);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 80px rgba(221, 65, 36, 0.5);
+            transform: translateY(-40px);
+            opacity: 0;
+            animation: dropInBold 0.6s ease 0.3s forwards;
         }
 
-        .closing-action {
-            color: var(--m5-brand);
-            font-weight: 700;
+        @keyframes dropInBold {
+            to {
+                opacity: 1;
+                transform: translateY(-40px) scale(1);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(-60px) scale(0.95);
+            }
         }
 
         .closing-subtitle {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
             font-size: clamp(18px, 2.5vw, 24px);
             line-height: 1.6;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 80px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
         }
 
-        .closing-visual {
-            display: flex;
-            justify-content: center;
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
         }
 
         .experience-metrics {
@@ -1236,7 +1251,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 60px;
             max-width: 900px;
-            width: 100%;
+            margin: 0 auto;
         }
 
         .metric-item {
@@ -1246,16 +1261,9 @@
             animation: fadeInUp 0.8s ease forwards;
         }
 
-        .metric-item:nth-child(1) { animation-delay: 0.2s; }
-        .metric-item:nth-child(2) { animation-delay: 0.4s; }
-        .metric-item:nth-child(3) { animation-delay: 0.6s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .metric-item:nth-child(1) { animation-delay: 0.8s; }
+        .metric-item:nth-child(2) { animation-delay: 1s; }
+        .metric-item:nth-child(3) { animation-delay: 1.2s; }
 
         .metric-number {
             font-family: 'Roboto Condensed', sans-serif;
@@ -1268,9 +1276,9 @@
         }
 
         .metric-label {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.6);
             font-size: clamp(14px, 1.5vw, 18px);
-            font-weight: 500;
+            font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -1726,18 +1734,44 @@
                 margin-bottom: 24px;
             }
 
+            /* Updated mobile styles for new closing section */
             .closing-value {
-                padding: 80px 0 60px 0;
+                padding: 80px 0;
             }
             
-            .closing-content {
+            .closing-container {
+                padding: 0 24px;
+            }
+            
+            .contrast-headline {
                 margin-bottom: 60px;
             }
             
-            .closing-and {
-                display: block;
-                margin: 8px 0;
-                font-size: 1em;
+            .contrast-talking {
+                font-size: clamp(60px, 15vw, 100px);
+                margin-bottom: 10px;
+            }
+            
+            .contrast-doing {
+                font-size: clamp(70px, 18vw, 120px);
+                transform: translateY(-20px);
+            }
+            
+            @keyframes dropInBold {
+                to {
+                    opacity: 1;
+                    transform: translateY(-20px) scale(1);
+                }
+                from {
+                    opacity: 0;
+                    transform: translateY(-40px) scale(0.95);
+                }
+            }
+            
+            .closing-subtitle {
+                font-size: 16px;
+                padding: 0 10px;
+                margin-bottom: 60px;
             }
             
             .experience-metrics {
@@ -1773,15 +1807,6 @@
 
             .outcome-item {
                 font-size: 15px;
-            }
-
-            .closing-headline {
-                font-size: 32px;
-            }
-            
-            .closing-subtitle {
-                font-size: 16px;
-                padding: 0 10px;
             }
 
             .cta-section {
@@ -2363,33 +2388,27 @@
 
         <section class="closing-value" id="closing-value">
             <div class="closing-container">
-                <div class="closing-content">
-                    <h2 class="closing-headline">
-                        <span class="closing-line1">The difference between</span>
-                        <span class="closing-line2">
-                            <span class="closing-contrast">talking about it</span>
-                            <span class="closing-and">and</span>
-                            <span class="closing-action">having done it</span>
-                        </span>
-                    </h2>
-                    <p class="closing-subtitle">
-Software fails in spectacular ways. We've seen every one and fixed them all. Five consultants couldn't solve it? We did. Technical disasters become competitive advantages, and we don't just prevent the problems other teams create, we prevent the ones they don't even know exist.                      </p>
+                <div class="contrast-headline">
+                    <span class="contrast-word contrast-talking">TALKING</span>
+                    <span class="contrast-word contrast-doing">DOING</span>
                 </div>
                 
-                <div class="closing-visual">
-                    <div class="experience-metrics">
-                        <div class="metric-item">
-                            <div class="metric-number">Day 1</div>
-                            <div class="metric-label">When we start shipping value</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-number">Zero</div>
-                            <div class="metric-label">Deadlines we've missed</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-number">∞</div>
-                            <div class="metric-label">Times we've heard "impossible"</div>
-                        </div>
+                <p class="closing-subtitle">
+                    Software fails in spectacular ways. We've seen every one and fixed them all. Five consultants couldn't solve it? We did. Technical disasters become competitive advantages, and we don't just prevent the problems other teams create, we prevent the ones they don't even know exist.
+                </p>
+                
+                <div class="experience-metrics">
+                    <div class="metric-item">
+                        <div class="metric-number">Day 1</div>
+                        <div class="metric-label">When we start shipping value</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">Zero</div>
+                        <div class="metric-label">Deadlines we've missed</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">∞</div>
+                        <div class="metric-label">Times we've heard "impossible"</div>
                     </div>
                 </div>
             </div>
