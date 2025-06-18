@@ -673,11 +673,11 @@
             margin-bottom: 20px;
         }
 
-        /* Proficiencies Panel */
+        /* Updated Proficiencies Panel with Orange Sticky Tab Style */
         .proficiencies-panel {
             background: #ffffff;
             border-radius: 12px;
-            padding: 40px 32px;
+            padding: 56px 48px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
@@ -691,63 +691,112 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
         }
 
+        /* Heavy Wear Orange Sticky Tab */
         .proficiencies-header {
-            font-family: 'Roboto Condensed', sans-serif;
+            position: absolute;
+            top: -5px;
+            left: -20px;
+            transform: rotate(-3deg);
+        }
+
+        .sticky-tab-scuffed {
+            padding: 8px 25px 8px 40px;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #ffffff;
-            margin-bottom: 24px;
+            letter-spacing: 2px;
             position: relative;
-            display: inline-block;
-            padding: 8px 24px;
-            transform: rotate(-2deg);
-        }
-
-        .proficiencies-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #DD4124;
-            z-index: -1;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            
+            /* Heavy wear pattern with brand color */
+            background: 
+                /* Bigger scratches */
+                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
+                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+                /* Multiple scuff marks */
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
+                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
+                /* Faded edges with brand color */
+                radial-gradient(ellipse at center, #DD4124 0%, #B73820 100%);
+            
             box-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        .proficiencies-header::after {
+        /* Left edge gradient for depth */
+        .sticky-tab-scuffed::before {
             content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.15) 0%, transparent 100%);
+        }
+
+        /* Arrow end */
+        .sticky-tab-scuffed::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 10px;
+            border-color: transparent transparent transparent #C63C28;
+            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Paper texture overlay */
+        .texture-noise {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.1) 2px,
-                rgba(255, 255, 255, 0.1) 4px
-            );
-            z-index: -1;
+            opacity: 0.15;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.02) 2px,
+                    rgba(255,255,255,0.02) 3px
+                );
+            mix-blend-mode: overlay;
+            pointer-events: none;
         }
 
+        /* Different rotation angles for variety */
+        .content-grid:nth-child(1) .proficiencies-header {
+            transform: rotate(-3deg);
+        }
+
+        .content-grid:nth-child(2) .proficiencies-header {
+            transform: rotate(2deg);
+            top: 0px;
+        }
+
+        /* Proficiencies List */
         .proficiencies-list {
             list-style: none;
             padding: 0;
+            padding-top: 72px;
             margin: 0;
         }
 
         .proficiencies-list li {
             font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 10px;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 12px;
             padding-left: 28px;
             position: relative;
             color: #2c3e50;
@@ -774,37 +823,6 @@
         .proficiencies-list li:hover::before {
             opacity: 1;
             transform: translateX(0);
-        }
-
-        .sticky-note {
-            position: absolute;
-            bottom: -30px;
-            right: 30px;
-            z-index: 10;
-            width: 200px;
-            height: 200px;
-            background: #FFE082;
-            padding: 0;
-            box-shadow: 
-                0 4px 12px rgba(0, 0, 0, 0.1),
-                0 1px 3px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            overflow: hidden;
-            transform: rotate(-3deg);
-        }
-
-        .sticky-note img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: contrast(1.1) saturate(1.2);
-        }
-
-        .proficiencies-panel:hover .sticky-note {
-            transform: rotate(0deg) scale(1.08) translateY(-5px);
-            box-shadow: 
-                0 8px 24px rgba(0, 0, 0, 0.15),
-                0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Compact Services Cards */
@@ -879,7 +897,7 @@
             line-height: 1.5;
         }
 
-        /* CTA Section */
+        /* CTA Section with Background Image */
         .cta-section {
             background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             color: white;
@@ -892,11 +910,28 @@
             z-index: 1;
         }
 
+        /* Add whiteboard background image with light opacity */
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('/img/whiteboard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
         .cta-content {
             position: relative;
             z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 24px;
         }
 
         .cta-content h2 {
@@ -1223,17 +1258,17 @@
             }
 
             .proficiencies-panel {
-                padding: 25px 20px;
+                padding: 40px 32px;
                 min-height: 250px;
             }
 
-            .proficiencies-header {
-                margin-bottom: 15px;
+            .proficiencies-list {
+                padding-top: 60px;
             }
 
             .proficiencies-list li {
-                font-size: 15px;
-                margin-bottom: 8px;
+                font-size: 16px;
+                margin-bottom: 10px;
             }
 
             .section-header {
@@ -1643,7 +1678,12 @@
                         </p>
                     </div>
                     <div class="proficiencies-panel fade-in">
-                        <div class="proficiencies-header">Proficiencies</div>
+                        <div class="proficiencies-header">
+                            <div class="sticky-tab-scuffed">
+                                <div class="texture-noise"></div>
+                                Proficiencies
+                            </div>
+                        </div>
                         <ul class="proficiencies-list">
                             <li>Accessibility Auditing</li>
                             <li>Application Development</li>
@@ -1654,15 +1694,17 @@
                             <li>Security Auditing</li>
                             <li>UX Research + Design</li>
                         </ul>
-                        <div class="sticky-note">
-                            <img src="/img/code.jpg" alt="I need code">
-                        </div>
                     </div>
                 </div>
 
                 <div class="content-grid fade-in">
                     <div class="proficiencies-panel">
-                        <div class="proficiencies-header">Battle-Tested Approach</div>
+                        <div class="proficiencies-header">
+                            <div class="sticky-tab-scuffed">
+                                <div class="texture-noise"></div>
+                                Battle-Tested Approach
+                            </div>
+                        </div>
                         <ul class="proficiencies-list">
                             <li>Production-Ready Architecture</li>
                             <li>Zero-Downtime Deployments</li>
