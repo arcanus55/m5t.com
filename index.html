@@ -1351,7 +1351,7 @@
             letter-spacing: 1px;
         }
 
-        /* CTA Section */
+        /* CTA Section - Updated with background image */
         .cta-section {
             background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
             color: white;
@@ -1361,6 +1361,22 @@
             overflow: hidden;
             margin: 0;
             width: 100%;
+            z-index: 1;
+        }
+
+        /* Add whiteboard background image with light opacity */
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('/img/whiteboard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
             z-index: 1;
         }
 
@@ -2603,20 +2619,20 @@
             </div>
 
             <div class="footer-section">
-                <h4>Services</h4>
+                <h4>I Need...</h4>
                 <ul>
-                    <li><a href="/services/plan">Planning</a></li>
-                    <li><a href="/services/code">Coding</a></li>
-                    <li><a href="/services/culture">Team Coaching</a></li>
-                    <li><a href="/services/minds">Embedded Team</a></li>
-                    <li><a href="/services/future-proof">Software Resilience</a></li>
-                    <li><a href="/services/delight">Gamification</a></li>
+                    <li><a href="/services/plan">A Plan</a></li>
+                    <li><a href="/services/code">Code</a></li>
+                    <li><a href="/services/culture">Culture</a></li>
+                    <li><a href="/services/minds">Minds</a></li>
+                    <li><a href="/services/future-proof">To Future-Proof</a></li>
+                    <li><a href="/services/delight">To Delight</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>Our Family</h4>
+                <h4>Mach Five</h4>
                 <ul>
                     <li><a href="https://www.machfivegroup.com" target="_blank">Mach Five Group</a></li>
                     <li><a href="https://www.machvive.com" target="_blank">MachVive</a></li>
