@@ -275,6 +275,16 @@
             box-shadow: 0 4px 16px rgba(221, 65, 36, 0.3) !important;
         }
 
+        /* Mobile menu links with icons - hidden on desktop */
+        .nav-menu .mobile-only {
+            display: none;
+        }
+
+        /* Add divider styling for mobile menu */
+        .nav-menu .nav-divider {
+            display: none;
+        }
+
         .mobile-menu-toggle {
             display: none;
         }
@@ -1662,11 +1672,40 @@
                 right: 0;
             }
 
+            /* Hide nav prompt on mobile */
+            .nav-prompt {
+                display: none !important;
+            }
+
+            /* Show mobile only links on mobile */
+            .nav-menu .mobile-only {
+                display: list-item !important;
+            }
+
+            /* Show divider on mobile */
+            .nav-menu .nav-divider {
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: rgba(0, 0, 0, 0.1);
+                margin: 20px 0;
+            }
+
             /* Update mobile nav menu styles */
             .nav-menu a {
                 width: 100%;
                 text-align: center;
                 font-size: 1.125rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            /* Mobile menu icon styling */
+            .nav-menu a .material-symbols-outlined {
+                font-size: 20px;
+                color: var(--m5-brand);
             }
 
             .mobile-menu-toggle {
@@ -1997,6 +2036,25 @@
                     <li><a href="/services/future-proof">To Future-Proof</a></li>
                     <li><a href="/services/delight">To Delight</a></li>
                     <li><a href="#contact" onclick="openContactForm()">Contact</a></li>
+                    <li class="nav-divider"></li>
+                    <li class="mobile-only">
+                        <a href="/blog">
+                            <span class="material-symbols-outlined">rss_feed</span>
+                            Knowledge Base
+                        </a>
+                    </li>
+                    <li class="mobile-only">
+                        <a href="/careers">
+                            <span class="material-symbols-outlined">person</span>
+                            Careers
+                        </a>
+                    </li>
+                    <li class="mobile-only">
+                        <a href="/customer-portal/">
+                            <span class="material-symbols-outlined">login</span>
+                            Login
+                        </a>
+                    </li>
                 </ul>
 
                 <button class="mobile-menu-toggle">
