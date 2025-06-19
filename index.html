@@ -56,6 +56,35 @@
             position: relative;
         }
 
+        /* Global scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--m5-brand);
+            border-radius: 6px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--m5-brand-dark);
+            background-clip: content-box;
+        }
+
+        /* Firefox scrollbar styling */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--m5-brand) rgba(0, 0, 0, 0.05);
+        }
+
         /* Grid texture with fade effect */
         body::before {
             content: '';
@@ -918,6 +947,25 @@
             max-height: 700px;
         }
 
+        /* Embed scenarios scrollbar */
+        .embed-scenarios::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .embed-scenarios::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+
+        .embed-scenarios::-webkit-scrollbar-thumb {
+            background: var(--m5-brand);
+            border-radius: 4px;
+        }
+
+        .embed-scenarios::-webkit-scrollbar-thumb:hover {
+            background: var(--m5-brand-dark);
+        }
+
         .scenario-item {
             padding: 24px;
             margin-bottom: 20px;
@@ -1042,12 +1090,12 @@
         }
 
         .composition-scroll-area::-webkit-scrollbar-thumb {
-            background: rgba(221, 65, 36, 0.5);
+            background: var(--m5-brand);
             border-radius: 4px;
         }
 
         .composition-scroll-area::-webkit-scrollbar-thumb:hover {
-            background: rgba(221, 65, 36, 0.7);
+            background: var(--m5-brand-dark);
         }
 
         .composition-content {
