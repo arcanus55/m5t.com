@@ -230,6 +230,28 @@
             animation: pointRight 2s ease-in-out infinite;
         }
 
+        /* Mobile nav prompt - hidden by default */
+        .mobile-nav-prompt {
+            display: none;
+            color: var(--m5-brand);
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(221, 65, 36, 0.2);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .mobile-nav-prompt::after {
+            content: '→';
+            font-size: 22px;
+            margin-left: 8px;
+            display: inline-block;
+            animation: pointRight 2s ease-in-out infinite;
+        }
+
         @keyframes pointRight {
             0%, 100% { transform: translateX(0); }
             50% { transform: translateX(5px); }
@@ -1224,13 +1246,12 @@
             position: relative;
         }
 
+        /* Updated TALKING styles - now solid white */
         .contrast-talking {
             font-size: clamp(80px, 12vw, 180px);
             font-weight: 100;
             letter-spacing: -0.02em;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-            text-stroke: 1px rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 20px;
             opacity: 0;
             animation: fadeInSoft 0.8s ease forwards;
@@ -1238,7 +1259,7 @@
             display: inline-block;
         }
 
-        /* Strikethrough for TALKING */
+        /* Strikethrough for TALKING - faster animation */
         .contrast-talking::after {
             content: '';
             position: absolute;
@@ -1249,7 +1270,7 @@
             background: var(--m5-brand);
             transform: translateY(-50%) scaleX(0);
             transform-origin: left center;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .contrast-talking.strike-through::after {
@@ -1667,6 +1688,7 @@
                 transform: rotate(-45deg) translate(7px, -8px);
             }
 
+            /* Updated mobile nav menu with scroll */
             .nav-menu {
                 position: fixed;
                 top: 0;
@@ -1676,21 +1698,46 @@
                 height: 100vh;
                 background: white;
                 flex-direction: column;
-                padding: 80px 32px;
-                gap: 24px;
+                padding: 80px 32px 32px 32px;
+                gap: 20px;
                 box-shadow: -2px 0 16px rgba(0, 0, 0, 0.1);
                 transition: right 0.3s;
                 z-index: 999;
-                align-items: flex-start;
+                align-items: stretch;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            /* Add scrollbar styling */
+            .nav-menu::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .nav-menu::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-menu::-webkit-scrollbar-thumb {
+                background: rgba(221, 65, 36, 0.3);
+                border-radius: 3px;
+            }
+
+            .nav-menu::-webkit-scrollbar-thumb:hover {
+                background: rgba(221, 65, 36, 0.5);
             }
 
             .nav-menu.active {
                 right: 0;
             }
 
-            /* Hide nav prompt on mobile */
+            /* Hide desktop nav prompt on mobile */
             .nav-prompt {
                 display: none !important;
+            }
+
+            /* Show mobile nav prompt */
+            .mobile-nav-prompt {
+                display: block !important;
             }
 
             /* Show mobile only links on mobile */
@@ -1698,13 +1745,36 @@
                 display: list-item !important;
             }
 
-            /* Show divider on mobile */
+            /* Enhanced divider styling on mobile */
             .nav-menu .nav-divider {
                 display: block;
-                width: 100%;
+                width: calc(100% + 64px);
+                margin-left: -32px;
+                margin-right: -32px;
                 height: 1px;
-                background: rgba(0, 0, 0, 0.1);
-                margin: 20px 0;
+                background: linear-gradient(
+                    90deg, 
+                    transparent 0%, 
+                    rgba(221, 65, 36, 0.2) 20%, 
+                    rgba(221, 65, 36, 0.2) 80%, 
+                    transparent 100%
+                );
+                margin-top: 24px;
+                margin-bottom: 24px;
+                position: relative;
+            }
+
+            /* Optional: Add decorative element to divider */
+            .nav-menu .nav-divider::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 8px;
+                height: 8px;
+                background: rgba(221, 65, 36, 0.2);
+                border-radius: 50%;
             }
 
             /* Update mobile nav menu styles */
@@ -2044,6 +2114,7 @@
                 <a href="/" class="nav-logo">Mach Five <span>Tech</span></a>
                 
                 <ul class="nav-menu">
+                    <li class="mobile-nav-prompt">I Need...</li>
                     <li class="nav-prompt">I Need...</li>
                     <li><a href="/services/plan">A Plan</a></li>
                     <li><a href="/services/code">Code</a></li>
@@ -2779,7 +2850,7 @@
                 observer.observe(el);
             });
 
-            // Strikethrough animation for TALKING word
+            // Strikethrough animation for TALKING word - faster timing
             const talkingWord = document.getElementById('talkingWord');
             if (talkingWord) {
                 const talkingObserver = new IntersectionObserver((entries) => {
@@ -2787,7 +2858,7 @@
                         if (entry.isIntersecting) {
                             setTimeout(() => {
                                 entry.target.classList.add('strike-through');
-                            }, 800);
+                            }, 400); // Reduced from 800ms
                             talkingObserver.unobserve(entry.target);
                         }
                     });
