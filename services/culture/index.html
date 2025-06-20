@@ -403,14 +403,17 @@
             display: none;
         }
 
-        /* Hero Section */
+        /* Hero Section - Mini version with whiteboard background */
         .culture-hero {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
+            color: white;
             padding: 50px 0;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
+        /* Add mini hero background - whiteboard texture like home page CTA */
         .culture-hero::before {
             content: '';
             position: absolute;
@@ -418,10 +421,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
-                linear-gradient(rgba(221, 65, 36, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(221, 65, 36, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-image: url('/img/whiteboard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 1;
         }
 
         .culture-hero-content {
@@ -429,20 +434,20 @@
             margin: 0 auto;
             padding: 0 24px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .culture-hero h1 {
             font-size: clamp(40px, 6vw, 64px);
             font-weight: 700;
-            color: var(--m5-dark);
+            color: white;
             margin-bottom: 20px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
         .culture-hero-subtitle {
             font-size: 20px;
-            color: var(--m5-text-light);
+            color: rgba(255, 255, 255, 0.9);
             max-width: 800px;
             line-height: 1.5;
         }
@@ -463,12 +468,12 @@
 
         .result-icon {
             font-size: 28px;
-            color: var(--m5-brand);
+            color: white;
         }
 
         .result-label {
             font-size: 15px;
-            color: var(--m5-text);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
         }
 
@@ -682,14 +687,14 @@
             position: absolute;
             left: 0;
             top: 0;
-            color: #DD4124;
+            color: #666;
             font-weight: 600;
-            opacity: 0;
+            opacity: 1;
             transition: all 0.2s ease;
         }
 
         .proficiencies-list li:hover::before {
-            opacity: 1;
+            color: #DD4124;
             transform: translateX(0);
         }
 

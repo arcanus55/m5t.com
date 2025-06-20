@@ -371,14 +371,17 @@
             display: none;
         }
 
-        /* Hero Section */
+        /* Hero Section - Mini version with whiteboard background */
         .delight-hero {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            background: linear-gradient(135deg, var(--m5-brand) 0%, var(--m5-brand-dark) 100%);
+            color: white;
             padding: 50px 0;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
+        /* Add mini hero background - whiteboard texture like home page CTA */
         .delight-hero::before {
             content: '';
             position: absolute;
@@ -386,10 +389,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
-                linear-gradient(rgba(221, 65, 36, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(221, 65, 36, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-image: url('/img/whiteboard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 1;
         }
 
         .delight-hero-content {
@@ -397,20 +402,20 @@
             margin: 0 auto;
             padding: 0 24px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .delight-hero h1 {
             font-size: clamp(40px, 6vw, 64px);
             font-weight: 700;
-            color: var(--m5-dark);
+            color: white;
             margin-bottom: 20px;
             font-family: 'Roboto Condensed', sans-serif;
         }
 
         .delight-hero-subtitle {
             font-size: 20px;
-            color: var(--m5-text-light);
+            color: rgba(255, 255, 255, 0.9);
             max-width: 800px;
             line-height: 1.5;
         }
@@ -432,12 +437,12 @@
         .stat-number {
             font-size: 15px;
             font-weight: 500;
-            color: var(--m5-text);
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .stat-label {
             font-size: 15px;
-            color: var(--m5-text);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
         }
 
@@ -622,14 +627,14 @@
             position: absolute;
             left: 0;
             top: 0;
-            color: #DD4124;
+            color: #666;
             font-weight: 600;
-            opacity: 0;
+            opacity: 1;
             transition: all 0.2s ease;
         }
 
         .proficiencies-list li:hover::before {
-            opacity: 1;
+            color: #DD4124;
             transform: translateX(0);
         }
 
@@ -637,7 +642,7 @@
         .problem-panel {
             background: white;
             border-radius: 12px;
-            padding: 40px 32px;
+            padding: 50px 40px 40px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
@@ -652,49 +657,62 @@
         }
 
         .problem-header {
+            position: absolute;
+            top: -5px;
+            left: -20px;
+            transform: rotate(-3deg);
             font-family: 'Roboto Condensed', sans-serif;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #ffffff;
-            margin-bottom: 24px;
-            position: relative;
-            display: inline-block;
-            padding: 8px 24px;
-            transform: rotate(-3deg);
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 8px 25px 8px 40px;
+            margin: 0;
+            
+            /* Heavy wear pattern with brand color */
+            background: 
+                /* Bigger scratches */
+                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
+                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+                /* Multiple scuff marks */
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
+                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
+                /* Faded edges with brand color */
+                radial-gradient(ellipse at center, #DD4124 0%, #B73820 100%);
+            
+            box-shadow: 
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
+        /* Left edge gradient for depth */
         .problem-header::before {
             content: '';
             position: absolute;
-            top: 0;
             left: 0;
-            right: 0;
+            top: 0;
             bottom: 0;
-            background: #DD4124;
-            z-index: -1;
-            box-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+            width: 20px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.15) 0%, transparent 100%);
         }
 
+        /* Arrow end */
         .problem-header::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.1) 2px,
-                rgba(255, 255, 255, 0.1) 4px
-            );
-            z-index: -1;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 10px;
+            border-color: transparent transparent transparent #C63C28;
+            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.2));
         }
 
         .problem-list {
@@ -763,49 +781,67 @@
         }
 
         .applications-header {
+            position: absolute;
+            top: -5px;
+            left: -20px;
+            transform: rotate(2deg);
             font-family: 'Roboto Condensed', sans-serif;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #ffffff;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-            padding: 8px 24px;
-            transform: rotate(-2deg);
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 8px 25px 8px 40px;
+            margin: 0;
+            
+            /* Heavy wear pattern with brand color */
+            background: 
+                /* Bigger scratches */
+                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
+                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+                /* Multiple scuff marks */
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
+                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
+                /* Faded edges with brand color */
+                radial-gradient(ellipse at center, #DD4124 0%, #B73820 100%);
+            
+            box-shadow: 
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
+        /* Left edge gradient for depth */
         .applications-header::before {
             content: '';
             position: absolute;
-            top: 0;
             left: 0;
-            right: 0;
+            top: 0;
             bottom: 0;
-            background: #DD4124;
-            z-index: -1;
-            box-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+            width: 20px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.15) 0%, transparent 100%);
         }
 
+        /* Arrow end */
         .applications-header::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.1) 2px,
-                rgba(255, 255, 255, 0.1) 4px
-            );
-            z-index: -1;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 10px;
+            border-color: transparent transparent transparent #C63C28;
+            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.2));
+        }
+
+        .applications-panel {
+            position: relative;
+            padding-top: 40px;
         }
 
         .applications-grid {
@@ -1506,19 +1542,19 @@
                 </p>
                 <div class="stat-grid fade-in">
                     <div class="stat-item">
-                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">psychology</span>
+                        <span class="material-symbols-outlined" style="font-size: 28px; color: white;">psychology</span>
                         <span class="stat-number">Behavioral Design Expertise</span>
                     </div>
                     <div class="stat-item">
-                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">build</span>
+                        <span class="material-symbols-outlined" style="font-size: 28px; color: white;">build</span>
                         <span class="stat-label">Custom Implementation</span>
                     </div>
                     <div class="stat-item">
-                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">analytics</span>
+                        <span class="material-symbols-outlined" style="font-size: 28px; color: white;">analytics</span>
                         <span class="stat-label">Data-Driven Optimization</span>
                     </div>
                     <div class="stat-item">
-                        <span class="material-symbols-outlined" style="font-size: 28px; color: var(--m5-brand);">integration_instructions</span>
+                        <span class="material-symbols-outlined" style="font-size: 28px; color: white;">integration_instructions</span>
                         <span class="stat-label">Platform Integration</span>
                     </div>
                 </div>
