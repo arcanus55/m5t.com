@@ -111,6 +111,30 @@
             z-index: 0;
         }
 
+        /* Enhanced fade for laptop viewports */
+        @media (min-width: 1024px) and (max-width: 1600px) {
+            body::before {
+                mask-image: linear-gradient(90deg, 
+                    transparent 0%, 
+                    rgba(0,0,0,0.2) 10%,
+                    rgba(0,0,0,0.6) 20%,
+                    black 30%, 
+                    black 70%, 
+                    rgba(0,0,0,0.6) 80%,
+                    rgba(0,0,0,0.2) 90%,
+                    transparent 100%);
+                -webkit-mask-image: linear-gradient(90deg, 
+                    transparent 0%, 
+                    rgba(0,0,0,0.2) 10%,
+                    rgba(0,0,0,0.6) 20%,
+                    black 30%, 
+                    black 70%, 
+                    rgba(0,0,0,0.6) 80%,
+                    rgba(0,0,0,0.2) 90%,
+                    transparent 100%);
+            }
+        }
+
         /* Neodigm button overrides */
         [data-n55-enchanted-cta][data-n55-theme='primary'] { 
             background: linear-gradient(var(--m5-night-mid), var(--m5-night-mid)) !important; 
@@ -883,7 +907,7 @@
         /* Rest of the sections remain unchanged */
         .embed-excellence {
             padding: 60px 0 120px 0;
-            background: #fafafa;
+            background: linear-gradient(135deg, var(--m5-dark) 0%, var(--m5-night-mid) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -896,14 +920,14 @@
             right: 0;
             bottom: 0;
             background-image: 
-                linear-gradient(rgba(221, 65, 36, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(221, 65, 36, 0.02) 1px, transparent 1px);
-            background-size: 30px 30px;
+                linear-gradient(rgba(221, 65, 36, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221, 65, 36, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
             z-index: 0;
         }
 
         .embed-container {
-            max-width: 1400px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 24px;
             position: relative;
@@ -914,17 +938,18 @@
             text-align: center;
             font-size: clamp(48px, 5vw, 80px);
             font-weight: 700;
-            color: var(--m5-dark);
+            color: var(--m5-lighter);
             font-family: 'Roboto Condensed', sans-serif;
             margin: 0 auto 32px auto;
             max-width: 800px;
             line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .embed-subheadline {
             text-align: center;
             font-size: 20px;
-            color: var(--m5-text-light);
+            color: rgba(255,255,255,0.8);
             margin: 0 auto 80px auto;
             max-width: 600px;
             line-height: 1.6;
@@ -932,19 +957,20 @@
 
         .embed-interactive {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
             gap: 80px;
             align-items: stretch;
-            max-height: 700px;
+            max-height: none;
         }
 
         .embed-scenarios {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(221, 65, 36, 0.1);
             padding: 40px;
             overflow-y: auto;
             max-height: 700px;
+            border: 2px solid rgba(221, 65, 36, 0.2);
         }
 
         /* Embed scenarios scrollbar */
@@ -969,10 +995,11 @@
         .scenario-item {
             padding: 24px;
             margin-bottom: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid rgba(221, 65, 36, 0.1);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
             position: relative;
             overflow: hidden;
         }
@@ -1010,13 +1037,54 @@
         .scenario-icon {
             width: 40px;
             height: 40px;
-            background: var(--m5-brand);
+            background: 
+                /* Paper texture noise */
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.05) 2px,
+                    rgba(255,255,255,0.05) 3px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0,0,0,0.03) 2px,
+                    rgba(0,0,0,0.03) 3px
+                ),
+                /* Organic wear marks */
+                radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                radial-gradient(ellipse at 75% 75%, rgba(0,0,0,0.08) 0%, transparent 30%),
+                radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.06) 0%, transparent 35%),
+                /* Base color */
+                var(--m5-brand);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Additional texture overlay */
+        .scenario-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                /* Stressed paper grain */
+                repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255,255,255,0.02) 2deg, transparent 4deg),
+                /* Organic fiber texture */
+                radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 20%),
+                radial-gradient(ellipse at 80% 70%, rgba(0,0,0,0.05) 0%, transparent 25%);
+            mix-blend-mode: overlay;
+            pointer-events: none;
         }
 
         .scenario-item:hover .scenario-icon,
@@ -1031,10 +1099,48 @@
         }
 
         .scenario-title {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--m5-dark);
-            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+            padding: 8px 25px 8px 20px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 16px;
+            transform: rotate(-1deg);
+            
+            /* Heavy wear pattern with brand color */
+            background: 
+                /* Scratches */
+                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
+                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+                /* Scuff marks */
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                /* Base orange color */
+                radial-gradient(ellipse at center, #DD4124 0%, #B73820 100%);
+            
+            box-shadow: 
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Arrow end for tab effect */
+        .scenario-title::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 12px 0 12px 8px;
+            border-color: transparent transparent transparent #C63C28;
+            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.2));
         }
 
         .scenario-desc {
@@ -1045,14 +1151,15 @@
 
         .embed-composition {
             background: var(--m5-dark);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 40px;
             height: 700px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(221, 65, 36, 0.3);
             display: flex;
             flex-direction: column;
+            border: 2px solid rgba(221, 65, 36, 0.2);
         }
 
         .embed-composition::before {
@@ -1197,7 +1304,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            color: var(--m5-accent);
+            color: #34495E;
             font-weight: bold;
         }
 
@@ -2486,7 +2593,7 @@
         <section class="embed-excellence" id="embed-excellence">
             <div class="embed-container">
                 <h2 class="embed-headline">The Standard We Operate At</h2>
-                <p class="embed-subheadline">Real scenarios. Proven approaches. No theoretical frameworks.</p>
+                <p class="embed-subheadline">These moments define your trajectory. The difference between scaling smoothly and scrambling to catch up often comes down to having the right technical partner when it matters most. Smart leaders don't wait for the crisis—they prepare for the opportunity.</p>
                 <p class="mobile-instruction">Tap each scenario to see our approach</p>
                 
                 <div class="embed-interactive">

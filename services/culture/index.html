@@ -82,6 +82,30 @@
             z-index: 0;
         }
 
+        /* Enhanced fade for laptop viewports */
+        @media (min-width: 1024px) and (max-width: 1600px) {
+            body::before {
+                mask-image: linear-gradient(90deg, 
+                    transparent 0%, 
+                    rgba(0,0,0,0.2) 10%,
+                    rgba(0,0,0,0.6) 20%,
+                    black 30%, 
+                    black 70%, 
+                    rgba(0,0,0,0.6) 80%,
+                    rgba(0,0,0,0.2) 90%,
+                    transparent 100%);
+                -webkit-mask-image: linear-gradient(90deg, 
+                    transparent 0%, 
+                    rgba(0,0,0,0.2) 10%,
+                    rgba(0,0,0,0.6) 20%,
+                    black 30%, 
+                    black 70%, 
+                    rgba(0,0,0,0.6) 80%,
+                    rgba(0,0,0,0.2) 90%,
+                    transparent 100%);
+            }
+        }
+
         /* Neodigm button overrides */
         [data-n55-enchanted-cta][data-n55-theme='primary'] { 
             background: linear-gradient(var(--m5-night-mid), var(--m5-night-mid)) !important; 
