@@ -680,11 +680,16 @@
         }
 
         .table-header {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--m5-dark);
+            display: flex;
+            justify-content: center;
             margin-bottom: 24px;
-            text-align: center;
+        }
+
+        /* Larger tab variant for table headers */
+        .table-header .sticky-tab-scuffed {
+            font-size: 20px !important;
+            padding: 14px 32px !important;
+            letter-spacing: 1.5px !important;
         }
 
         .discovery-table {
@@ -717,6 +722,66 @@
         .discovery-table thead {
             background: linear-gradient(135deg, var(--m5-dark) 0%, #000 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add scuffed texture to table headers */
+        .discovery-table thead::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.08) 2px,
+                    rgba(255,255,255,0.08) 4px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0,0,0,0.2) 2px,
+                    rgba(0,0,0,0.2) 4px
+                );
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Add noise texture overlay */
+        .discovery-table thead::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+
+        /* Add worn/scratched effect to edges */
+        .discovery-table thead tr {
+            position: relative;
+        }
+
+        .discovery-table thead tr::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--m5-brand);
+            mask-image: url("data:image/svg+xml,%3Csvg width='100' height='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 Q10,0 20,1 T40,1 T60,1 T80,1 T100,1' stroke='black' fill='none'/%3E%3C/svg%3E");
+            mask-repeat: repeat-x;
+            mask-size: 100px 3px;
         }
 
         .discovery-table th {
@@ -726,7 +791,9 @@
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-bottom: 3px solid var(--m5-brand);
+            border: none;
+            position: relative;
+            z-index: 1;
         }
 
         .discovery-table td {
@@ -744,17 +811,24 @@
             transform: translateX(4px);
         }
 
-        .discovery-table tbody tr:hover td:first-child::before {
+        /* Default arrow for all rows */
+        .discovery-table td:first-child::before {
             content: '→';
             position: absolute;
             left: 8px;
-            color: var(--m5-brand);
+            color: #666;
             font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        .discovery-table tbody tr:hover td:first-child::before {
+            color: var(--m5-brand);
         }
 
         .discovery-table td:first-child {
             font-weight: 500;
             color: var(--m5-dark);
+            padding-left: 32px;
         }
 
         .discovery-table td:last-child {
@@ -1245,7 +1319,7 @@
 
         /* Breadcrumb */
         .breadcrumb {
-            padding: 20px 0;
+            padding: 32px 0 20px 0;
             background: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
             position: relative;
@@ -1579,6 +1653,13 @@
             outline: 2px solid var(--m5-brand);
             outline-offset: 2px;
         }
+
+        /* Target Neodigm widget in footer - let JavaScript handle specific targeting */
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:first-child,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-1,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:first-child {
+            color: var(--m5-dark) !important;
+        }
     </style>
 </head>
 <body>
@@ -1753,7 +1834,12 @@
                 </div>
 
                 <div class="table-container fade-in">
-                    <h3 class="table-header">Bringing an Idea to Life</h3>
+                    <div class="table-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Bringing an Idea to Life
+                        </div>
+                    </div>
                     <table class="discovery-table">
                         <thead>
                             <tr>
@@ -1803,7 +1889,12 @@
                 </div>
 
                 <div class="table-container fade-in">
-                    <h3 class="table-header">Turning a Product Around</h3>
+                    <div class="table-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Turning a Product Around
+                        </div>
+                    </div>
                     <table class="discovery-table">
                         <thead>
                             <tr>
@@ -1938,17 +2029,17 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const intersectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                    intersectionObserver.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
+            intersectionObserver.observe(el);
         });
 
         // Contact form
@@ -1971,6 +2062,42 @@
                     document.body.dataset.cta = "false";
                 }, "contact_templ_wdgt_CTA__id");
             }
+        }
+
+        // Function to target only "Mach" text in Neodigm widget
+        function styleMachText() {
+            const widget = document.querySelector('neodigm-widget[data-n55-widget-id="effect_two_word_rotate"]');
+            if (widget) {
+                // Target all text nodes and spans within the widget
+                const allElements = widget.querySelectorAll('*');
+                allElements.forEach(el => {
+                    if (el.textContent && el.textContent.trim()) {
+                        const text = el.textContent.trim();
+                        // Only target elements that contain exactly "Mach" (not "Five" or other text)
+                        if (text === 'Mach' || (text.includes('Mach') && !text.includes('Five'))) {
+                            el.style.setProperty('color', '#181818', 'important');
+                        }
+                        // Reset any "Five" text that might have been affected
+                        else if (text === 'Five' || text.includes('Five')) {
+                            el.style.removeProperty('color');
+                        }
+                    }
+                });
+            }
+        }
+
+        // Try to style immediately and on interval
+        setTimeout(styleMachText, 100);
+        setTimeout(styleMachText, 500);
+        setTimeout(styleMachText, 1000);
+        setTimeout(styleMachText, 2000);
+
+        // Also observe for widget changes (with error handling)
+        try {
+            const mutationObserver = new MutationObserver(styleMachText);
+            mutationObserver.observe(document.body, { childList: true, subtree: true });
+        } catch(e) {
+            console.log('Observer error:', e);
         }
     </script>
 </body>

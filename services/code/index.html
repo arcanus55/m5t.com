@@ -1274,7 +1274,7 @@
 
         /* Breadcrumb */
         .breadcrumb {
-            padding: 20px 0;
+            padding: 32px 0 20px 0;
             background: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
             position: relative;
@@ -1614,8 +1614,21 @@
         }
 
         .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Target Neodigm widget in footer - let JavaScript handle specific targeting */
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:first-child,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-1,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:first-child {
+            color: var(--m5-dark) !important;
         }
     </style>
 </head>
@@ -2404,6 +2417,61 @@
             document.addEventListener('DOMContentLoaded', initializeMobileMenu);
         } else {
             initializeMobileMenu();
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const intersectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    intersectionObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            intersectionObserver.observe(el);
+        });
+
+        // Function to target only "Mach" text in Neodigm widget
+        function styleMachText() {
+            const widget = document.querySelector('neodigm-widget[data-n55-widget-id="effect_two_word_rotate"]');
+            if (widget) {
+                // Target all text nodes and spans within the widget
+                const allElements = widget.querySelectorAll('*');
+                allElements.forEach(el => {
+                    if (el.textContent && el.textContent.trim()) {
+                        const text = el.textContent.trim();
+                        // Only target elements that contain exactly "Mach" (not "Five" or other text)
+                        if (text === 'Mach' || (text.includes('Mach') && !text.includes('Five'))) {
+                            el.style.setProperty('color', '#181818', 'important');
+                        }
+                        // Reset any "Five" text that might have been affected
+                        else if (text === 'Five' || text.includes('Five')) {
+                            el.style.removeProperty('color');
+                        }
+                    }
+                });
+            }
+        }
+
+        // Try to style immediately and on interval
+        setTimeout(styleMachText, 100);
+        setTimeout(styleMachText, 500);
+        setTimeout(styleMachText, 1000);
+        setTimeout(styleMachText, 2000);
+
+        // Also observe for widget changes (with error handling)
+        try {
+            const mutationObserver = new MutationObserver(styleMachText);
+            mutationObserver.observe(document.body, { childList: true, subtree: true });
+        } catch(e) {
+            console.log('Observer error:', e);
         }
     </script>
 

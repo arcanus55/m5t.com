@@ -1840,6 +1840,13 @@
             color: var(--m5-brand);
         }
 
+        /* Target Neodigm widget in footer - let JavaScript handle specific targeting */
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:first-child,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-1,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:first-child {
+            color: var(--m5-dark) !important;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             body {
@@ -3037,6 +3044,38 @@
                     window.removeEventListener('load', window.mfLoadHandler);
                 }
             };
+
+            // Function to target only "Mach" text in Neodigm widget
+            function styleMachText() {
+                const widget = document.querySelector('neodigm-widget[data-n55-widget-id="effect_two_word_rotate"]');
+                if (widget) {
+                    // Target all text nodes and spans within the widget
+                    const allElements = widget.querySelectorAll('*');
+                    allElements.forEach(el => {
+                        if (el.textContent && el.textContent.trim()) {
+                            const text = el.textContent.trim();
+                            // Only target elements that contain exactly "Mach" (not "Five" or other text)
+                            if (text === 'Mach' || (text.includes('Mach') && !text.includes('Five'))) {
+                                el.style.setProperty('color', '#181818', 'important');
+                            }
+                            // Reset any "Five" text that might have been affected
+                            else if (text === 'Five' || text.includes('Five')) {
+                                el.style.removeProperty('color');
+                            }
+                        }
+                    });
+                }
+            }
+
+            // Try to style immediately and on interval
+            setTimeout(styleMachText, 100);
+            setTimeout(styleMachText, 500);
+            setTimeout(styleMachText, 1000);
+            setTimeout(styleMachText, 2000);
+
+            // Also observe for widget changes
+            const observer = new MutationObserver(styleMachText);
+            observer.observe(document.body, { childList: true, subtree: true });
 
             document.addEventListener('DOMContentLoaded', function() {
                 // Initialize only once
