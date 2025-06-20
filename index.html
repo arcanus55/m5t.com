@@ -138,6 +138,33 @@
             .top-bar-right {
                 margin-right: 150px;
             }
+
+            /* Make footer tighter on laptop viewports */
+            .footer {
+                padding: 40px 24px 0;
+            }
+
+            .footer::before {
+                bottom: 60px;
+            }
+
+            .footer-content {
+                gap: 20px;
+                padding-bottom: 20px;
+            }
+
+            .footer-brand {
+                flex: 1 1 300px;
+            }
+
+            .footer-section {
+                flex: 1 1 150px;
+            }
+
+            .footer-bottom {
+                margin-top: 16px;
+                padding: 16px 0;
+            }
         }
 
         /* Neodigm button overrides */
@@ -638,14 +665,15 @@
 
         .l-content-row {
             max-width: 1400px;
-            margin: 0 auto 120px;
+            margin: 0 auto 80px;
             padding: 0 80px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: center;
+            gap: 60px;
+            align-items: stretch;
             position: relative;
             z-index: 2;
+            min-height: 480px;
         }
 
         /* Default: service-content on left, panel on right */
@@ -670,6 +698,10 @@
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100%;
         }
 
         .service-content.in-view {
@@ -678,33 +710,36 @@
         }
 
         .i-need-tag {
-            font-size: clamp(48px, 5vw, 80px);
+            font-size: clamp(42px, 5vw, 72px);
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             color: var(--m5-dark);
         }
 
         .readampm {
-            font-size: 22px;
-            line-height: 1.8;
+            font-size: 20px;
+            line-height: 1.6;
             color: var(--m5-text);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
 
         /* Clean Panel Design - Tighten Style */
         .content-row__panel {
             background: #ffffff;
             border-radius: 12px;
-            padding: 56px 48px;
+            padding: 40px 36px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
             opacity: 0;
             transform: translateY(40px);
-            min-height: 420px;
+            min-height: 100%;
             overflow: visible;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .content-row__panel.in-view {
@@ -860,60 +895,52 @@
             position: absolute;
             left: 0;
             top: 0;
-            color: #DD4124;
+            color: #666;
             font-weight: 600;
-            opacity: 0;
+            opacity: 1;
             transition: all 0.2s ease;
         }
 
         .proficiencies-list li:hover::before {
-            opacity: 1;
+            color: #DD4124;
             transform: translateX(0);
         }
 
         /* Sticky Note - Clean Style */
         .sticky-note {
-            position: absolute;
-            bottom: -30px;
-            right: 30px;
-            z-index: 10;
-            width: 200px;
-            height: 200px;
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 0 20px 0;
             padding: 0;
             transition: all 0.3s ease;
             overflow: hidden;
+            z-index: 10;
         }
 
-        /* Different positions and rotations for visual variety */
+        /* Different rotations for visual variety */
         .l-content-row:nth-child(1) .sticky-note {
             transform: rotate(-3deg);
-            right: 40px;
         }
 
         .l-content-row:nth-child(2) .sticky-note {
             transform: rotate(2deg);
-            right: 50px;
         }
 
         .l-content-row:nth-child(3) .sticky-note {
             transform: rotate(-2deg);
-
-            right: 35px;
         }
 
         .l-content-row:nth-child(4) .sticky-note {
             transform: rotate(3deg);
-            right: 45px;
         }
 
         .l-content-row:nth-child(5) .sticky-note {
             transform: rotate(-4deg);
-            right: 30px;
         }
 
         .l-content-row:nth-child(6) .sticky-note {
             transform: rotate(1deg);
-            right: 55px;
         }
 
         /* Sticky note content */
@@ -925,7 +952,7 @@
         }
 
         /* Hover effects */
-        .content-row__panel:hover .sticky-note {
+        .sticky-note:hover {
             transform: rotate(0deg) scale(1.08) translateY(-5px);
             box-shadow: 
                 0 8px 24px rgba(0, 0, 0, 0.15),
@@ -1671,18 +1698,18 @@
             background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
             border-top: 1px solid var(--m5-border);
             color: var(--m5-text);
-            padding: 80px 24px 32px;
+            padding: 80px 24px 0;
             position: relative;
         }
 
-        /* Add grid background to footer */
+        /* Add grid background to footer - stops before footer-bottom */
         .footer::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
+            bottom: 100px;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
@@ -1798,6 +1825,9 @@
             color: var(--m5-text-light);
             position: relative;
             z-index: 1;
+            background: #fafafa;
+            padding: 32px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .footer-bottom a {
@@ -2048,22 +2078,28 @@
             .l-content-row {
                 grid-template-columns: 1fr;
                 gap: 0;
-                margin-bottom: 24px;
+                margin-bottom: 40px;
                 padding: 0 24px;
+                min-height: auto;
+                align-items: start;
             }
 
             .l-content-row .service-content {
                 order: 1;
-                margin-bottom: 24px;
+                margin-bottom: 32px;
+                display: block;
+                min-height: auto;
             }
 
             .l-content-row .content-row__panel {
                 order: 2;
-                padding: 40px 32px;
-                min-height: 320px;
+                padding: 32px 24px;
+                min-height: auto;
                 background: #ffffff;
+                display: block;
             }
 
+            /* Reset all orders to consistent flow on mobile */
             .l-content-row:nth-child(even) .service-content {
                 order: 1;
             }
@@ -2080,6 +2116,9 @@
             /* Show mobile sticky notes on mobile */
             .mobile-sticky-note {
                 display: block;
+                margin: 0 auto 24px auto;
+                width: 180px;
+                height: 180px;
             }
 
             .proficiencies-list li {
@@ -2088,7 +2127,22 @@
             }
 
             .proficiencies-list {
-                padding-top: 60px;
+                padding-top: 32px;
+                margin-top: 0;
+            }
+
+            /* Mobile typography adjustments */
+            .i-need-tag {
+                font-size: clamp(32px, 8vw, 48px);
+                margin-bottom: 16px;
+                text-align: center;
+            }
+
+            .readampm {
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 24px;
+                text-align: center;
             }
 
             .service-content nav {
@@ -2097,6 +2151,16 @@
 
             .service-content nav a[data-n55-enchanted-cta] {
                 margin: 0 auto;
+            }
+
+            /* Mobile proficiencies header improvements */
+            .proficiencies-header {
+                margin-bottom: 16px;
+            }
+
+            .sticky-tab-scuffed {
+                font-size: 14px;
+                padding: 8px 16px;
             }
 
             .footer-content {
@@ -2417,6 +2481,9 @@
         <section class="services" id="services">
             <div class="l-content-row">
                 <div class="service-content">
+                    <div class="sticky-note">
+                        <img src="/img/a_plan.jpg" alt="I need a plan">
+                    </div>
                     <h2 class="i-need-tag">I Need a Plan</h2>
                     <p class="readampm">
                         We help define your goals, articulate what success looks like, and provide a step-by-step plan to deliver and meet your strategic objectives.
@@ -2446,9 +2513,6 @@
                         <li>Technical Documentation</li>
                         <li>User Research & A/B testing</li>
                     </ul>
-                    <div class="sticky-note">
-                        <img src="/img/a_plan.jpg" alt="I need a plan">
-                    </div>
                 </div>
                 <div class="mobile-sticky-note">
                     <img src="/img/a_plan.jpg" alt="I need a plan">
@@ -2473,14 +2537,14 @@
                         <li>Security Auditing</li>
                         <li>UX Research + Design</li>
                     </ul>
-                    <div class="sticky-note">
-                        <img src="/img/code.jpg" alt="I need code">
-                    </div>
                 </div>
                 <div class="mobile-sticky-note">
                     <img src="/img/code.jpg" alt="I need code">
                 </div>
                 <div class="service-content">
+                    <div class="sticky-note">
+                        <img src="/img/code.jpg" alt="I need code">
+                    </div>
                     <h2 class="i-need-tag">I Need Code</h2>
                     <p class="readampm">
                         We'll partner with you from ideation to launch. We craft performant web and mobile apps that delight users and exceed expectations. We have the tools and the skills to give you a sustainable technology advantage.
@@ -2499,6 +2563,9 @@
 
             <div class="l-content-row">
                 <div class="service-content">
+                    <div class="sticky-note">
+                        <img src="/img/a_quality_culture.jpg" alt="I need a quality culture">
+                    </div>
                     <h2 class="i-need-tag">I Need a Quality Culture</h2>
                     <p class="readampm">
                         Our leadership experience nurtures a culture of innovation and excellence. Leveraging thought leadership and hard earned expertise we inspire a quality first sense of ownership that unlocks your team's productivity and enables excellence.
@@ -2529,9 +2596,6 @@
                         <li>Leadership Coaching</li>
                         <li>Programming Workshops</li>
                     </ul>
-                    <div class="sticky-note">
-                        <img src="/img/a_quality_culture.jpg" alt="I need a quality culture">
-                    </div>
                 </div>
                 <div class="mobile-sticky-note">
                     <img src="/img/a_quality_culture.jpg" alt="I need a quality culture">
@@ -2555,14 +2619,14 @@
                         <li>UI Refactoring</li>
                         <li>UX Research & Design</li>
                     </ul>
-                    <div class="sticky-note">
-                        <img src="/img/great_minds.jpg" alt="I need great minds">
-                    </div>
                 </div>
                 <div class="mobile-sticky-note">
                     <img src="/img/great_minds.jpg" alt="I need great minds">
                 </div>
                 <div class="service-content">
+                    <div class="sticky-note">
+                        <img src="/img/great_minds.jpg" alt="I need great minds">
+                    </div>
                     <h2 class="i-need-tag">I Need Great Minds</h2>
                     <p class="readampm">
                         We slot in high-trust engineers: full-stack architects, UX specialists, and project leads who move fast, sweat the details, and take ownership like it's their product.
@@ -2581,6 +2645,9 @@
 
             <div class="l-content-row">
                 <div class="service-content">
+                    <div class="sticky-note">
+                        <img src="/img/to_future_proof.jpg" alt="I need to future-proof">
+                    </div>
                     <h2 class="i-need-tag">I Need to Future-Proof</h2>
                     <p class="readampm">
                         We have vast experience refactoring software inundated with Technical Debt. We can identify and refactor software patterns that lead to unreliable, unstable, and difficult to maintain applications. We can lead you to the place where your software infrastructure stands the test of time.
@@ -2611,9 +2678,6 @@
                         <li>Sustained Development Service</li>
                         <li>Tech Stack Upgrades</li>
                     </ul>
-                    <div class="sticky-note">
-                        <img src="/img/to_future_proof.jpg" alt="I need to future-proof">
-                    </div>
                 </div>
                 <div class="mobile-sticky-note">
                     <img src="/img/to_future_proof.jpg" alt="I need to future-proof">
@@ -2637,14 +2701,14 @@
                         <li>Shopify Engagement</li>
                         <li>Wordle Style Puzzles</li>
                     </ul>
-                    <div class="sticky-note">
-                        <img src="/img/to_delight.jpg" alt="I need to delight">
-                    </div>
                 </div>
                 <div class="mobile-sticky-note">
                     <img src="/img/to_delight.jpg" alt="I need to delight">
                 </div>
                 <div class="service-content">
+                    <div class="sticky-note">
+                        <img src="/img/to_delight.jpg" alt="I need to delight">
+                    </div>
                     <h2 class="i-need-tag">I Need to Delight</h2>
                     <p class="readampm">
                         Gamification that drives loyalty. Our mobile games make your brand interactive, memorable, and worth sharing. We design playful experiences that match your brand's style and give visitors a reason to come back, share, and spread the word.

@@ -104,6 +104,38 @@
                     rgba(0,0,0,0.2) 90%,
                     transparent 100%);
             }
+
+            /* Adjust top-bar-right position for laptop viewports */
+            .top-bar-right {
+                margin-right: 150px;
+            }
+
+            /* Make footer tighter on laptop viewports */
+            .footer {
+                padding: 40px 24px 0;
+            }
+
+            .footer::before {
+                bottom: 60px;
+            }
+
+            .footer-content {
+                gap: 20px;
+                padding-bottom: 20px;
+            }
+
+            .footer-brand {
+                flex: 1 1 300px;
+            }
+
+            .footer-section {
+                flex: 1 1 150px;
+            }
+
+            .footer-bottom {
+                margin-top: 16px;
+                padding: 16px 0;
+            }
         }
 
         /* Neodigm button overrides */
@@ -149,6 +181,7 @@
             display: flex;
             gap: 24px;
             align-items: center;
+            margin-right: 200px;
         }
 
         .top-bar-link {
@@ -169,6 +202,26 @@
             color: var(--m5-brand);
         }
 
+        /* Make login link more prominent */
+        .top-bar-link[href="/customer-portal/"] {
+            background: var(--m5-brand);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--m5-brand);
+            transition: all 0.2s ease;
+        }
+
+        .top-bar-link[href="/customer-portal/"]:hover {
+            background: var(--m5-brand-dark);
+            border-color: var(--m5-brand-dark);
+            color: white;
+        }
+
+        .top-bar-link[href="/customer-portal/"] .material-symbols-outlined {
+            color: white;
+        }
+
         .main-nav {
             background: white;
             padding: 20px 0;
@@ -180,14 +233,16 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: 280px auto 1fr;
             align-items: center;
+            gap: 20px;
         }
 
-        /* Hide nav logo on desktop */
+        /* Show nav logo on desktop */
         .main-nav .nav-logo {
-            display: none;
+            display: inline-flex;
+            justify-self: start;
         }
 
         /* Desktop only logo */
@@ -228,8 +283,24 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 6px;
             list-style: none;
+            justify-self: center;
+            white-space: nowrap;
+        }
+
+        .nav-menu a {
+            white-space: nowrap;
+        }
+
+        .nav-spacer {
+            justify-self: end;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
         }
 
         /* I Need prompt */
@@ -237,11 +308,12 @@
             color: var(--m5-brand);
             font-size: 16px;
             font-weight: 600;
-            margin-right: 20px;
+            margin-right: 16px;
             display: flex;
             align-items: center;
             gap: 8px;
             letter-spacing: -0.02em;
+            white-space: nowrap;
         }
 
         .nav-prompt::after {
@@ -1008,18 +1080,18 @@
             background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
             border-top: 1px solid var(--m5-border);
             color: var(--m5-text);
-            padding: 80px 24px 32px;
+            padding: 80px 24px 0;
             position: relative;
         }
 
-        /* Add grid background to footer */
+        /* Add grid background to footer - stops before footer-bottom */
         .footer::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
+            bottom: 100px;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
@@ -1135,6 +1207,9 @@
             color: var(--m5-text-light);
             position: relative;
             z-index: 1;
+            background: #fafafa;
+            padding: 32px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .footer-bottom a {
@@ -1516,7 +1591,6 @@
         <div class="top-bar">
             <div class="top-bar-inner">
                 <div class="top-bar-left">
-                    <a href="/" class="nav-logo">Mach Five <span>Tech</span></a>
                 </div>
                 <div class="top-bar-right">
                     <a href="/blog" class="top-bar-link">
@@ -1529,7 +1603,7 @@
                     </a>
                     <a href="/customer-portal/" class="top-bar-link">
                         <span class="material-symbols-outlined">login</span>
-                        Login
+                        Portal
                     </a>
                 </div>
             </div>
@@ -1565,10 +1639,12 @@
                     <li class="mobile-only">
                         <a href="/customer-portal/">
                             <span class="material-symbols-outlined">login</span>
-                            Login
+                            Portal
                         </a>
                     </li>
                 </ul>
+
+                <div class="nav-spacer"></div>
 
                 <button class="mobile-menu-toggle">
                     <span></span>
